@@ -1,0 +1,179 @@
+:root {
+	--padding-lien:7px 12px;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #101631;
+	color: var(--noir);
+	font-family: sans-serif;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.33;
+	@include bp(md) {
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+.h1, .h2, .h3, .h4
+{
+	clear: both;
+	font-weight: 500;
+}
+
+h1, .h1 {
+	font-size:1.8125rem;
+	margin:0;
+	padding:0;
+	text-align:center;
+	text-transform: uppercase;
+}
+
+h2,
+h3,
+h4, .h2, .h3, .h4
+{
+	color:var(--cyan);
+	margin:0 0 0.3em;
+}
+
+h2, .h2 {
+	font-size: 1.44rem;
+	margin-bottom: 1em;
+	position: relative;
+}
+p + h2, p + .h2 {
+	margin-top:2em;
+}
+h3, .h3 {
+	font-size: 1.17rem;
+}
+h4, .h4 {
+	font-size: 1rem;
+}
+h5, .h5 {
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+@include bp(md) {
+	h1,
+	h2,
+	h3,
+	h4,
+	.h1, .h2, .h3, .h4
+	{
+		clear: both;
+		font-weight: 700;
+	}
+	h1, .h1 {
+		font-size:3.75rem;
+	}
+	h2, .h2 {
+		font-size: 2rem;
+		&::after {
+			height:6px;
+		}
+	}
+	h3, .h3 {
+		font-size: 1.625rem;
+	}
+	h4, .h4 {
+		font-size: 1.375rem;
+	}
+	h5, .h5 {
+		font-size: 1.25rem;
+		font-weight: 500;
+	}
+}
+
+
+p {
+	margin-bottom: 1em;
+	margin-top:0;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left:solid 5px inherit;
+	font-size:1.375rem;
+	margin: 0 0 1em;
+	padding:5px 27px;
+	cite {
+		font-weight: 500;
+	}
+}
+
+mark,
+ins {
+	background: var(--fond);
+	text-decoration: none;
+}
+
+small, .has-small-font-size  {
+	font-size: 80%;
+}
+
+.has-regular-font-size {
+	font-size: 1rem;
+}
+
+big, .has-big-font-size  {
+	font-size: 125%;
+}
+.has-huge-font-size {
+	@include taille(26);
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}

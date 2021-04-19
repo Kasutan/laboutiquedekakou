@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+## Site header
+--------------------------------------------------------------*/
+.site-header {
+	background-color: var(--blanc);
+	padding: 0 var(--padding-x-header);
+	position: relative;
+	z-index:10;
+	&::before {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		content: '';
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+
+	&.sticky {
+		position:fixed;
+		left: 0;
+		top: 0;
+		width:100%;
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	.site-branding, .recherche.bouton, .menu-toggle {
+		position: relative;
+	}
+}
+
+.custom-logo {
+	display: block;
+	margin:0;
+	max-width: 169px;
+}
+
+@include bp(lg) {
+	.admin-bar .site-header.sticky {
+		top:32px;
+	}
+	
+	.custom-logo {
+		margin:0;
+		max-width: 290px;
+	}
+
+	
+}
+
+@include bp(xl) {
+	.site-header {
+		height:111px;
+	}
+	.site-branding {
+		flex-basis:290px;
+		flex-shrink: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Volets connexion et recherche
+--------------------------------------------------------------*/
+
+.volet-header {
+	align-items: center;
+	background-color: var(--noir);
+	color:var(--blanc);
+	display: none;
+	flex-direction:column;
+	padding:20px;
+	position: relative;
+	z-index:1;
+	.decor {
+		background: var(--gradient);
+		clip-path: polygon(100% 0px, 100% 43%, 20% 100%, 0px 81%, 0px 0px);
+		height:85%;
+		left:0;
+		opacity:0.18;
+		position:absolute;
+		top:0;
+		width:100%;
+	}
+	.h2, .picto, form {
+		position: relative; //pour passer devant le décor
+	}
+	.h2 {
+		color:var(--blanc);
+		text-align: center;
+		&::after {
+			display: none;
+		}
+	}
+	form {
+		display:flex;
+		flex-wrap:wrap;
+		max-width: 488px;
+	}
+	.message {
+		text-align: center;
+	}
+	.fermer {
+		align-items:center;
+		background-color: transparent;
+		border:none;
+		color:var(--blanc);
+		display: flex;
+		flex-direction: column;
+		@include taille(22);
+		justify-content:center;
+		margin: 0;
+		padding: 0;
+		span {
+			margin-bottom:13px;
+		}
+		&:hover, &:focus,&:active {
+			color:var(--blanc);
+		}
+	}
+
+
+	&.recherche {
+		min-height:100vh;
+		padding-bottom:50px;
+		position: absolute;
+		top:0;
+		left:0;
+		width:100vw;
+		z-index: 15; //au-dessus du menu
+		.sep {
+			flex-basis:30px;
+			flex-grow:1;
+		}
+		.search-form .search-field {
+			@include placeholder;
+		}
+		.search-form .search-submit {
+			background-color: #fff;
+			color:var(--cyan);
+			&:hover, &:focus, &:active {
+				color:var(--bleu);
+			}
+		}
+	}
+
+	@include bp(md) {
+		padding:50px;
+		&.recherche .h2 {
+			margin-bottom: 58px;
+		}
+		.search-form .search-field {
+			width:425px;
+		}
+	}
+	
+}
+/*--------------------------------------------------------------
+## Entry-header
+--------------------------------------------------------------*/

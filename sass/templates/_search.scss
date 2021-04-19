@@ -1,0 +1,30 @@
+.search-results {
+	article {
+		margin-bottom: var(--margin-y);
+		h2 {
+			a {
+				text-decoration: none;
+			}
+			&::after {
+				display: none;
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
+		.entry-meta {
+			font-weight:500;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.no-results{
+	min-height:50vh;
+	padding-bottom:var(--margin-y);
+	padding-top:var(--margin-y);
+	.search-field {
+		border:solid 1px var(--bleu);
+		padding-left:12px;
+	}
+}

@@ -1,0 +1,97 @@
+$colors: ( 
+	'blanc':#fff,
+	'rouge' :#D61530,
+	'bleu' : #0B499A, //bleu principal
+	'bleu-fonce' : #30358C,
+	'bleu-clair' : #EAF9F9,//pour les fonds
+	'fond' : #EAF9F9,//pour les fonds
+	'gradient' : linear-gradient(#6facac,#064999), 
+	'violet' :#99066E,
+	'cyan' : #37b0b0,
+	'noir' : #101631, // texte
+	'gris' : #82879A //texte grisé
+);
+
+$testVariable : pink;
+
+
+// Breakpoints
+@mixin bp($point) {
+	$sm: "(min-width: 576px)";
+	$md: "(min-width: 768px)";
+	$lg: "(min-width: 960px)";
+	$xl: "(min-width: 1400px)";
+	$xxl: "(min-width: 1900px)";
+  
+	@if $point == sm {
+	@media #{$sm} { @content; }
+	}
+	@else if $point == md {
+	@media #{$md} { @content; }
+	}
+
+	@else if $point == lg {
+	@media #{$lg} { @content; }
+	}
+  
+	@else if $point == xl {
+	@media #{$xl} { @content; }
+	}
+
+	@else if $point == xxl {
+		@media #{$xxl} { @content; }
+		}
+}
+
+@mixin bleed {
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin taille($px) {
+	font-size:calc(#{$px} * 0.8125rem / 18);
+	@include bp(md) {
+		font-size: calc(#{$px} * 1.125rem / 18);
+	}
+}
+
+@mixin bouton {
+	border: 1px solid;
+	border-radius: 0;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight:700;
+	line-height: 1.1;
+	margin: 0 0 .5rem 0;
+	padding: var(--padding-lien);
+	text-align: center;
+	text-decoration: none;
+	transition: all var(--transition);
+	vertical-align: middle;
+}
+
+@mixin screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+@mixin placeholder {
+	color:var(--gris);
+	font-weight: 700;
+	line-height: 40px;
+	height:40px;
+	opacity:1;
+	padding:0 15px;
+	text-transform: uppercase;
+}

@@ -1,0 +1,31 @@
+
+:root {
+	@each $name, $color in $colors {
+	
+	--#{$name} : #{$color};
+	}
+
+}
+
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+	a.wp-block-button__link.has-#{$name}-background-color {
+		border-color:$color;
+		&:focus, &:hover {
+			background-color:transparent;
+			color:$color;
+			border-color:$color;
+			text-decoration: none;
+		}
+	}
+
+
+}
