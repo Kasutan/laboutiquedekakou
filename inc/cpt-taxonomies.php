@@ -3,18 +3,18 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 /***************************************************************
-	Custom Taxonomy Type de ressource
+	Custom Taxonomy Type de producteur
 /***************************************************************/
 
-//add_action( 'init', 'create_type_ressource_tag', 0 );
-function create_type_ressource_tag() {
+//add_action( 'init', 'create_type_producteur_tag', 0 );
+function create_type_producteur_tag() {
 // Labels part for the GUI
 $labels = array(
-	'name' => _x( 'Types de ressource', 'taxonomy general name' ),
-	'singular_name' => _x( 'Type de ressource', 'taxonomy singular name' ),
-	'menu_name' => __( 'Types de ressource' ),
+	'name' => _x( 'Types de producteur', 'taxonomy general name' ),
+	'singular_name' => _x( 'Type de producteur', 'taxonomy singular name' ),
+	'menu_name' => __( 'Types de producteur' ),
 ); 
-register_taxonomy('type_ressource','ressource',array(
+register_taxonomy('type_producteur','producteur',array(
 	'hierarchical' => true,
 	'labels' => $labels,
 	'show_ui' => true, 
@@ -29,37 +29,37 @@ register_taxonomy('type_ressource','ressource',array(
 
 
 /***************************************************************
-	Custom Post Type : ressource
+	Custom Post Type : producteur
 /***************************************************************/
-//add_action( 'init', 'kasutan_ressource_post_type', 0 );
-function kasutan_ressource_post_type() {
+add_action( 'init', 'kasutan_producteur_post_type', 0 );
+function kasutan_producteur_post_type() {
 
 	$labels = array(
-		'name'                  => _x( 'Ressources', 'Post Type General Name', 'kakou' ),
-		'singular_name'         => _x( 'Ressource', 'Post Type Singular Name', 'kakou' ),
-		'menu_name'             => __( 'Ressources', 'kakou' ),
-		'name_admin_bar'        => __( 'Ressources', 'kakou' ),
-		'archives'              => __( 'Archives des ressources', 'kakou' ),
+		'name'                  => _x( 'Producteurs', 'Post Type General Name', 'kakou' ),
+		'singular_name'         => _x( 'Producteur', 'Post Type Singular Name', 'kakou' ),
+		'menu_name'             => __( 'Producteurs', 'kakou' ),
+		'name_admin_bar'        => __( 'Producteurs', 'kakou' ),
+		'archives'              => __( 'Archives des producteurs', 'kakou' ),
 		'attributes'            => __( 'Item Attributes', 'kakou' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'kakou' ),
-		'all_items'             => __( 'Toutes les ressources', 'kakou' ),
-		'add_new_item'          => __( 'Ajouter une ressource', 'kakou' ),
+		'all_items'             => __( 'Toutes les producteurs', 'kakou' ),
+		'add_new_item'          => __( 'Ajouter un producteur', 'kakou' ),
 		'add_new'               => __( 'Ajouter', 'kakou' ),
-		'new_item'              => __( 'Nouvelle ressource', 'kakou' ),
-		'edit_item'             => __( 'Modifier la ressource', 'kakou' ),
-		'update_item'           => __( 'Mettre à jour la ressource', 'kakou' ),
-		'view_item'             => __( 'Voir la ressource', 'kakou' ),
-		'view_items'            => __( 'Voir les ressources', 'kakou' ),
-		'search_items'          => __( 'Rechercher une ressource', 'kakou' ),
-		'not_found'             => __( 'Aucune ressource', 'kakou' ),
-		'not_found_in_trash'    => __( 'Aucune ressource dans la corbeille', 'kakou' ),
+		'new_item'              => __( 'Nouveau producteur', 'kakou' ),
+		'edit_item'             => __( 'Modifier le producteur', 'kakou' ),
+		'update_item'           => __( 'Mettre à jour le producteur', 'kakou' ),
+		'view_item'             => __( 'Voir le producteur', 'kakou' ),
+		'view_items'            => __( 'Voir les producteurs', 'kakou' ),
+		'search_items'          => __( 'Rechercher un producteur', 'kakou' ),
+		'not_found'             => __( 'Aucun producteur', 'kakou' ),
+		'not_found_in_trash'    => __( 'Aucun producteur dans la corbeille', 'kakou' ),
 	);
 	$args = array(
-		'label'                 => __( 'Ressource', 'kakou' ),
-		'description'           => __( 'Ressources publiques ou réservées aux adhérents', 'kakou' ),
+		'label'                 => __( 'Producteur', 'kakou' ),
+		'description'           => __( 'Producteurs', 'kakou' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'revisions', 'editor', 'custom-fields' ),
-		'taxonomies'            => array( 'type_ressource'),
+		'taxonomies'            => array( 'type_producteur'),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -75,7 +75,7 @@ function kasutan_ressource_post_type() {
 		'capability_type'       => 'page',
 		'show_in_rest'          => false,
 	);
-	register_post_type( 'ressource', $args );
+	register_post_type( 'producteur', $args );
 
 }
 
