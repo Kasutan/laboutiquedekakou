@@ -109,12 +109,12 @@ class BE_ACF_Customizations {
 	function register_options_page() {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page(array(
-				'page_title' 	=> 'Réglages du site',
+				'page_title' 	=> 'Réglages du site La boutique de Kakou',
 				'menu_title'	=> 'Réglages du site',
 				'menu_slug' 	=> 'site-settings',
 				'capability'	=> 'edit_posts',
 				'position' 		=> '2.5',
-			//	'icon_url' 		=> 'dashicons-cloud',
+				'icon_url' 		=> 'dashicons-store',
 				'redirect'		=> false,
 				'update_button' => 'Mettre à jour',
 				'updated_message' => 'Réglages du site mis à jour',

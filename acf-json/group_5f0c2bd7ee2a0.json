@@ -49,11 +49,11 @@
             "ui": 1
         },
         {
-            "key": "field_5f0c6086b67f7",
-            "label": "Page des ressources",
-            "name": "page_ressources",
+            "key": "field_5f2439218c9df",
+            "label": "Page contact",
+            "name": "page_contact",
             "type": "post_object",
-            "instructions": "Réglage utilisé pour le fil d'ariane",
+            "instructions": "Réglage utilisé pour le menu contact dans la topbar",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -71,26 +71,23 @@
             "ui": 1
         },
         {
-            "key": "field_5f2439218c9df",
-            "label": "Page de l'agenda",
-            "name": "page_agenda",
-            "type": "post_object",
-            "instructions": "Réglage utilisé pour le bloc agenda-ressources sur la page d'accueil",
-            "required": 1,
+            "key": "field_607dc11601aaa",
+            "label": "Numéro de téléphone",
+            "name": "kakou_telephone",
+            "type": "text",
+            "instructions": "Affiché dans le pied de page",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -98,7 +95,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "kasutan-settings"
+                "value": "site-settings"
             }
         ]
     ],
@@ -108,7 +105,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1596209479
+    "modified": 1618854332
 }
