@@ -67,7 +67,10 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 			'primary' => 'Menu principal',
 			'topbar' => 'Menu barre supérieure',
 			'mobile' => 'Menu mobile',
-			'footer' => 'Liens légaux du footer'
+			'footer-1' => 'Menu colonne 1 du pied de page',
+			'footer-2' => 'Menu colonne 2 du pied de page',
+			'footer-3' => 'Menu colonne 3 du pied de page',
+			'footer-legal' => 'Menu liens légaux du pied de page'
 		) );
 
 		//Autoriser les shortcodes dans les widgets

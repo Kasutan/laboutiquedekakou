@@ -1,9 +1,39 @@
 <?php
 
 /**
+ * Bannière Newsletter
+ *
+ */
+add_action( 'tha_footer_before', 'kasutan_affiche_banniere_newsletter' );
+function kasutan_affiche_banniere_newsletter() {
+	echo '<div class="banniere-newsletter" style="background:grey; padding:20px;height:100px">';
+	echo '<p>Formulaire inscription newlsetter ici</p>';
+	echo '</div>';
+}
+
+/**
+ * Logo + menus Footer
+ *
+ */
+add_action( 'tha_footer_top', 'kasutan_menus_footer' );
+function kasutan_menus_footer() {
+	echo '<div class="menus-footer">';
+		for($i=1;$i<=3;$i++) {
+			if( has_nav_menu( 'footer-'.$i ) ) {
+				wp_nav_menu( array( 'theme_location' => 'footer-'.$i, 'menu_id' => 'footer-'.$i, 'container_class' => 'nav-footer' ) );
+			}
+		}
+		
+	echo '</div>';
+	echo '<a class="backtotop" href="#main-content"><span class="screen-reader-text">Retour en haut</span>' . kasutan_picto( array( 'icon' => 'arrow-up' ) ) . '</a>';
+}
+
+
+/**
 * Afficher l'adresse de la boutique
 *
 */
+add_action('tha_footer_bottom','kasutan_affiche_coordonnees_boutique');
 function kasutan_affiche_coordonnees_boutique() {
 	$tel=$adresse_ligne_2='';
 
@@ -39,48 +69,20 @@ function kasutan_affiche_coordonnees_boutique() {
 	echo '</div>';
 	
 }
-add_action('tha_footer_bottom','kasutan_affiche_coordonnees_boutique');
-
-/**
- * Register footer widget areas
- *
- */
-function ea_register_footer_widget_areas() {
-
-	for( $i = 1; $i <=3; $i++ ) {
-
-		register_sidebar( ea_widget_area_args( array(
-			'name' => esc_html__( 'Footer ' . $i, 'ea-starter' ),
-		) ) );
-	}
-
-}
-add_action( 'widgets_init', 'ea_register_footer_widget_areas' );
 
 
 /**
- * Footer Widget Areas
- *
- */
-function ea_site_footer_widgets() {
-	echo '<div class="footer-widgets"><div class="wrap">';
-	for( $i = 1; $i < 4; $i++ ) {
-		dynamic_sidebar( 'footer-' . $i );
-	}
-	echo '</div></div>';
-}
-add_action( 'tha_footer_before', 'ea_site_footer_widgets' );
-
-/**
- * Site Footer
- *
- */
-function ea_site_footer() {
-	echo '<div class="footer-left">';
-		echo '<p class="copyright">Copyright &copy; ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '®. All Rights Reserved.</p>';
-		echo '<p class="footer-links"><a href="' . home_url( 'privacy-policy' ) . '">Privacy Policy</a> <a href="' . home_url( 'terms' ) . '">Terms</a></p>';
-		echo '<p class="cafemedia">An Elite Cafemedia Food Publisher</p>';
+* Copyright et liens légaux
+*
+*/
+add_action( 'tha_footer_bottom', 'kasutan_copyright' );
+function kasutan_copyright() {
+	echo '<div class="copyright">';
+		printf('<span>%s</span>',date('Y'));
+		printf('<span>%s</span>',get_option('blogname'));
+		echo ('<span><a href="https://banquise.com/" rel="noopener noreferrer" target="_blank">Site réalisé par 40 degrés sur la banquise</a></span>');
+		if( has_nav_menu( 'footer-legal' ) ) {
+			wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'footer-legal', 'container_class' => 'nav-footer-legal' ) );
+		}
 	echo '</div>';
-	echo '<a class="backtotop" href="#main-content">Back to top' . kasutan_picto( array( 'icon' => 'arrow-up' ) ) . '</a>';
 }
-add_action( 'tha_footer_top', 'ea_site_footer' );

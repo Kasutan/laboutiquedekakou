@@ -10,10 +10,10 @@
 
 echo '</div>'; // .site-inner
 tha_footer_before();
-echo '<footer class="site-footer" role="contentinfo"><div class="wrap">';
+echo '<footer class="site-footer" role="contentinfo">';
 tha_footer_top();
 tha_footer_bottom();
-echo '</div></footer>';
+echo '</footer>';
 tha_footer_after();
 
 echo '</div>';
