@@ -18,6 +18,7 @@ function kasutan_affiche_banniere_newsletter() {
 add_action( 'tha_footer_top', 'kasutan_menus_footer' );
 function kasutan_menus_footer() {
 	echo '<div class="menus-footer">';
+		printf('<div class="logo-footer">%s</div>',get_custom_logo());
 		for($i=1;$i<=3;$i++) {
 			if( has_nav_menu( 'footer-'.$i ) ) {
 				wp_nav_menu( array( 'theme_location' => 'footer-'.$i, 'menu_id' => 'footer-'.$i, 'container_class' => 'nav-footer' ) );
