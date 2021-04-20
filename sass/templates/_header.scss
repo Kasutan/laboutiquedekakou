@@ -37,7 +37,7 @@
 .custom-logo {
 	display: block;
 	margin:0;
-	max-width: 169px;
+	//max-width: 169px;
 }
 
 @include bp(lg) {
@@ -47,7 +47,7 @@
 	
 	.custom-logo {
 		margin:0;
-		max-width: 290px;
+	//	max-width: 290px;
 	}
 
 	

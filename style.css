@@ -562,10 +562,10 @@ body {
 :root {
   --margin-y:20px;
   --padding-x:15px;
-  --padding-x-grille:var(--padding-x);
+  --padding-x-content:var(--padding-x);
   --padding-x-header:var(--padding-x);
   --padding-x-footer:var(--padding-x); }
-  @media (min-width: 576px) {
+  @media (min-width: 500px) {
     :root {
       --padding-x:4%; } }
   @media (min-width: 768px) {
@@ -574,17 +574,11 @@ body {
   @media (min-width: 960px) {
     :root {
       --margin-y:55px;
-      --padding-x: calc(50vw - 868px/2);
-      --padding-x-grille:40px;
-      --padding-x-header: 40px;
-      --padding-x-footer: 40px; } }
-  @media screen and (min-width: 1200px) {
+      --padding-x-content: calc(50vw - 868px/2);
+      --padding-x:40px; } }
+  @media (min-width: 1900px) {
     :root {
-      --padding-x-grille: calc(50vw - 1090px/2); } }
-  @media (min-width: 1400px) {
-    :root {
-      --padding-x-header: calc(50vw - 1260px/2);
-      --padding-x-footer: calc(50vw - 1312px/2); } }
+      --padding-x: calc(50vw - 1600px/2); } }
 
 .alignfull, .bleed-container {
   width: 100vw;
@@ -1867,18 +1861,17 @@ button.modaal-close {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: var(--noir);
-  color: var(--blanc);
-  padding: 0 var(--padding-x-footer) 0; }
+  position: relative; }
+  .site-footer h2 {
+    margin-bottom: 0.5em; }
   .site-footer a {
+    color: var(--bleu);
     text-decoration: none;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s; }
     .site-footer a:hover, .site-footer a:focus {
-      color: inherit; }
+      color: var(--bleu-fonce);
+      text-decoration: underline; }
     .site-footer a br {
       display: none; }
   .site-footer ul {
@@ -1887,175 +1880,126 @@ button.modaal-close {
     margin: 0; }
     .site-footer ul li {
       line-height: 30px; }
-  .site-footer .footer-widgets {
-    background-image: url("icons/logo-footer.svg");
-    background-repeat: no-repeat;
-    background-position: 40px 40px;
-    background-size: 194px 224px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 58px 0 30px; }
-    .site-footer .footer-widgets .footer-4 a {
-      font-size: 1.22em;
-      font-weight: bold;
-      line-height: 1.8; }
-    .site-footer .footer-widgets .footer-5 {
-      margin-bottom: 25px; }
-    .site-footer .footer-widgets .h4 {
-      color: var(--blanc);
-      margin-bottom: 1em; }
-  .site-footer .footer-widgets .row > div {
-    margin-bottom: 25px; }
-  @media (min-width: 768px) {
-    .site-footer .footer-widgets {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-      .site-footer .footer-widgets .row {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between; }
-        .site-footer .footer-widgets .row > div {
-          -ms-flex-preferred-size: 200px;
-          flex-basis: 200px; }
-    .site-footer .footer-5 {
-      -webkit-box-flex: 300px;
-      -ms-flex: 300px 0 0px;
-      flex: 300px 0 0;
-      padding-left: 40px;
-      position: relative; }
-      .site-footer .footer-5::before {
-        background-color: #fff;
-        content: '';
-        display: block;
-        height: 246px;
-        left: 0;
-        position: absolute;
-        top: -10px;
-        width: 1px; } }
-  @media screen and (min-width: 1200px) {
-    .site-footer .footer-widgets .row {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap; }
-    .site-footer .footer-4 {
-      -ms-flex-preferred-size: 150px;
-      flex-basis: 150px; } }
-  .site-footer #menu-liens-reseaux-sociaux {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .site-footer .backtotop {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start; }
-    .site-footer #menu-liens-reseaux-sociaux a {
-      background-color: var(--blanc);
-      border-radius: 50%;
-      display: block;
-      color: transparent;
-      height: 38px;
-      margin: 10px 10px 20px 0;
-      position: relative;
-      overflow: hidden;
-      width: 38px; }
-      .site-footer #menu-liens-reseaux-sociaux a::after {
-        background-image: url("icons/instagram.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        -webkit-transition: -webkit-filter var(--transition);
-        transition: -webkit-filter var(--transition);
-        transition: filter var(--transition);
-        transition: filter var(--transition), -webkit-filter var(--transition);
-        top: 0;
-        width: 100%; }
-      .site-footer #menu-liens-reseaux-sociaux a[href*="twitter"]::after {
-        background-image: url("icons/twitter.svg"); }
-      .site-footer #menu-liens-reseaux-sociaux a[href*="linkedin"]::after {
-        background-image: url("icons/linkedin.svg"); }
-      .site-footer #menu-liens-reseaux-sociaux a[href*="facebook"]::after {
-        background-image: url("icons/facebook.svg"); }
-      .site-footer #menu-liens-reseaux-sociaux a[href*="youtube"]::after {
-        background-image: url("icons/youtube.svg"); }
-      .site-footer #menu-liens-reseaux-sociaux a:hover::after, .site-footer #menu-liens-reseaux-sociaux a:focus::after {
-        -webkit-filter: brightness(0) saturate(100%) invert(67%) sepia(11%) saturate(2180%) hue-rotate(131deg) brightness(89%) contrast(85%);
-        filter: brightness(0) saturate(100%) invert(67%) sepia(11%) saturate(2180%) hue-rotate(131deg) brightness(89%) contrast(85%); }
-  .site-footer .copyright {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: var(--cyan);
+    background-color: var(--bleu);
+    border-radius: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-bottom: 0;
-    padding: 10px 0 0; }
-    .site-footer .copyright span {
-      margin-bottom: 10px; }
-  .site-footer .liens-copyright {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    .site-footer .liens-copyright li {
-      text-align: center; }
-    .site-footer .liens-copyright a {
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: -40px;
+    width: 30px;
+    z-index: 1; }
+    .site-footer .backtotop:hover, .site-footer .backtotop:focus {
+      background-color: var(--bleu-fonce); }
+    .site-footer .backtotop svg {
+      margin-left: -1px; }
+      .site-footer .backtotop svg path {
+        fill: var(--blanc); }
+  .site-footer .menus-footer, .site-footer .coordonnees-boutique {
+    padding: 2rem var(--padding-x); }
+  .site-footer .logo-footer {
+    text-align: center; }
+  .site-footer a.custom-logo-link {
+    display: inline-block;
+    max-width: 200px;
+    margin-bottom: 1rem; }
+  .site-footer .coordonnees-boutique {
+    background-color: var(--bleu-fonce); }
+    .site-footer .coordonnees-boutique, .site-footer .coordonnees-boutique a, .site-footer .coordonnees-boutique h2 {
       color: var(--blanc); }
-  @media (min-width: 768px) {
-    .site-footer .copyright, .site-footer .liens-copyright {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-    .site-footer .liens-copyright li {
-      margin-left: 10px;
-      margin-bottom: 10px;
+    .site-footer .coordonnees-boutique svg {
+      margin-right: 1ch; }
+  .site-footer .social-links {
+    padding-top: 1rem; }
+    .site-footer .social-links svg path {
+      fill: currentColor; }
+    .site-footer .social-links svg.facebook path {
+      fill: var(--bleu-fonce); }
+  .site-footer .copyright {
+    font-size: 13px;
+    padding: 1rem var(--padding-x); }
+    .site-footer .copyright, .site-footer .copyright a {
+      color: var(--gris); }
+    .site-footer .copyright a {
+      display: inline-block; }
+  .site-footer .annee::after {
+    content: '|';
+    margin: 0 1ch; }
+  .site-footer .agence {
+    display: block; }
+  @media (min-width: 500px) {
+    .site-footer .menus-footer, .site-footer .coordonnees-boutique {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      -webkit-column-gap: 1rem;
+      column-gap: 1rem; }
+    .site-footer .logo-footer {
       text-align: left; }
-      .site-footer .liens-copyright li:before {
-        content: '-';
-        margin-right: 10px; } }
+    .site-footer a.custom-logo-link {
+      margin-bottom: 0;
+      margin-right: 1rem; }
+    .site-footer .coordonnees-boutique {
+      grid-template-rows: auto auto; }
+      .site-footer .coordonnees-boutique h2 {
+        grid-column: 1 / span 2; }
+    .site-footer .social-links {
+      -ms-flex-item-align: end;
+      align-self: end; }
+    .site-footer .agence {
+      display: inline-block; }
+      .site-footer .agence::before {
+        content: '|';
+        margin: 0 1ch; }
+    .site-footer .nav-footer-legal li {
+      display: inline-block; }
+      .site-footer .nav-footer-legal li::before {
+        content: '|';
+        margin: 0 1ch; }
+      .site-footer .nav-footer-legal li:first-of-type::before {
+        display: none; } }
+  @media (min-width: 768px) {
+    .site-footer .menus-footer {
+      grid-template-columns: minmax(120px, 250px) repeat(3, minmax(180px, 1fr)); } }
+  @media (min-width: 1200px) {
+    .site-footer {
+      display: grid;
+      grid-template-columns: 1fr 450px;
+      grid-template-rows: auto 50px; }
+      .site-footer .coordonnees-boutique {
+        grid-row: 1 / span 2;
+        padding: 2rem 1rem; }
+      .site-footer .copyright {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        padding: 0; }
+      .site-footer .copyright, .site-footer .menus-footer {
+        padding-left: var(--padding-x);
+        padding-right: 1rem; } }
+  @media screen and (min-width: 1400px) {
+    .site-footer {
+      grid-template-columns: 1fr 500px;
+      grid-template-rows: auto 30px; }
+      .site-footer .coordonnees-boutique {
+        padding-left: 2rem;
+        padding-right: var(--padding-x); }
+      .site-footer .copyright {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+      .site-footer .nav-footer-legal li:first-of-type::before {
+        display: inline-block; } }
 
 /*--------------------------------------------------------------
 ## Site header
@@ -2089,17 +2033,15 @@ button.modaal-close {
 
 .custom-logo {
   display: block;
-  margin: 0;
-  max-width: 169px; }
+  margin: 0; }
 
 @media (min-width: 960px) {
   .admin-bar .site-header.sticky {
     top: 32px; }
   .custom-logo {
-    margin: 0;
-    max-width: 290px; } }
+    margin: 0; } }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .site-header {
     height: 111px; }
   .site-branding {

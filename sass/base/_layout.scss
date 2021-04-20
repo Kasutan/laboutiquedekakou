@@ -11,7 +11,7 @@ body {
 :root {
 	--margin-y:20px;
 	--padding-x:15px;
-	--padding-x-grille:var(--padding-x);
+	--padding-x-content:var(--padding-x);
 	--padding-x-header:var(--padding-x);
 	--padding-x-footer:var(--padding-x);
 	//--header-height:80px;
@@ -27,19 +27,13 @@ body {
 	}
 	@include bp(lg) {
 		--margin-y:55px;
-		--padding-x : calc(50vw - 868px/2);
-		--padding-x-grille:40px;
-		--padding-x-header: 40px;
-		--padding-x-footer: 40px;
+		--padding-x-content: calc(50vw - 868px/2);
+		--padding-x:40px;
 
 	}
-	@media screen and (min-width:1200px) {
-		--padding-x-grille : calc(50vw - 1090px/2);
 
-	}
-	@include bp(xl) {
-		--padding-x-header: calc(50vw - 1260px/2);
-		--padding-x-footer: calc(50vw - 1312px/2);
+	@include bp(xxl) {
+		--padding-x : calc(50vw - 1600px/2);
 	}
 }
 

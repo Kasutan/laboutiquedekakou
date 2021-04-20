@@ -33,7 +33,7 @@ function kasutan_social_links() {
 			if(!empty($url)) {
 				printf('<li><a href="%s" target="_blank" rel="noopener noreferrer">%s<span class="label">%s</span></a></li>',
 					$url,
-					kasutan_picto( array( 'icon' => strtolower($reseau), 'label' => $reseau )),
+					kasutan_picto( array( 'icon' => strtolower($reseau), 'label' => $reseau, 'class' => strtolower($reseau) )),
 					$reseau
 				);
 			}

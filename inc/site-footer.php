@@ -39,8 +39,8 @@ function kasutan_affiche_coordonnees_boutique() {
 	$tel=$adresse_ligne_2='';
 
 	echo '<div class="coordonnees-boutique">';
+		echo '<h2>Contactez-nous</h2>';
 		echo '<div class="col-1">';
-			echo '<h2>Contactez-nous</h2>';
 			if (kasutan_is_woo_active()) {
 				$adresse_ligne_2=WC()->countries->get_base_address_2();
 				echo '<p class="adresse-boutique">';
@@ -58,7 +58,11 @@ function kasutan_affiche_coordonnees_boutique() {
 				$tel=esc_attr(get_field('kakou_telephone','option'));
 				if(!empty($tel)) {
 					$tel_link='tel:+33'.str_replace(' ','',$tel);
-					printf('<a href="%s" class="tel">%s</a>',$tel_link,$tel);
+					printf('<a href="%s" class="tel">%s%s</a>',
+						$tel_link,
+						kasutan_picto(array('icon'=>'phone')),
+						$tel
+					);
 				}
 			}
 		echo '</div>';//fin .col-1 
@@ -79,9 +83,9 @@ function kasutan_affiche_coordonnees_boutique() {
 add_action( 'tha_footer_bottom', 'kasutan_copyright' );
 function kasutan_copyright() {
 	echo '<div class="copyright">';
-		printf('<span>%s</span>',date('Y'));
-		printf('<span>%s</span>',get_option('blogname'));
-		echo ('<span><a href="https://banquise.com/" rel="noopener noreferrer" target="_blank">Site réalisé par 40 degrés sur la banquise</a></span>');
+		printf('<span class="annee">%s</span>',date('Y'));
+		printf('<span class="titre">%s</span>',get_option('blogname'));
+		echo ('<span class="agence"><a href="https://banquise.com/" rel="noopener noreferrer" target="_blank">Site réalisé par 40 degrés sur la banquise</a></span>');
 		if( has_nav_menu( 'footer-legal' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'footer-legal', 'menu_id' => 'footer-legal', 'container_class' => 'nav-footer-legal' ) );
 		}
