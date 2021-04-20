@@ -8,7 +8,7 @@ Description: Avril 2021
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: kasutan
+Text Domain: kakou
 Tags: custom-logo, custom-menu, featured-images
 
 This theme, like WordPress, is licensed under the GPL.
@@ -388,15 +388,15 @@ template {
 
 :root {
   --blanc: #fff;
-  --rouge: #D61530;
-  --bleu: #0B499A;
-  --bleu-fonce: #30358C;
+  --rouge: #da1515;
+  --bleu: #0e4b5b;
+  --bleu-fonce: #073239;
   --bleu-clair: #EAF9F9;
   --fond: #EAF9F9;
   --gradient: linear-gradient(#6facac, #064999);
   --violet: #99066E;
   --cyan: #37b0b0;
-  --noir: #101631;
+  --noir: #161616;
   --gris: #82879A; }
 
 .has-blanc-color {
@@ -414,45 +414,45 @@ a.wp-block-button__link.has-blanc-background-color {
     text-decoration: none; }
 
 .has-rouge-color {
-  color: #D61530; }
+  color: #da1515; }
 
 .has-rouge-background-color {
-  background-color: #D61530; }
+  background-color: #da1515; }
 
 a.wp-block-button__link.has-rouge-background-color {
-  border-color: #D61530; }
+  border-color: #da1515; }
   a.wp-block-button__link.has-rouge-background-color:focus, a.wp-block-button__link.has-rouge-background-color:hover {
     background-color: transparent;
-    color: #D61530;
-    border-color: #D61530;
+    color: #da1515;
+    border-color: #da1515;
     text-decoration: none; }
 
 .has-bleu-color {
-  color: #0B499A; }
+  color: #0e4b5b; }
 
 .has-bleu-background-color {
-  background-color: #0B499A; }
+  background-color: #0e4b5b; }
 
 a.wp-block-button__link.has-bleu-background-color {
-  border-color: #0B499A; }
+  border-color: #0e4b5b; }
   a.wp-block-button__link.has-bleu-background-color:focus, a.wp-block-button__link.has-bleu-background-color:hover {
     background-color: transparent;
-    color: #0B499A;
-    border-color: #0B499A;
+    color: #0e4b5b;
+    border-color: #0e4b5b;
     text-decoration: none; }
 
 .has-bleu-fonce-color {
-  color: #30358C; }
+  color: #073239; }
 
 .has-bleu-fonce-background-color {
-  background-color: #30358C; }
+  background-color: #073239; }
 
 a.wp-block-button__link.has-bleu-fonce-background-color {
-  border-color: #30358C; }
+  border-color: #073239; }
   a.wp-block-button__link.has-bleu-fonce-background-color:focus, a.wp-block-button__link.has-bleu-fonce-background-color:hover {
     background-color: transparent;
-    color: #30358C;
-    border-color: #30358C;
+    color: #073239;
+    border-color: #073239;
     text-decoration: none; }
 
 .has-bleu-clair-color {
@@ -526,17 +526,17 @@ a.wp-block-button__link.has-cyan-background-color {
     text-decoration: none; }
 
 .has-noir-color {
-  color: #101631; }
+  color: #161616; }
 
 .has-noir-background-color {
-  background-color: #101631; }
+  background-color: #161616; }
 
 a.wp-block-button__link.has-noir-background-color {
-  border-color: #101631; }
+  border-color: #161616; }
   a.wp-block-button__link.has-noir-background-color:focus, a.wp-block-button__link.has-noir-background-color:hover {
     background-color: transparent;
-    color: #101631;
-    border-color: #101631;
+    color: #161616;
+    border-color: #161616;
     text-decoration: none; }
 
 .has-gris-color {
