@@ -21,7 +21,6 @@ ul:not([class]),
 ol:not([class]) {
 	margin: 0 0 1.5em 0;
 	padding-left:1em;
-	
 }
 
 ul:not([class])  {
@@ -29,7 +28,7 @@ ul:not([class])  {
 	padding-left:1em;
 	> li::before {
 		content: '•'; 
-		color: var(--gris-fond);
+		color: var(--bleu);
 		display: inline-block; 
 		width: 1em;
 		margin-left: -1em		
@@ -79,28 +78,25 @@ table {
 --------------------------------------------------------------*/
 
 
-a.wp-block-button__link {
-	@include bouton;
-}
-
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button,
-a.wp-block-button__link:not(.has-background) {
+a.wp-block-button__link {
 	@include bouton;
 
-	background: var(--bleu);
-	border-color: var(--bleu);
+	background: var(--bleu-bouton);
 	color: var(--blanc);
 	
 
 	&:hover, &:focus, &:active {
-		background: var(--blanc);
-		color: var(--bleu);
-		outline:none;
+		background: var(--bleu-fonce);
+		outline: none;
 		text-decoration: none;
+	}
+	&:focus-visible {
+		outline : solid 1px var(--bleu-fonce);
 	}
 }
 
@@ -122,10 +118,11 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: var(--bleu);
-	border: 1px solid var(--gris-decor);
-	border-radius: 0;
-	outline-color:var(--cyan);
+	color: var(--texte);
+	border: 1px solid var(--gris);
+	border-radius: 1rem;
+	outline-color:var(--bleu);
+	min-height:4.4rem;
 	padding: 3px;
 	
 	&:focus {
@@ -135,7 +132,7 @@ textarea {
 
 
 select {
-	border: 1px solid var(--gris-decor);
+	border: 1px solid var(--gris);
 }
 
 textarea {
