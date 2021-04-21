@@ -1,18 +1,17 @@
 $colors: ( 
 	'blanc':#fff,
+	'bleu' : #124b5a, //titres
+	'bleu-bouton' : #0e4b5b, //fond boutons
+	'bleu-fonce' : #073239, //fond header et footer
+	'vert' : #1b7c32,
 	'rouge' :#da1515,
-	'bleu' : #0e4b5b, //bleu principal
-	'bleu-fonce' : #073239,
-	'bleu-clair' : #EAF9F9,//pour les fonds
-	'fond' : #EAF9F9,//pour les fonds
-	'gradient' : linear-gradient(#6facac,#064999), 
-	'violet' :#99066E,
-	'cyan' : #37b0b0,
-	'noir' : #161616, // texte
-	'gris' : #82879A //texte grisé
+	'fond' : #e7edee, //fond filtres et bloc nouveautés
+	'texte' : #303030, 
+	'texte-blanc' : #eceded,
+	'texte-gris' : #919191, 
+	'noir' : #000000
 );
 
-$testVariable : pink;
 
 
 // Breakpoints
@@ -49,12 +48,6 @@ $testVariable : pink;
 	transform: translateX(-50%);
 }
 
-@mixin taille($px) {
-	font-size:calc(#{$px} * 0.8125rem / 18);
-	@include bp(md) {
-		font-size: calc(#{$px} * 1.125rem / 18);
-	}
-}
 
 @mixin bouton {
 	border: 1px solid;

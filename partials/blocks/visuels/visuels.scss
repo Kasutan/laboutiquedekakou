@@ -1,7 +1,6 @@
 @import "./././sass/abstracts/variables-et-mixins";
 .acf-visuels { 
 	--texte:#fff;
-	background-color: $testVariable; 
 	color: map-get($colors, 'rouge');
 	display: flex;
 	flex-direction: column;
