@@ -742,7 +742,11 @@ Sous-menu desktop : 10;
 
 html {
   font-size: 62.5%;
-  /* 1rem = 10px */ }
+  /* 1rem = 10px */
+  --taille-texte:1.8rem; }
+  @media (min-width: 1400px) {
+    html {
+      --taille-texte:2.1rem; } }
 
 body,
 button,
@@ -753,7 +757,8 @@ textarea {
   color: #303030;
   color: var(--texte);
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
+  font-size: var(--taille-texte);
   font-weight: 300;
   line-height: 1.4; }
 
@@ -763,16 +768,12 @@ textarea {
 
 h1, .h1 {
   color: var(--noir);
-  font-size: 4rem;
+  font-size: calc(55 * var(--taille-texte) / 21);
   font-weight: 400;
   margin: 1.5em 0 1em;
   padding: 0;
   text-align: center;
   text-transform: uppercase; }
-
-@media (min-width: 960px) {
-  h1, .h1 {
-    font-size: 5.5rem; } }
 
 h2,
 h3,
@@ -784,16 +785,16 @@ h4,
   margin: 0 0 0.5em; }
 
 h2, .h2 {
-  font-size: 2.8rem; }
+  font-size: calc(28 * var(--taille-texte) / 21); }
 
 p + h2, p + .h2 {
   margin-top: 2em; }
 
 h3, .h3 {
-  font-size: 2.6rem; }
+  font-size: calc(26 * var(--taille-texte) / 21); }
 
-h4, .h4 {
-  font-size: 2.4rem; }
+h4, .h4, h5, .h5, h6, .h6 {
+  font-size: calc(24 * var(--taille-texte) / 21); }
 
 p {
   margin-bottom: 1em;
@@ -1357,7 +1358,6 @@ p.fil-ariane {
 .nav-main a {
   color: var(--blanc);
   display: block;
-  font-size: 17px;
   text-decoration: none; }
   .nav-main a br {
     display: none; }
@@ -1971,7 +1971,7 @@ button.modaal-close {
     .site-footer .social-links svg.facebook path {
       fill: var(--bleu-fonce); }
   .site-footer .copyright {
-    font-size: 13px;
+    font-size: calc(17 * var(--taille-texte) / 21);
     padding: 1rem var(--padding-x); }
     .site-footer .copyright, .site-footer .copyright a {
       color: var(--gris); }
@@ -2015,7 +2015,7 @@ button.modaal-close {
   @media (min-width: 768px) {
     .site-footer .menus-footer {
       grid-template-columns: minmax(120px, 250px) repeat(3, minmax(180px, 1fr)); } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .site-footer {
       display: grid;
       grid-template-columns: 1fr 450px;
@@ -2087,7 +2087,7 @@ button.modaal-close {
   .custom-logo {
     margin: 0; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .site-header {
     height: 111px; }
   .site-branding {
@@ -2250,7 +2250,6 @@ button.modaal-close {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    font-size: 22px;
     font-weight: 700;
     height: 40px;
     text-decoration: none;

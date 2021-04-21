@@ -96,7 +96,7 @@
 	}
 
 	.copyright {
-		font-size: 13px;
+		@include fs(17);
 		padding:1rem var(--padding-x);
 		
 		&, a {

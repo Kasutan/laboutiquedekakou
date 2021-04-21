@@ -19,7 +19,7 @@ $colors: (
 	$sm: "(min-width: 500px)";
 	$md: "(min-width: 768px)";
 	$lg: "(min-width: 960px)";
-	$xl: "(min-width: 1200px)";
+	$xl: "(min-width: 1400px)";
 	$xxl: "(min-width: 1920px)";
   
 	@if $point == sm {
@@ -41,6 +41,11 @@ $colors: (
 		@media #{$xxl} { @content; }
 		}
 }
+
+@mixin fs($px) {
+	font-size:calc(#{$px} * var(--taille-texte) / 21);
+}
+
 
 @mixin bleed {
 	width: 100vw;
