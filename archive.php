@@ -9,7 +9,7 @@
 **/
 
 // Full width
-add_filter( 'ea_page_layout', 'ea_return_full_width_content' );
+add_filter( 'ea_page_layout', 'ea_return_pleine_largeur' );
 
 /**
  * Body Class

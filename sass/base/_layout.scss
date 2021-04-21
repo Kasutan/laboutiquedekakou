@@ -11,9 +11,8 @@ body {
 :root {
 	--margin-y:20px;
 	--padding-x:15px;
-	--padding-x-content:var(--padding-x);
-	--padding-x-header:var(--padding-x);
-	--padding-x-footer:var(--padding-x);
+	--padding-x-largeur-reduite:var(--padding-x);
+	--padding-x-pleine-largeur:0;
 	//--header-height:80px;
 	//--max-width-xl:1900px;
 
@@ -24,18 +23,38 @@ body {
 
 	@include bp(md) {
 		--margin-y:40px;
+		--padding-x-largeur-reduite: calc(50vw - 60ch/2);
 	}
 	@include bp(lg) {
 		--margin-y:55px;
-		--padding-x-content: calc(50vw - 868px/2);
-		--padding-x:40px;
-
 	}
 
 	@include bp(xxl) {
-		--padding-x : calc(50vw - 1600px/2);
+		--padding-x : calc(50vw - 1613px/2);
+		--padding-x-pleine-largeur : calc(50vw - 1920px/2);
 	}
 }
+
+//Réglages de largeur communs à tous les templates
+.site-main {
+	.fil-ariane, h1 {
+		padding: 0 var(--padding-x);
+	}
+}
+
+//Réglages de largeur selon option choisie en BO ou codée dans la fonction ea_page_layout ou obtenue par le filtre ea_page_layout
+
+body.largeur-normale .entry-content {
+	padding: 0 var(--padding-x);
+}
+body.largeur-reduite .entry-content {
+	padding: 0 var(--padding-x-largeur-reduite);
+}
+
+body.pleine-largeur .entry-content {
+	padding: 0 var(--padding-x-pleine-largeur);
+}
+
 
 
 .alignfull , .bleed-container {

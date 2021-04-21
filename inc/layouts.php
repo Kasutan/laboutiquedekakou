@@ -14,40 +14,12 @@
  */
 function ea_page_layout_options() {
 	return [
-		'content-sidebar',
-		'content',
-		'full-width-content',
+		'largeur-normale',
+		'largeur-reduite',
+		'pleine-largeur',
 	];
 }
 
-/**
- * Gutenberg layout style
- *
- */
-function ea_editor_layout_style() {
-	wp_enqueue_style( 'ea-editor-layout', get_stylesheet_directory_uri() . '/assets/css/editor-layout.css', [], filemtime( get_stylesheet_directory() . '/assets/css/editor-layout.css' ) );
-}
-add_action( 'enqueue_block_editor_assets', 'ea_editor_layout_style' );
-
-/**
- * Editor layout class
- * @link https://www.billerickson.net/change-gutenberg-content-width-to-match-layout/
- *
- * @param string $classes
- * @return string
- */
-function ea_editor_layout_class( $classes ) {
-	$screen = get_current_screen();
-	if( ! $screen->is_block_editor() )
-		return $classes;
-
-	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) : false;
-	$layout = ea_page_layout( $post_id );
-
-	$classes .= ' ' . $layout . ' ';
-	return $classes;
-}
-add_filter( 'admin_body_class', 'ea_editor_layout_class' );
 
 
 /**
@@ -68,11 +40,11 @@ function ea_page_layout_metabox() {
 
 	acf_add_local_field_group(array(
 		'key' => 'group_5dd714b369526',
-		'title' => 'Page Layout',
+		'title' => 'Largeur page',
 		'fields' => array(
 			array(
 				'key' => 'field_5dd715a02eaf0',
-				'label' => 'Page Layout',
+				'label' => 'Largeur page',
 				'name' => 'ea_page_layout',
 				'type' => 'select',
 				'instructions' => '',
@@ -84,8 +56,7 @@ function ea_page_layout_metabox() {
 					'id' => '',
 				),
 				'choices' => $choices,
-				'default_value' => array(
-				),
+				'default_value' => array(),
 				'allow_null' => 1,
 				'multiple' => 0,
 				'ui' => 0,
@@ -115,19 +86,6 @@ function ea_page_layout_metabox() {
 }
 add_action( 'acf/init', 'ea_page_layout_metabox' );
 
-/**
-* Register widget area.
-*
-* @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
-*/
-function ea_widgets_init() {
-
-	register_sidebar( ea_widget_area_args( array(
-		'name' => esc_html__( 'Primary Sidebar', 'ea-starter' ),
-	) ) );
-
-}
-add_action( 'widgets_init', 'ea_widgets_init' );
 
 /**
 * Layout Body Class
@@ -139,31 +97,6 @@ function ea_layout_body_class( $classes ) {
 }
 add_filter( 'body_class', 'ea_layout_body_class', 5 );
 
-/**
-* Default Widget Area Arguments
-*
-* @param array $args
-* @return array $args
-*/
-function ea_widget_area_args( $args = array() ) {
-
-	$defaults = array(
-		'name'          => '',
-		'id'            => '',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	);
-	$args = wp_parse_args( $args, $defaults );
-
-	if( !empty( $args['name'] ) && empty( $args['id'] ) )
-		$args['id'] = sanitize_title_with_dashes( $args['name'] );
-
-	return $args;
-
-}
 
 /**
 * Page Layout
@@ -172,7 +105,7 @@ function ea_widget_area_args( $args = array() ) {
 function ea_page_layout( $id = false ) {
 
 	$available_layouts = ea_page_layout_options();
-	$layout = 'content-sidebar';
+	$layout = 'largeur-normale';
 
 	if( is_singular() || $id ) {
 		$id = $id ? intval( $id ) : get_the_ID();
@@ -191,22 +124,22 @@ function ea_page_layout( $id = false ) {
 * Return Full Width Content
 * used when filtering 'ea_page_layout'
 */
-function ea_return_full_width_content() {
-	return 'full-width-content';
+function ea_return_pleine_largeur() {
+	return 'pleine-largeur';
 }
 
 /**
 * Return Content Sidebar
 * used when filtering 'ea_page_layout'
 */
-function ea_return_content_sidebar() {
-	return 'content-sidebar';
+function ea_return_largeur_reduite() {
+	return 'largeur-reduite';
 }
 
 /**
 * Return Content
 * used when filtering 'ea_page_layout'
 */
-function ea_return_content() {
-	return 'content';
+function ea_return_largeur_normale() {
+	return 'largeur-normale';
 }

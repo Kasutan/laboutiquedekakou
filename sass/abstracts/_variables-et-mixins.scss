@@ -20,7 +20,7 @@ $colors: (
 	$md: "(min-width: 768px)";
 	$lg: "(min-width: 960px)";
 	$xl: "(min-width: 1200px)";
-	$xxl: "(min-width: 1900px)";
+	$xxl: "(min-width: 1920px)";
   
 	@if $point == sm {
 	@media #{$sm} { @content; }
@@ -83,11 +83,6 @@ $colors: (
 }
 
 @mixin placeholder {
-	color:var(--gris);
-	font-weight: 700;
-	line-height: 40px;
-	height:40px;
+	color:#727272;
 	opacity:1;
-	padding:0 15px;
-	text-transform: uppercase;
 }

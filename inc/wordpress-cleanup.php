@@ -66,27 +66,7 @@ function ea_singular_body_class( $classes ) {
 }
 add_filter( 'body_class', 'ea_singular_body_class' );
 
-/**
- * Clean body classes
- *
- */
-function ea_clean_body_classes( $classes ) {
 
-	$allowed_classes = [
-		'singular',
-		'single',
-		'page',
-		'archive',
-		'admin-bar',
-		'full-width-content',
-		'content-sidebar',
-		'content',
-	];
-
-	return array_intersect( $classes, $allowed_classes );
-
-}
-add_filter( 'body_class', 'ea_clean_body_classes', 20 );
 
 /**
  * Clean Nav Menu Classes

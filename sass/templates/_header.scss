@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 .site-header {
 	background-color: var(--blanc);
-	padding: 0 var(--padding-x-header);
+	padding: 0 var(--padding-x);
 	position: relative;
 	z-index:10;
 	&::before {
