@@ -612,7 +612,7 @@ body {
   --padding-x-pleine-largeur:0; }
   @media (min-width: 500px) {
     :root {
-      --padding-x:4%; } }
+      --padding-x: 4vw; } }
   @media (min-width: 768px) {
     :root {
       --padding-x-largeur-reduite: calc(50vw - 60ch/2); } }

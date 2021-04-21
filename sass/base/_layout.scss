@@ -19,7 +19,8 @@ body {
 
 
 	@include bp(sm) {
-		--padding-x:4%;
+		//mieux en vw qu'en % pour pouvoir l'utiliser sur un élément qui ne fait pas toute la largeur de la page (sinon calcule le % sur la largeur de l'élément)
+		--padding-x: 4vw; 
 	}
 
 	@include bp(md) {
