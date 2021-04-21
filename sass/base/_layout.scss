@@ -9,7 +9,8 @@ body {
 	overflow-x:hidden;
 }
 :root {
-	--margin-y:20px;
+	--margin-y-1: 2rem;
+	--margin-y-2: 3.5rem;
 	--padding-x:15px;
 	--padding-x-largeur-reduite:var(--padding-x);
 	--padding-x-pleine-largeur:0;
@@ -22,11 +23,11 @@ body {
 	}
 
 	@include bp(md) {
-		--margin-y:40px;
 		--padding-x-largeur-reduite: calc(50vw - 60ch/2);
 	}
 	@include bp(lg) {
-		--margin-y:55px;
+		--margin-y-1: 4.5rem;
+		--margin-y-2: 7.5rem;
 	}
 
 	@include bp(xxl) {
@@ -38,7 +39,8 @@ body {
 //Réglages de largeur communs à tous les templates
 .site-main {
 	.fil-ariane, h1 {
-		padding: 0 var(--padding-x);
+		padding-left: var(--padding-x);
+		padding-right: var(--padding-x);
 	}
 }
 

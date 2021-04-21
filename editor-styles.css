@@ -605,7 +605,8 @@ body {
   overflow-x: hidden; }
 
 :root {
-  --margin-y:20px;
+  --margin-y-1: 2rem;
+  --margin-y-2: 3.5rem;
   --padding-x:15px;
   --padding-x-largeur-reduite:var(--padding-x);
   --padding-x-pleine-largeur:0; }
@@ -614,18 +615,19 @@ body {
       --padding-x:4%; } }
   @media (min-width: 768px) {
     :root {
-      --margin-y:40px;
       --padding-x-largeur-reduite: calc(50vw - 60ch/2); } }
   @media (min-width: 960px) {
     :root {
-      --margin-y:55px; } }
+      --margin-y-1: 4.5rem;
+      --margin-y-2: 7.5rem; } }
   @media (min-width: 1920px) {
     :root {
       --padding-x: calc(50vw - 1613px/2);
       --padding-x-pleine-largeur: calc(50vw - 1920px/2); } }
 
 .site-main .fil-ariane, .site-main h1 {
-  padding: 0 var(--padding-x); }
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x); }
 
 body.largeur-normale .entry-content {
   padding: 0 var(--padding-x); }
