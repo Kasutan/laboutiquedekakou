@@ -31,10 +31,25 @@ echo '<div class="site-container">';
 		tha_header_top();
 
 		echo '<div class="title-area">';
-		$logo_tag = ( apply_filters( 'ea_h1_site_title', false ) || ( is_front_page() && is_home() ) ) ? 'h1' : 'p';
-		echo '<' . $logo_tag . ' class="site-title"><a href="' . esc_url( home_url() ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></' . $logo_tag . '>';
-		if( apply_filters( 'ea_header_site_description', false ) )
-		 	echo '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>';
+		$logo_tag='p';
+		if(is_front_page()) {
+			$logo_tag='h1';
+		}
+			if(has_custom_logo()) {
+				printf('<%s class="site-title">%s<span class="screen-reader-text">%s</span></%s>',
+					$logo_tag,
+					get_custom_logo(),	
+					get_bloginfo( 'name'),
+					$logo_tag,	
+				);
+			} else {
+				printf('<%s class="site-title">%s</%s>',
+					$logo_tag,
+					get_bloginfo( 'name'),
+					$logo_tag,	
+				);
+			}
+			
 		echo '</div>';
 
 		tha_header_bottom();

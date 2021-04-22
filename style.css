@@ -2058,19 +2058,18 @@ button.modaal-close {
 .site-header {
   background-color: var(--blanc);
   position: relative;
-  z-index: 10; }
-  .site-header::before {
-    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    content: '';
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out; }
+  z-index: 10;
+  /*	&::before {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		content: '';
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}*/ }
   .site-header.sticky {
     position: fixed;
     left: 0;
@@ -2080,6 +2079,13 @@ button.modaal-close {
       opacity: 1; }
   .site-header .site-branding, .site-header .recherche.bouton, .site-header .menu-toggle {
     position: relative; }
+
+.site-title {
+  margin: var(--margin-y-1) var(--padding-x);
+  text-align: center; }
+
+.custom-logo-link {
+  display: inline-block; }
 
 .custom-logo {
   display: block;

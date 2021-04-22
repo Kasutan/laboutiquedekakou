@@ -86,7 +86,8 @@
 		}*/
 
 
-		/****************** Sticky header *************************/	
+		/****************** Sticky header *************************/
+		/*	
 		var siteHeader=$('.site-header');
 		var pageHeaderImg=$('.entry-header .image');
 		var siteContent=$('.site-main');
@@ -126,7 +127,7 @@
 			document.documentElement.style.setProperty('--header-bottom', headerBottom); //utile pour positionner le menu mobile
 		}
 
-
+*/
 
 		/****************** Carrousel de logos adhérents *************************/
 

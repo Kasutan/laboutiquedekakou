@@ -5,7 +5,7 @@
 	background-color: var(--blanc);
 	position: relative;
 	z-index:10;
-	&::before {
+/*	&::before {
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		content: '';
 		width: 100%;
@@ -15,7 +15,7 @@
 		height: 100%;
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
-	}
+	}*/
 
 
 	&.sticky {
@@ -31,6 +31,15 @@
 	.site-branding, .recherche.bouton, .menu-toggle {
 		position: relative;
 	}
+}
+
+.site-title {
+	margin:var(--margin-y-1) var(--padding-x);
+	text-align: center;
+}
+
+.custom-logo-link {
+	display: inline-block;
 }
 
 .custom-logo {
