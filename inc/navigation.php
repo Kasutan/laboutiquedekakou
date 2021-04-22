@@ -67,15 +67,15 @@ function kasutan_menu_topbar() {
  *
  */
 function ea_site_header() {
-
 	echo '<nav id="site-navigation" class="nav-main" aria-label="menu principal">';
-	if( has_nav_menu( 'primary' ) ) {
-		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
-	}
-	//bouton ouvrir volet de recherche
-	printf('<button id="ouvrir-recherche" aria-expanded="false" class="recherche bouton" aria-controls="volet-recherche" aria-label="Ouvrir le volet de recherche">%s<span>Rechercher</span></button>',
-		kasutan_picto(array('icon'=>'loupe'))
-	);
+		echo '<div class="centreur"></div>';
+		if( has_nav_menu( 'primary' ) ) {
+			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
+		}
+		//bouton ouvrir volet de recherche
+		printf('<div class="centreur"><button id="ouvrir-recherche" aria-expanded="false" class="recherche" aria-controls="volet-recherche" aria-label="Ouvrir le volet de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
+			kasutan_picto(array('icon'=>'loupe','size'=>'33'))
+		);
 	echo '</nav>';
 
 }

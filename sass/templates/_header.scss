@@ -34,8 +34,14 @@
 }
 
 .site-title {
-	margin:var(--margin-y-1) var(--padding-x);
+	border-bottom:solid 2px var(--bleu);
+	margin:0;
+	padding : 2rem var(--padding-x);
 	text-align: center;
+	@include bp(lg) {
+		padding-top:3.5rem;
+		padding-bottom:3.2rem;
+	}
 }
 
 .custom-logo-link {
@@ -61,15 +67,6 @@
 	
 }
 
-@include bp(xl) {
-	.site-header {
-		height:111px;
-	}
-	.site-branding {
-		flex-basis:290px;
-		flex-shrink: 0;
-	}
-}
 
 /*--------------------------------------------------------------
 ## Volets connexion et recherche
