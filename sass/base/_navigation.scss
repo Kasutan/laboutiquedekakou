@@ -25,108 +25,6 @@ a:active {
 	outline: 0;
 }
 
-.fleche {
-	text-align: center;
-
-	a, button {
-		--lien:var(--cyan);
-
-		background-color: transparent;
-		border:none;
-		color:var(--lien);
-		display: inline-block;
-		font-size: 122%;
-		font-weight:700;
-		line-height:1.36;
-		margin:1em auto;
-		outline: none;
-		padding:8px;
-		position: relative;
-		text-decoration: none;
-		text-transform: none;
-		transition-property: border,color;
-
-		&::after {
-			background-color: var(--lien);
-			bottom:-8px;
-			content:'';
-			display: block;
-			height:2px;
-			left:-8px;
-			position: relative;
-			transition:background-color var(--transition);
-			width:100%;
-			width:calc(100% + 16px);
-		}
-		
-		svg {
-			margin-left: 6px;
-			max-width:6px;
-			position: relative;
-			top:4px;
-			@include bp(md) {
-				margin-left: 8px;
-				max-width:11px;
-				top:2px;
-			}
-
-			path {
-				fill:var(--lien);
-				transition: fill var(--transition);
-
-			}
-
-			
-		}
-
-		&:hover, &:focus, &:active {
-			--lien : var(--bleu);
-			&::after {
-				animation: animTrait 0.45s cubic-bezier(0.7,0,0.3,1) both;
-			}
-		}
-	}
-	
-
-	/*Variante avec les couleurs inversées*/
-	&.bleu {
-		a, button {
-			--lien : var(--bleu);
-			&:hover, &:focus, &:active {
-				--lien : var(--cyan);
-			}
-		}
-		
-	}
-	&.blanc {
-		a, button {
-			--lien : var(--blanc);
-			&:hover, &:focus, &:active {
-				--lien : var(--blanc);
-			}
-		}
-		
-	}
-
-	/*Variante avec la fleche vers le bas*/
-	&.angle-bas {
-		a, button {
-			svg {
-				margin-left: 4px;
-				max-width: 12px;
-				top: 6px;
-				@include bp(md) {
-					margin-left: 7px;
-					max-width: 18px;
-					top: 6px;
-				}
-			}
-		}
-	}
-
-
-	
-}
 
 /*--------------------------------------------------------------
 ## Ancres
@@ -159,7 +57,7 @@ p.fil-ariane {
 
 /*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/ 
 
-.nav-topbar, .nav-main, .volet-navigation {
+.nav-topbar-gauche, .nav-main, .volet-navigation {
 	display: none; // tous les menus sont cachés en mobile
 	ul {
 		display: flex;
@@ -174,7 +72,7 @@ p.fil-ariane {
 	&:focus {
 		outline: none;
 	}
-	svg.times { //croix pour refermer le menu
+	svg.fermer-menu { //croix pour refermer le menu
 		display:none;
 	}
 	//menu mobile ouvert
@@ -182,7 +80,7 @@ p.fil-ariane {
 		svg.menu { //cacher hamburger 
 			display:none;
 		}
-		svg.times { // afficher croix
+		svg.fermer-menu { // afficher croix
 			display:block;
 		}
 	}
@@ -223,11 +121,14 @@ p.fil-ariane {
 	.menu-toggle {
 		display: none;
 	}
-	.nav-topbar, .nav-main { //menus affichés en desktop
-		background: #fff;
+	.nav-topbar-gauche, .nav-main { //menus affichés en desktop
+		display:flex;
+		flex-direction: row;
+
+	}
+	.nav-main { 
 		display: flex;
 		flex-direction: row;
-		width: 100%;
 		ul.menu {
 			align-items: stretch;
 			height:100%;
@@ -276,13 +177,71 @@ p.fil-ariane {
 .menu-toggle {
 	background:transparent;
 	border:0;
-	margin-left: auto;
-	margin-right: 10px;
-	padding:0;
+	margin:0;
+	min-width:unset;
+	padding:0 1rem;
 	&:hover, &:focus, &:active {
 		background:transparent;
 	}
+	svg path {
+		fill : var(--blanc);
+	}
 }
+/*Style liens de menus TOPBAR*/
+.topbar {
+	align-items: center;
+	background-color: var(--bleu);
+	display: flex;
+	justify-content: space-between;
+	padding:1rem var(--padding-x);
+	.menu {
+		align-items: center;
+		display:flex;
+		list-style: none;
+		margin:0;
+		padding:0;
+		text-align:center
+	}
+	li {
+		margin-right:2rem;
+	}
+	a {
+		color:var(--blanc);
+		letter-spacing: 1.4px;
+		line-height: 1;
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+	li.current-menu-item, li.current-menu-ancestor {
+		a {
+			font-weight: 700;
+		}
+	}
+	.compte {
+		background-image:url('icons/mon-compte.png');
+	}
+	.panier {
+		background-image:url('icons/panier.png');
+	}
+	.compte, .panier {
+		background-size:contain;
+		background-repeat: no-repeat;
+		height:28px;
+		overflow: hidden;
+		width:30px;
+		a {
+			color:transparent;
+		}
+	}
+	@include bp(xl) {
+		padding-top:1.5rem;
+		padding-bottom: 1.5rem;
+	}
+}
+
+
 
 /*Style liens de menus*/ 
 

@@ -65,7 +65,8 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 
 		register_nav_menus( array(
 			'primary' => 'Menu principal',
-			'topbar' => 'Menu barre supérieure',
+			'topbar-gauche' => 'Menu barre supérieure gauche',
+			'topbar-droite' => 'Menu barre supérieure droite',
 			'mobile' => 'Menu mobile',
 			'footer-1' => 'Menu colonne 1 du pied de page',
 			'footer-2' => 'Menu colonne 2 du pied de page',

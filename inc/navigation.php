@@ -23,13 +23,14 @@
 add_action('tha_header_top','kasutan_menu_topbar');
 function kasutan_menu_topbar() {
 	echo '<nav class="topbar">';
-		if( has_nav_menu( 'topbar' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'topbar', 'menu_id' => 'topbar-menu', 'container_class' => 'nav-topbar' ) );
+		if( has_nav_menu( 'topbar-gauche' ) ) {
+			wp_nav_menu( array( 'theme_location' => 'topbar-gauche', 'menu_id' => 'topbar-menu-gauche', 'container_class' => 'nav-topbar-gauche' ) );
 		}
+		
 		?>
 		<button class="menu-toggle" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
-			<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu'));?>
-			<?php echo kasutan_picto(array('icon'=>'croix-menu', 'class' => 'times'));?>
+			<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu', 'size'=>'28'));?>
+			<?php echo kasutan_picto(array('icon'=>'close', 'class' => 'fermer-menu','size'=>'28'));?>
 		</button>
 		<div class="volet-navigation"  id="volet-navigation">
 		<?php
@@ -53,6 +54,11 @@ function kasutan_menu_topbar() {
 
 		
 		echo '</div>'; //Fin volet navigation
+
+		if( has_nav_menu( 'topbar-droite' ) ) {
+			wp_nav_menu( array( 'theme_location' => 'topbar-droite', 'menu_id' => 'topbar-menu-droite', 'container_class' => 'nav-topbar-droite' ) );
+		}
+
 	echo '</nav>';
 }
 

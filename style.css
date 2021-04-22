@@ -1127,76 +1127,6 @@ a:hover,
 a:active {
   outline: 0; }
 
-.fleche {
-  text-align: center;
-  /*Variante avec les couleurs inversées*/
-  /*Variante avec la fleche vers le bas*/ }
-  .fleche a, .fleche button {
-    --lien:var(--cyan);
-    background-color: transparent;
-    border: none;
-    color: var(--lien);
-    display: inline-block;
-    font-size: 122%;
-    font-weight: 700;
-    line-height: 1.36;
-    margin: 1em auto;
-    outline: none;
-    padding: 8px;
-    position: relative;
-    text-decoration: none;
-    text-transform: none;
-    -webkit-transition-property: border,color;
-    transition-property: border,color; }
-    .fleche a::after, .fleche button::after {
-      background-color: var(--lien);
-      bottom: -8px;
-      content: '';
-      display: block;
-      height: 2px;
-      left: -8px;
-      position: relative;
-      -webkit-transition: background-color var(--transition);
-      transition: background-color var(--transition);
-      width: 100%;
-      width: calc(100% + 16px); }
-    .fleche a svg, .fleche button svg {
-      margin-left: 6px;
-      max-width: 6px;
-      position: relative;
-      top: 4px; }
-      @media (min-width: 768px) {
-        .fleche a svg, .fleche button svg {
-          margin-left: 8px;
-          max-width: 11px;
-          top: 2px; } }
-      .fleche a svg path, .fleche button svg path {
-        fill: var(--lien);
-        -webkit-transition: fill var(--transition);
-        transition: fill var(--transition); }
-    .fleche a:hover, .fleche a:focus, .fleche a:active, .fleche button:hover, .fleche button:focus, .fleche button:active {
-      --lien: var(--bleu); }
-      .fleche a:hover::after, .fleche a:focus::after, .fleche a:active::after, .fleche button:hover::after, .fleche button:focus::after, .fleche button:active::after {
-        -webkit-animation: animTrait 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
-        animation: animTrait 0.45s cubic-bezier(0.7, 0, 0.3, 1) both; }
-  .fleche.bleu a, .fleche.bleu button {
-    --lien: var(--bleu); }
-    .fleche.bleu a:hover, .fleche.bleu a:focus, .fleche.bleu a:active, .fleche.bleu button:hover, .fleche.bleu button:focus, .fleche.bleu button:active {
-      --lien: var(--cyan); }
-  .fleche.blanc a, .fleche.blanc button {
-    --lien: var(--blanc); }
-    .fleche.blanc a:hover, .fleche.blanc a:focus, .fleche.blanc a:active, .fleche.blanc button:hover, .fleche.blanc button:focus, .fleche.blanc button:active {
-      --lien: var(--blanc); }
-  .fleche.angle-bas a svg, .fleche.angle-bas button svg {
-    margin-left: 4px;
-    max-width: 12px;
-    top: 6px; }
-    @media (min-width: 768px) {
-      .fleche.angle-bas a svg, .fleche.angle-bas button svg {
-        margin-left: 7px;
-        max-width: 18px;
-        top: 6px; } }
-
 /*--------------------------------------------------------------
 ## Ancres
 --------------------------------------------------------------*/
@@ -1222,9 +1152,9 @@ p.fil-ariane {
 ## Menus
 --------------------------------------------------------------*/
 /*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/
-.nav-topbar, .nav-main, .volet-navigation {
+.nav-topbar-gauche, .nav-main, .volet-navigation {
   display: none; }
-  .nav-topbar ul, .nav-main ul, .volet-navigation ul {
+  .nav-topbar-gauche ul, .nav-main ul, .volet-navigation ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1236,11 +1166,11 @@ p.fil-ariane {
   display: block; }
   .menu-toggle:focus {
     outline: none; }
-  .menu-toggle svg.times {
+  .menu-toggle svg.fermer-menu {
     display: none; }
   .menu-toggle[aria-expanded=true] svg.menu {
     display: none; }
-  .menu-toggle[aria-expanded=true] svg.times {
+  .menu-toggle[aria-expanded=true] svg.fermer-menu {
     display: block; }
 
 .volet-navigation.toggled {
@@ -1282,17 +1212,23 @@ p.fil-ariane {
 @media (min-width: 960px) {
   .menu-toggle {
     display: none; }
-  .nav-topbar, .nav-main {
-    background: #fff;
+  .nav-topbar-gauche, .nav-main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row;
-    width: 100%; }
-    .nav-topbar ul.menu, .nav-main ul.menu {
+    flex-direction: row; }
+  .nav-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    .nav-main ul.menu {
       -webkit-box-align: stretch;
       -ms-flex-align: stretch;
       align-items: stretch;
@@ -1300,7 +1236,7 @@ p.fil-ariane {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end; }
-      .nav-topbar ul.menu ul, .nav-main ul.menu ul {
+      .nav-main ul.menu ul {
         float: left;
         margin-top: 0px;
         position: absolute;
@@ -1308,9 +1244,9 @@ p.fil-ariane {
         top: calc(100% - 10px);
         left: -999em;
         z-index: 10; }
-      .nav-topbar ul.menu > li, .nav-main ul.menu > li {
+      .nav-main ul.menu > li {
         position: relative; }
-        .nav-topbar ul.menu > li:hover ul, .nav-topbar ul.menu > li.focus ul, .nav-main ul.menu > li:hover ul, .nav-main ul.menu > li.focus ul {
+        .nav-main ul.menu > li:hover ul, .nav-main ul.menu > li.focus ul {
           -webkit-animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
           animation: animSousMenu 0.45s cubic-bezier(0.7, 0, 0.3, 1) both;
           display: -webkit-box;
@@ -1324,7 +1260,7 @@ p.fil-ariane {
           opacity: 1;
           right: -32px;
           width: 320px; }
-    .nav-topbar.sticky ul.menu, .nav-main.sticky ul.menu {
+    .nav-main.sticky ul.menu {
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end; } }
@@ -1333,11 +1269,65 @@ p.fil-ariane {
 .menu-toggle {
   background: transparent;
   border: 0;
-  margin-left: auto;
-  margin-right: 10px;
-  padding: 0; }
+  margin: 0;
+  min-width: unset;
+  padding: 0 1rem; }
   .menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active {
     background: transparent; }
+  .menu-toggle svg path {
+    fill: var(--blanc); }
+
+/*Style liens de menus TOPBAR*/
+.topbar {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--bleu);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem var(--padding-x); }
+  .topbar .menu {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+  .topbar li {
+    margin-right: 2rem; }
+  .topbar a {
+    color: var(--blanc);
+    letter-spacing: 1.4px;
+    line-height: 1;
+    text-decoration: none; }
+    .topbar a:hover, .topbar a:focus {
+      text-decoration: underline; }
+  .topbar li.current-menu-item a, .topbar li.current-menu-ancestor a {
+    font-weight: 700; }
+  .topbar .compte {
+    background-image: url("icons/mon-compte.png"); }
+  .topbar .panier {
+    background-image: url("icons/panier.png"); }
+  .topbar .compte, .topbar .panier {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 28px;
+    overflow: hidden;
+    width: 30px; }
+    .topbar .compte a, .topbar .panier a {
+      color: transparent; }
+  @media (min-width: 1400px) {
+    .topbar {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem; } }
 
 /*Style liens de menus*/
 .nav-main li {
@@ -2067,7 +2057,6 @@ button.modaal-close {
 --------------------------------------------------------------*/
 .site-header {
   background-color: var(--blanc);
-  padding: 0 var(--padding-x);
   position: relative;
   z-index: 10; }
   .site-header::before {
