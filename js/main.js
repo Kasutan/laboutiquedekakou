@@ -40,20 +40,24 @@
 		}
 		
 		/********* Ouvrir-fermer les sous-menus mobile **********/
-		var ouvrirSousMenu=$('.ouvrir-sous-menu, .menu-item-has-children > a');
-		if(width<960 && ouvrirSousMenu.length>0) {
+		var ouvrirSousMenu=$('.volet-navigation .ouvrir-sous-menu');
+		if(ouvrirSousMenu.length>0) {
 			ouvrirSousMenu.click(function(e) {
-				e.preventDefault();
-				$(this).siblings('.sub-menu').animate(
-					{right:0},
-					400
-				);
-			});
-			$('.fermer-sous-menu').click(function(){
-				$(this).parents('.sub-menu').animate(
-					{right:-1*width},
-					400
-				);
+				var sousMenu=$(this).siblings('.sub-menu');
+
+				if($(this).hasClass('js-ouvert')) {
+					//le sous-menu était ouvert, on le referme
+					$(this).removeClass('js-ouvert');
+					$(sousMenu).slideUp();
+				} else {
+					//on referme tous les sous-menus
+					ouvrirSousMenu.removeClass('js-ouvert');
+					$('.volet-navigation .sub-menu').slideUp();
+
+					//on ouvre celui demandé
+					$(this).addClass('js-ouvert');
+					$(sousMenu).slideDown();
+				}
 			});
 		}
 		/********* Desktop : neutraliser clic pour lien de menu parent **********/

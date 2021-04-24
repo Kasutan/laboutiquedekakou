@@ -1301,7 +1301,21 @@ button.menu-toggle {
 
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
-  background-color: var(--blanc); }
+  background-color: var(--blanc);
+  /*Logique affichage sous-menu*/ }
+  .volet-navigation .sub-menu {
+    display: none; }
+  .volet-navigation .picto-angle {
+    display: inline-block;
+    -webkit-transition: -webkit-transform var(--transition);
+    transition: -webkit-transform var(--transition);
+    transition: transform var(--transition);
+    transition: transform var(--transition), -webkit-transform var(--transition); }
+  .volet-navigation button.js-ouvert .picto-angle {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg); }
 
 /*Style liens de menus MENU PRINCIPAL */
 .nav-main {

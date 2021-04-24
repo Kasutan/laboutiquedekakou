@@ -196,6 +196,22 @@ button.menu-toggle {
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
 	background-color:var(--blanc);
+
+	/*Logique affichage sous-menu*/
+	.sub-menu {
+		display: none;
+		//animation JS pour ouvrir/refermer
+	}
+	.picto-angle {
+		display: inline-block;
+		transition:transform var(--transition);
+	}
+
+	button.js-ouvert .picto-angle {
+		transform-origin: center;
+		transform:rotate(90deg);
+	}
+	
 }
 
 
