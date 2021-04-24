@@ -1064,8 +1064,8 @@ textarea {
 --------------------------------------------------------------*/
 .volet-recherche {
   overflow: hidden;
-  -webkit-transition: width var(--transition);
-  transition: width var(--transition); }
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition); }
 
 .search-form {
   -webkit-box-align: stretch;
@@ -1081,7 +1081,8 @@ textarea {
 .search-form .search-field {
   height: 40px;
   line-height: 40px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 150px; }
 
 .search-form .search-submit {
   margin-bottom: 0;
@@ -1360,18 +1361,25 @@ button.menu-toggle {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 0 var(--padding-x); }
   .nav-main .centreur {
     -ms-flex-preferred-size: 4rem;
     flex-basis: 4rem;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
+    .nav-main .centreur:last-of-type {
+      text-align: right; }
   .nav-main .nav-primary {
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0; }
+  .nav-main .search-form {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
   .nav-main .menu {
     -ms-flex-pack: distribute;
     justify-content: space-around;
@@ -1966,25 +1974,7 @@ button.modaal-close {
 .site-header {
   background-color: var(--blanc);
   position: relative;
-  z-index: 10;
-  /*	&::before {
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		content: '';
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}*/ }
-  .site-header.sticky {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%; }
-    .site-header.sticky::before {
-      opacity: 1; }
+  z-index: 10; }
   .site-header .site-branding, .site-header .recherche.bouton, .site-header .menu-toggle {
     position: relative; }
 
@@ -2005,11 +1995,36 @@ button.modaal-close {
   display: block;
   margin: 0; }
 
+.topbar.js-sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+#wpadminbar {
+  position: fixed; }
+
+.admin-bar .topbar.js-sticky {
+  top: 32px; }
+
 @media (min-width: 960px) {
-  .admin-bar .site-header.sticky {
-    top: 32px; }
-  .custom-logo {
-    margin: 0; } }
+  .logo-sticky {
+    display: none; }
+  .nav-main.js-sticky {
+    background-color: var(--blanc);
+    -webkit-box-shadow: 0 3px 3px rgba(18, 75, 90, 0.2);
+    box-shadow: 0 3px 3px rgba(18, 75, 90, 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; }
+    .nav-main.js-sticky .logo-sticky {
+      display: block; }
+    .nav-main.js-sticky .centreur {
+      -ms-flex-preferred-size: 6rem;
+      flex-basis: 6rem; }
+  .admin-bar .nav-main.js-sticky {
+    top: 32px; } }
 
 /*--------------------------------------------------------------
 ## Entry-header

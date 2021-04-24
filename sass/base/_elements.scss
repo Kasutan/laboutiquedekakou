@@ -166,7 +166,7 @@ textarea {
 --------------------------------------------------------------*/
 .volet-recherche {
 	overflow:hidden;
-	transition:width var(--transition); //animation de l'affichage du volet
+	transition:all var(--transition); //animation de l'affichage du volet
 }
 .search-form {
 	align-items: stretch;
@@ -177,6 +177,7 @@ textarea {
 	height: 40px;
 	line-height: 40px;
 	margin-bottom: 0;
+	width:150px;
 }
 .search-form .search-submit {
 	margin-bottom: 0;

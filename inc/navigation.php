@@ -79,7 +79,11 @@ function kasutan_menu_topbar() {
  */
 function ea_site_header() {
 	echo '<nav id="site-navigation" class="nav-main" aria-label="menu principal">';
-		echo '<div class="centreur"></div>';
+		echo '<div class="centreur">';
+			if(has_custom_logo()){
+				printf('<div class="logo-sticky">%s</div>',get_custom_logo());
+			}
+		echo '</div>';
 		if( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
 		}

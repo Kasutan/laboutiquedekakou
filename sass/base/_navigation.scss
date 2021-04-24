@@ -254,15 +254,21 @@ button.menu-toggle {
 /*Style liens de menus MENU PRINCIPAL */ 
 .nav-main { 
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	padding:0 var(--padding-x);
 
 	.centreur {
 		flex-basis:4rem;
 		flex-shrink: 0;
+		&:last-of-type {
+			text-align: right;
+		}
 	}
 	.nav-primary { //conteneur du menu
 		flex-grow:0;
+	}
+	.search-form {
+		justify-content: flex-end;
 	}
 	.menu {
 		justify-content: space-around;

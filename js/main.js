@@ -2,6 +2,7 @@
 
 	$( document ).ready(function() {
 		var width=$(window).width();
+
 		/****************** Modaal*************************/
 		$('.ouvrir-modaal').modaal();
 		$('.fermer-modaal').click(function(){
@@ -19,21 +20,28 @@
 
 		//Au chargement de la page, masquer les volets de recherche
 		$('.volet-recherche').css('width',0);
+		$('.volet-recherche').hide();
 
 		var boutonRecherche=$("button.recherche");
 		if($(boutonRecherche).length>0) {
 			$(boutonRecherche).click(function(){
 				var voletRecherche=$(this).attr('aria-controls');
 				if($(boutonRecherche).attr('aria-expanded')=="false") {
-					$(voletRecherche).css('width','300px');
+					$(voletRecherche).show();
+					$(voletRecherche).css('width','200px');
+					$(voletRecherche).css('flex-grow','1');
 					$(voletRecherche).attr('aria-expanded','true');
 					$(boutonRecherche).attr('aria-expanded','true');
 					$('#volet-recherche .search-field').focus();
+					$('.nav-main .centreur:first-of-type').hide();
 					
 				} else {
 					$(voletRecherche).css('width','0');
+					$(voletRecherche).css('flex-grow','unset');
+					$(voletRecherche).fadeOut();
 					$(voletRecherche).attr('aria-expanded','false');
 					$(boutonRecherche).attr('aria-expanded','false');
+					$('.nav-main .centreur:first-of-type').show();
 				}
 
 			});
@@ -72,47 +80,33 @@
 
 
 		/****************** Sticky header *************************/
-		/*	
-		var siteHeader=$('.site-header');
-		var pageHeaderImg=$('.entry-header .image');
-		var siteContent=$('.site-main');
-		var mainNavigation=$('.main-navigation');
-		var headerTop=0;
-		var headerBottom=0;
-		updateHeaderPosition();
-
-
-		$(window).scroll(function () { // scroll event
-			var windowTop = $(window).scrollTop(); // returns number
-			var windowBottom=window.innerHeight+windowTop;
-			if (windowTop > headerTop ) {
-				siteContent.css('margin-top',siteHeader.outerHeight());
-				siteHeader.addClass('sticky');
-				mainNavigation.addClass('sticky');
-				var parallax=windowTop*0.2;
-				if(parallax <= 40) {
-					$(pageHeaderImg).css({'transform':'translateY(-'+parallax+'px)'});
-				}
-			} else {
-				siteContent.css('margin-top',0);
-				siteHeader.removeClass('sticky');
-				mainNavigation.removeClass('sticky');
-			}
-
-		});
 		
+		var siteHeader=$('.site-header');
+		var siteContent=$('.site-main');
+		var mainNavigation=$('.nav-main');
+		var topbar=$('.topbar');
+		
+		mainNavigationTop=mainNavigation.offset().top;
 
-		//Si on permet au visiteur de masquer la topbar
-		//var topbar = $('.topbar');
-		//updateHeaderPosition()
+		
+		if(width>=960) {
+			$(window).scroll(function () { // scroll event
+				var windowTop = $(window).scrollTop(); // returns number
+				if (windowTop > mainNavigationTop ) {
+					siteContent.css('margin-top',mainNavigation.outerHeight());
+					siteHeader.addClass('js-sticky');
+					mainNavigation.addClass('js-sticky');
+				} else {
+					siteContent.css('margin-top',0);
+					siteHeader.removeClass('js-sticky');
+					mainNavigation.removeClass('js-sticky');
+				}
 
-		function updateHeaderPosition() {
-			headerTop=siteHeader.offset().top;
-			headerBottom=headerTop + siteHeader.outerHeight(); // inclut la topbar si elle est présente
-			document.documentElement.style.setProperty('--header-bottom', headerBottom); //utile pour positionner le menu mobile
+			});
+		} else {
+			$(topbar).addClass('js-sticky');
+			siteHeader.css('margin-top',topbar.outerHeight());
 		}
-
-*/
 
 		/****************** Carrousel de logos adhérents *************************/
 

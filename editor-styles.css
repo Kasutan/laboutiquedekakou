@@ -1043,8 +1043,8 @@ textarea {
 --------------------------------------------------------------*/
 .volet-recherche {
   overflow: hidden;
-  -webkit-transition: width var(--transition);
-  transition: width var(--transition); }
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition); }
 
 .search-form {
   -webkit-box-align: stretch;
@@ -1060,7 +1060,8 @@ textarea {
 .search-form .search-field {
   height: 40px;
   line-height: 40px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 150px; }
 
 .search-form .search-submit {
   margin-bottom: 0;

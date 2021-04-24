@@ -5,33 +5,12 @@
 	background-color: var(--blanc);
 	position: relative;
 	z-index:10;
-/*	&::before {
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		content: '';
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
-	}*/
-
-
-	&.sticky {
-		position:fixed;
-		left: 0;
-		top: 0;
-		width:100%;
-		&::before {
-			opacity: 1;
-		}
-	}
 
 	.site-branding, .recherche.bouton, .menu-toggle {
 		position: relative;
 	}
 }
+
 
 .site-title {
 	border-bottom:solid 2px var(--bleu);
@@ -54,17 +33,44 @@
 	//max-width: 169px;
 }
 
+//Topbar sticky en mobile
+.topbar.js-sticky {
+	position:fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+}
+
+#wpadminbar {
+	position: fixed;
+}
+.admin-bar .topbar.js-sticky {
+	top:32px;
+}	
+
+
 @include bp(lg) {
-	.admin-bar .site-header.sticky {
-		top:32px;
+	.logo-sticky {
+		display:none;
 	}
-	
-	.custom-logo {
-		margin:0;
-	//	max-width: 290px;
+	.nav-main.js-sticky {
+		background-color:var(--blanc);
+		box-shadow: 0 3px 3px rgba(18,75,90,0.2);
+		position:fixed;
+		left: 0;
+		top: 0;
+		width:100%;
+		.logo-sticky {
+			display:block;
+		}
+		.centreur {
+			flex-basis:6rem;
+		}
 	}
 
-	
+	.admin-bar .nav-main.js-sticky {
+		top:32px;
+	}	
 }
 
 
