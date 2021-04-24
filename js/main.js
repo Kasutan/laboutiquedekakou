@@ -25,7 +25,7 @@
 			$(boutonRecherche).click(function(){
 				var voletRecherche=$(this).attr('aria-controls');
 				if($(boutonRecherche).attr('aria-expanded')=="false") {
-					$(voletRecherche).css('width','325px');
+					$(voletRecherche).css('width','300px');
 					$(voletRecherche).attr('aria-expanded','true');
 					$(boutonRecherche).attr('aria-expanded','true');
 					$('#volet-recherche .search-field').focus();

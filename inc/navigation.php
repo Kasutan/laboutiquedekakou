@@ -24,7 +24,7 @@ add_action('tha_header_top','kasutan_menu_topbar');
 function kasutan_menu_topbar() {
 	echo '<nav class="topbar">';
 		if( has_nav_menu( 'topbar-gauche' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'topbar-gauche', 'menu_id' => 'topbar-menu-gauche', 'container_class' => 'nav-topbar-gauche' ) );
+			wp_nav_menu( array( 'theme_location' => 'topbar-gauche', 'menu_id' => 'topbar-menu-gauche', 'menu_class'=>'menu-topbar', 'container_class' => 'nav-topbar-gauche' ) );
 		}
 		
 		?>
@@ -38,23 +38,24 @@ function kasutan_menu_topbar() {
 				wp_nav_menu( array(
 					'theme_location' => 'menu-mobile',
 					'menu_id'        => 'menu-mobile',
-					'walker' => new etcode_sublevel_walker
+					'walker' => new etcode_sublevel_walker,
+					'menu_class'=>'menu-mobile',
 				) );
 			} else {
 				wp_nav_menu( array(
 					'theme_location' => 'menu-mobile',
 					'menu_id'        => 'menu-mobile',
+					'menu_class'=>'menu-mobile',
 				) );
 			}
 					
-			if(function_exists('kasutan_affiche_recherche')) {
-				kasutan_affiche_recherche('mobile');
-			}
+			get_search_form();
+
 		
 		echo '</div>'; //Fin volet navigation
 
 		if( has_nav_menu( 'topbar-droite' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'topbar-droite', 'menu_id' => 'topbar-menu-droite', 'container_class' => 'nav-topbar-droite' ) );
+			wp_nav_menu( array( 'theme_location' => 'topbar-droite', 'menu_id' => 'topbar-menu-droite', 'menu_class'=>'menu-topbar', 'container_class' => 'nav-topbar-droite' ) );
 		}
 
 	echo '</nav>';

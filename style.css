@@ -1182,7 +1182,6 @@ p.fil-ariane {
     display: block; }
 
 .volet-navigation.toggled {
-  background: var(--bleu);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1191,31 +1190,15 @@ p.fil-ariane {
   -ms-flex-direction: column;
   flex-direction: column;
   left: 0;
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 64px);
   overflow-x: hidden;
   overflow-y: auto;
   padding: 18px;
   padding-bottom: 35px;
   position: absolute;
-  top: 80px;
+  top: 100%;
   width: 100vw;
   z-index: 10; }
-  .volet-navigation.toggled::before {
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid var(--cyan);
-    content: '';
-    display: inline-block;
-    height: 0;
-    position: absolute;
-    right: 30px;
-    top: -6px;
-    width: 0; }
-  .volet-navigation.toggled .menu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
 
 @media (min-width: 960px) {
   .menu-toggle {
@@ -1249,8 +1232,9 @@ p.fil-ariane {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem var(--padding-x); }
-  .topbar .menu {
+  padding: 1rem var(--padding-x);
+  position: relative; }
+  .topbar .menu-topbar {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1261,18 +1245,18 @@ p.fil-ariane {
     margin: 0;
     padding: 0;
     text-align: center; }
-  .topbar li {
-    margin-right: 2rem; }
-  .topbar a {
-    color: var(--blanc);
-    letter-spacing: 1.4px;
-    line-height: 1;
-    text-decoration: none; }
-    .topbar a:hover, .topbar a:focus {
-      text-decoration: underline;
-      text-underline-offset: 1rem; }
-  .topbar li.current-menu-item a, .topbar li.current-menu-ancestor a {
-    font-weight: 700; }
+    .topbar .menu-topbar li {
+      margin-right: 2rem; }
+    .topbar .menu-topbar a {
+      color: var(--blanc);
+      letter-spacing: 1.4px;
+      line-height: 1;
+      text-decoration: none; }
+      .topbar .menu-topbar a:hover, .topbar .menu-topbar a:focus {
+        text-decoration: underline;
+        text-underline-offset: 1rem; }
+    .topbar .menu-topbar li.current-menu-item a, .topbar .menu-topbar li.current-menu-ancestor a {
+      font-weight: 700; }
   .topbar .compte {
     background-image: url("icons/mon-compte.png"); }
   .topbar .panier {
@@ -1298,6 +1282,10 @@ p.fil-ariane {
     .topbar {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem; } }
+
+/* Style liens de menu VOLET NAVIGATION MOBILE */
+.volet-navigation {
+  background-color: var(--blanc); }
 
 /*Style liens de menus MENU PRINCIPAL */
 .nav-main {
