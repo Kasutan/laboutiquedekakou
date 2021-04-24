@@ -1,0 +1,55 @@
+{
+    "key": "group_608464b19e243",
+    "title": "Image bannière",
+    "fields": [
+        {
+            "key": "field_608464c388d03",
+            "label": "Afficher une image bannière",
+            "name": "kakou_page_banniere",
+            "type": "image",
+            "instructions": "Format recommandé JPG. Taille recommandée : 1920px de large par 600px de haut.\r\nLaisser ce champ vide pour ne pas afficher de bannière.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "0.3",
+            "mime_types": "jpg, jpeg"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1619289469
+}

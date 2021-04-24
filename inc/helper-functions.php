@@ -354,3 +354,16 @@ function kasutan_affiche_recherche($contexte='desktop') {
 		kasutan_picto(array('icon'=>'loupe','size'=>'33'))
 	);
 }
+
+/***************************************************************
+	Affiche l'image bannière
+/***************************************************************/
+function kasutan_page_banniere() {
+	if(!function_exists('get_field')) {
+		return;
+	}
+	$image_id=esc_attr(get_field('kakou_page_banniere'));
+	if(!empty($image_id)) {
+		printf('<div class="page-banniere">%s</div>',wp_get_attachment_image( $image_id, 'banniere'));
+	}
+}

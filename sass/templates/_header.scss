@@ -77,3 +77,16 @@
 /*--------------------------------------------------------------
 ## Entry-header
 --------------------------------------------------------------*/
+.page-banniere {
+	display: flex;
+	height:31vw;
+	width:100vw;
+	img {
+		object-fit: cover;
+		object-position: center;
+		width:100%;
+	}
+	@include bp(xxl) {
+		height:60rem;
+	}
+}

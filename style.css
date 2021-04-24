@@ -2029,6 +2029,22 @@ button.modaal-close {
 /*--------------------------------------------------------------
 ## Entry-header
 --------------------------------------------------------------*/
+.page-banniere {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 31vw;
+  width: 100vw; }
+  .page-banniere img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 100%; }
+  @media (min-width: 1920px) {
+    .page-banniere {
+      height: 60rem; } }
+
 .archive .actualites, .blog .actualites {
   display: -webkit-box;
   display: -ms-flexbox;
