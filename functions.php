@@ -245,9 +245,18 @@ add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 * Image sizes. Work first with medium and large in admin if possible
 * https://developer.wordpress.org/reference/functions/add_image_size/
 */
+/*Autres tailles réglées en bo : 
+	thumbnail 150
+	medium = woocommerce_medium 520 
+	large 1000 x 600 
+	medium_large 768
+	woocommerce_single = shop_single 520 
+	woocommerce_thumbnail = shop_catalog 330
+	woocommerce_gallery_thumbnail = shop_thumbnail 100 
+	1536x1536
 
-//add_image_size('banniere',1600,700,false);
-//add_image_size('logo',160,150,false);
+*/
+add_image_size('banniere',1920,600,false);
 
 /**
 * CPT, custom fields, custom taxonomies et functions associées
