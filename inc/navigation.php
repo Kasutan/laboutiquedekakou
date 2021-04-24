@@ -16,6 +16,18 @@
 * @return string HTML attributes.
 */
 
+/* walker for primary menu sub nav */
+class etcode_sublevel_walker extends Walker_Nav_Menu
+{
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto">%s</span></button><ul class="sub-menu">',kasutan_picto(array('icon'=>'angle')) );
+	}
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$output .= "</ul>";
+	}
+}
+
+
 /**
 * Toppbar
 *
@@ -28,7 +40,7 @@ function kasutan_menu_topbar() {
 		}
 		
 		?>
-		<button class="menu-toggle" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
+		<button class="menu-toggle picto" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
 			<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu', 'size'=>'28'));?>
 			<?php echo kasutan_picto(array('icon'=>'close', 'class' => 'fermer-menu','size'=>'28'));?>
 		</button>
@@ -36,14 +48,14 @@ function kasutan_menu_topbar() {
 			<?php
 			if( class_exists('etcode_sublevel_walker') ) {
 				wp_nav_menu( array(
-					'theme_location' => 'menu-mobile',
+					'theme_location' => 'mobile',
 					'menu_id'        => 'menu-mobile',
 					'walker' => new etcode_sublevel_walker,
 					'menu_class'=>'menu-mobile',
 				) );
 			} else {
 				wp_nav_menu( array(
-					'theme_location' => 'menu-mobile',
+					'theme_location' => 'mobile',
 					'menu_id'        => 'menu-mobile',
 					'menu_class'=>'menu-mobile',
 				) );
@@ -80,20 +92,6 @@ function ea_site_header() {
 add_action( 'tha_header_bottom', 'ea_site_header', 11 );
 
 
-/* walker for primary menu sub nav 
-class etcode_sublevel_walker extends Walker_Nav_Menu
-{
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .=sprintf('<button class="ouvrir-sous-menu"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-mobile">%s</span><span class="picto-desktop">%s</span></button><ul class="sub-menu">',kasutan_picto(array('icon'=>'angle')),kasutan_picto(array('icon'=>'angle-bas')));
-
-		$output.=sprintf('<li><button class="fermer-sous-menu">%s<span> Retour</span></button></li>',
-			kasutan_picto(array('icon'=>'angle'))
-		);
-	}
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "</ul>";
-	}
-}*/
 
 
 /**

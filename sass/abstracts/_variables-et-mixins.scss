@@ -56,20 +56,10 @@ $colors: (
 
 @mixin bouton {
 	border: none;
-	border-radius: 1rem;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1em;
-	font-weight:400;
-	letter-spacing: 1.05px;
-	line-height: 1.1;
-	min-height:4.4rem;
-	min-width:21rem;
 	padding: 1rem 2rem;
 	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: all var(--transition);
 	vertical-align: middle;
 }
 

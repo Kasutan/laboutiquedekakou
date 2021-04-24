@@ -67,7 +67,7 @@ p.fil-ariane {
 	}
 }
 
-.menu-toggle {
+button.menu-toggle {
 	display: block;
 	&:focus {
 		outline: none;
@@ -102,7 +102,7 @@ p.fil-ariane {
 }
 
 @include bp(lg) { 
-	.menu-toggle {
+	button.menu-toggle {
 		display: none;
 	}
 	.nav-topbar-gauche, .nav-main { //menus affichés en desktop
@@ -318,22 +318,13 @@ p.fil-ariane {
 }
 
 //Bouton recherche
-.recherche {
-	background-color: transparent;
-	border:none;
-	border-radius:0;
-	min-width:unset;
+button.recherche {
 	padding:0;
-	transition:all 0.3s;
 	width:2rem;
 	@include bp(xl) {
 		width:3rem;
 	}
-	svg {
-		max-width:100%;
-	}
 	&:hover, &:focus {
-		background-color: transparent;
 		transform:scale(1.1);
 		svg path {
 			fill:var(--bleu);

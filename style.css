@@ -945,32 +945,32 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
+button:not(.picto),
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-a.button,
+a.button:not(.picto),
 a.wp-block-button__link {
   border: none;
-  border-radius: 1rem;
   cursor: pointer;
   display: inline-block;
+  padding: 1rem 2rem;
+  text-align: center;
+  vertical-align: middle;
+  background: var(--bleu-bouton);
+  border-radius: 1rem;
+  color: var(--blanc);
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 1.05px;
   line-height: 1.1;
   min-height: 4.4rem;
   min-width: 21rem;
-  padding: 1rem 2rem;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all var(--transition);
-  transition: all var(--transition);
-  vertical-align: middle;
-  background: var(--bleu-bouton);
-  color: var(--blanc); }
-  button:hover, button:focus, button:active,
+  transition: all var(--transition); }
+  button:not(.picto):hover, button:not(.picto):focus, button:not(.picto):active,
   input[type="button"]:hover,
   input[type="button"]:focus,
   input[type="button"]:active,
@@ -980,22 +980,38 @@ a.wp-block-button__link {
   input[type="submit"]:hover,
   input[type="submit"]:focus,
   input[type="submit"]:active,
-  a.button:hover,
-  a.button:focus,
-  a.button:active,
+  a.button:not(.picto):hover,
+  a.button:not(.picto):focus,
+  a.button:not(.picto):active,
   a.wp-block-button__link:hover,
   a.wp-block-button__link:focus,
   a.wp-block-button__link:active {
     background: var(--bleu-fonce);
     outline: none;
     text-decoration: none; }
-  button:focus-visible,
+  button:not(.picto):focus-visible,
   input[type="button"]:focus-visible,
   input[type="reset"]:focus-visible,
   input[type="submit"]:focus-visible,
-  a.button:focus-visible,
+  a.button:not(.picto):focus-visible,
   a.wp-block-button__link:focus-visible {
     outline: solid 1px var(--bleu-fonce); }
+
+button.picto,
+a.button.picto {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  button.picto svg,
+  a.button.picto svg {
+    max-width: 100%; }
 
 input[type="text"],
 input[type="email"],
@@ -1170,15 +1186,15 @@ p.fil-ariane {
     margin: 0;
     padding-left: 0; }
 
-.menu-toggle {
+button.menu-toggle {
   display: block; }
-  .menu-toggle:focus {
+  button.menu-toggle:focus {
     outline: none; }
-  .menu-toggle svg.fermer-menu {
+  button.menu-toggle svg.fermer-menu {
     display: none; }
-  .menu-toggle[aria-expanded=true] svg.menu {
+  button.menu-toggle[aria-expanded=true] svg.menu {
     display: none; }
-  .menu-toggle[aria-expanded=true] svg.fermer-menu {
+  button.menu-toggle[aria-expanded=true] svg.fermer-menu {
     display: block; }
 
 .volet-navigation.toggled {
@@ -1201,7 +1217,7 @@ p.fil-ariane {
   z-index: 10; }
 
 @media (min-width: 960px) {
-  .menu-toggle {
+  button.menu-toggle {
     display: none; }
   .nav-topbar-gauche, .nav-main {
     display: -webkit-box;
@@ -1381,25 +1397,16 @@ p.fil-ariane {
           font-weight: 400;
           left: 0.5rem; }
 
-.recherche {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  min-width: unset;
+button.recherche {
   padding: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
   width: 2rem; }
   @media (min-width: 1400px) {
-    .recherche {
+    button.recherche {
       width: 3rem; } }
-  .recherche svg {
-    max-width: 100%; }
-  .recherche:hover, .recherche:focus {
-    background-color: transparent;
+  button.recherche:hover, button.recherche:focus {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
-    .recherche:hover svg path, .recherche:focus svg path {
+    button.recherche:hover svg path, button.recherche:focus svg path {
       fill: var(--bleu); }
 
 /*Animations*/
