@@ -339,14 +339,18 @@ endif;
 /**
 * Afficher le volet de recherche dans l'en-tête
 */
-function kasutan_affiche_volet_recherche() {
+function kasutan_affiche_recherche($contexte='desktop') {
 	if(!function_exists('kasutan_picto') ) {
 		return;
 	}
-	echo '<div class="volet-header recherche" id="volet-recherche" role="form" aria-expanded="false" >';
-		echo kasutan_picto(array('icon'=>'loupe'));
-		echo '<p class="h2">Rechercher un contenu</p>';
+	//volet avec formulaire de recherche
+	printf('<div class="volet-recherche %s" id="volet-recherche-%s" role="form" aria-expanded="false" >',$contexte,$contexte);
 		get_search_form();
-		printf('<button id="fermer-recherche" class="fermer"><span>Fermer</span>%s',kasutan_picto(array('icon'=>'croix-blanc')));
 	echo '</div>';
+	//bouton ouvrir/fermer volet de recherche
+	printf('<div class="centreur"><button id="ouvrir-recherche-%s" aria-expanded="false" class="recherche" aria-controls="#volet-recherche-%s" aria-label="Ouvrir le formulaire de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
+		$contexte,
+		$contexte,
+		kasutan_picto(array('icon'=>'loupe','size'=>'33'))
+	);
 }

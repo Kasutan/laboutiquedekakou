@@ -16,45 +16,26 @@
 		
 		
 		/*********Afficher/masquer le volet de recherche **********/
-		var voletNavigation=$('#volet-navigation');
-		function fermeMenuMobile(){
-			if($(voletNavigation).hasClass('toggled')) {
-				$(voletNavigation).removeClass('toggled');
-				$(voletNavigation).attr('aria-expanded',false);
-				$('.menu-toggle').attr('aria-expanded',false);
-			}
-		}
 
-		var voletRecherche=$('#volet-recherche');
-		if($(voletRecherche).length>0) {
-			var boutonRecherche=$("#ouvrir-recherche");
+		//Au chargement de la page, masquer les volets de recherche
+		$('.volet-recherche').css('width',0);
+
+		var boutonRecherche=$("button.recherche");
+		if($(boutonRecherche).length>0) {
 			$(boutonRecherche).click(function(){
+				var voletRecherche=$(this).attr('aria-controls');
 				if($(boutonRecherche).attr('aria-expanded')=="false") {
-					$(voletRecherche).fadeIn('slow');
-					$(voletRecherche).css('display','flex');
+					$(voletRecherche).css('width','325px');
 					$(voletRecherche).attr('aria-expanded','true');
 					$(boutonRecherche).attr('aria-expanded','true');
 					$('#volet-recherche .search-field').focus();
-
-					$('body,html').animate(
-						{scrollTop : 0},
-						400,
-						function() {
-							fermeMenuMobile();
-						}
-					);
 					
 				} else {
-					$(voletRecherche).fadeOut('slow');
+					$(voletRecherche).css('width','0');
 					$(voletRecherche).attr('aria-expanded','false');
 					$(boutonRecherche).attr('aria-expanded','false');
 				}
 
-			});
-			$('#fermer-recherche').click(function(){
-				$(voletRecherche).fadeOut('slow');
-				$(voletRecherche).attr('aria-expanded','false');
-				$(boutonRecherche).attr('aria-expanded','false');
 			});
 		}
 		

@@ -1,5 +1,5 @@
 
-<form role="search" method="get" class="flex search-form" action="/" >
+<form role="search" method="get" class="search-form" action="/" >
 	<label>
 		<span class="screen-reader-text">Votre recherche</span>
 		<input class="search-field" 

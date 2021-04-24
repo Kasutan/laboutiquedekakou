@@ -33,25 +33,23 @@ function kasutan_menu_topbar() {
 			<?php echo kasutan_picto(array('icon'=>'close', 'class' => 'fermer-menu','size'=>'28'));?>
 		</button>
 		<div class="volet-navigation"  id="volet-navigation">
-		<?php
-		if( class_exists('etcode_sublevel_walker') ) {
-			wp_nav_menu( array(
-				'theme_location' => 'menu-mobile',
-				'menu_id'        => 'menu-mobile',
-				'walker' => new etcode_sublevel_walker
-			) );
-		} else {
-			wp_nav_menu( array(
-				'theme_location' => 'menu-mobile',
-				'menu_id'        => 'menu-mobile',
-			) );
-		}
-				
-			//bouton ouvrir volet de recherche
-			printf('<button id="ouvrir-recherche" aria-expanded="false" class="recherche bouton" aria-controls="volet-recherche" aria-label="Ouvrir le volet de recherche">%s<span>Rechercher</span></button>',
-				kasutan_picto(array('icon'=>'loupe'))
-			);
-
+			<?php
+			if( class_exists('etcode_sublevel_walker') ) {
+				wp_nav_menu( array(
+					'theme_location' => 'menu-mobile',
+					'menu_id'        => 'menu-mobile',
+					'walker' => new etcode_sublevel_walker
+				) );
+			} else {
+				wp_nav_menu( array(
+					'theme_location' => 'menu-mobile',
+					'menu_id'        => 'menu-mobile',
+				) );
+			}
+					
+			if(function_exists('kasutan_affiche_recherche')) {
+				kasutan_affiche_recherche('mobile');
+			}
 		
 		echo '</div>'; //Fin volet navigation
 
@@ -72,10 +70,9 @@ function ea_site_header() {
 		if( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
 		}
-		//bouton ouvrir volet de recherche
-		printf('<div class="centreur"><button id="ouvrir-recherche" aria-expanded="false" class="recherche" aria-controls="volet-recherche" aria-label="Ouvrir le volet de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
-			kasutan_picto(array('icon'=>'loupe','size'=>'33'))
-		);
+		if(function_exists('kasutan_affiche_recherche')) {
+			kasutan_affiche_recherche('desktop');
+		}
 	echo '</nav>';
 
 }
