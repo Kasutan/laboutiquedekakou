@@ -58,6 +58,31 @@ body.pleine-largeur .entry-content {
 	padding: 0 var(--padding-x-pleine-largeur);
 }
 
+body.deux-colonnes .entry-content {
+	padding: 0 var(--padding-x);
+	@include bp(md) {
+		--taille-image:30rem;
+		position:relative;
+		min-height: calc(var(--taille-image) + 2rem);
+		padding-left : calc(var(--padding-x) + var(--taille-image) + 3.5rem);
+		> .thumbnail {
+			display: flex;
+			height:var(--taille-image);
+			left:var(--padding-x);
+			position: absolute;
+			top:0;
+			width:var(--taille-image);
+			img {
+				object-fit: cover;
+				object-position: center;
+				width: 100%;
+			}
+		}
+	}
+	@include bp(lg) {
+		--taille-image : 50rem;
+	}
+}
 
 
 .alignfull , .bleed-container {

@@ -17,6 +17,7 @@ function ea_page_layout_options() {
 		'largeur-normale',
 		'largeur-reduite',
 		'pleine-largeur',
+		'deux-colonnes'
 	];
 }
 
@@ -36,6 +37,9 @@ function ea_page_layout_metabox() {
 	foreach( $layouts as $layout ) {
 		$label = str_replace( '-', ' ', $layout );
 		$choices[ $layout ] = ucwords( $label );
+		if($layout==='deux-colonnes') {
+			$choices[ $layout ] .=' (image à gauche)';
+		}
 	}
 
 	acf_add_local_field_group(array(
@@ -106,6 +110,10 @@ function ea_page_layout( $id = false ) {
 
 	$available_layouts = ea_page_layout_options();
 	$layout = 'largeur-normale';
+
+	if(is_single()) {
+		$layout='deux-colonnes';
+	}
 
 	if( is_singular() || $id ) {
 		$id = $id ? intval( $id ) : get_the_ID();

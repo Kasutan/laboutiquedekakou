@@ -13,7 +13,7 @@ echo '<article class="post-summary">';
 	ea_post_summary_image();
 
 	echo '<div class="post-summary__content">';
-		ea_entry_category();
+		ea_entry_category('archive');
 		ea_post_summary_title();
 	echo '</div>';
 

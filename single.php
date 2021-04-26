@@ -8,39 +8,52 @@
  * @license      GPL-2.0+
 **/
 
+
+// Breadcrumbs above page title
+add_action( 'tha_entry_top', 'kasutan_fil_ariane', 8 );
+
+// Image bannière au-dessus de la catégorie
+add_action( 'tha_entry_top', 'kasutan_page_banniere', 9 );
+
 // Entry category in header
-add_action( 'tha_entry_top', 'ea_entry_category', 8 );
-add_action( 'tha_entry_top', 'ea_entry_author', 12 );
-add_action( 'tha_entry_top', 'ea_entry_header_share', 13 );
+add_action( 'tha_entry_top', 'ea_entry_category', 10 );
 
-/**
- * Entry header share
- *
- */
-function ea_entry_header_share() {
-	do_action( 'ea_entry_header_share' );
-}
+//Titre déplacé dans le contenu
+remove_action( 'tha_entry_top', 'ea_entry_title' );
 
-/**
- * After Entry
- *
- */
-function ea_single_after_entry() {
-	echo '<div class="after-entry">';
 
-	// Breadcrumbs
-	kasutan_fil_ariane();
+//Titre et date insérés avant le contenu pour mise en page grille
+add_action('tha_entry_content_before', 'kasutan_single_entry_content_before');
+function kasutan_single_entry_content_before() {
+	//image 
+	if(function_exists('kasutan_affiche_thumbnail_dans_contenu')) {
+		kasutan_affiche_thumbnail_dans_contenu();
+	}
+	
+	//titre 
+	printf('<h1 class="h2 single-title">%s</h1>',get_the_title());
 
 	// Publish date
-	echo '<p class="publish-date">Published on ' . get_the_date( 'F j, Y' ) . '</p>';
-
-	// Sharing
-	do_action( 'ea_entry_footer_share' );
-	
-	echo '</div>';
+	echo '<p class="publish-date">'. get_the_date('d/m/Y') . '</p>';
 
 }
-add_action( 'tha_content_while_after', 'ea_single_after_entry', 8 );
+
+//Retour vers la page d'archive
+add_action('tha_entry_bottom','kasutan_single_entry_bottom');
+function kasutan_single_entry_bottom() {
+	$post_type=get_post_type();
+	$archive_id='';
+	if($post_type==='post') {
+		$archive_id=get_option('page_for_posts');
+	}
+	//TODO ID vers page producteur
+	if(!empty($archive_id)) {
+		printf('<a href="%s" class="retour-archive">Retourner à la page %s</a>',
+			get_the_permalink( $archive_id), //TODO texte en option
+			get_the_title($archive_id)
+		);
+	}
+}
 
 // Build the page
 require get_template_directory() . '/index.php';

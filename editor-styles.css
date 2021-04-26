@@ -638,6 +638,33 @@ body.largeur-reduite .entry-content {
 body.pleine-largeur .entry-content {
   padding: 0 var(--padding-x-pleine-largeur); }
 
+body.deux-colonnes .entry-content {
+  padding: 0 var(--padding-x); }
+  @media (min-width: 768px) {
+    body.deux-colonnes .entry-content {
+      --taille-image:30rem;
+      position: relative;
+      min-height: calc(var(--taille-image) + 2rem);
+      padding-left: calc(var(--padding-x) + var(--taille-image) + 3.5rem); }
+      body.deux-colonnes .entry-content > .thumbnail {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: var(--taille-image);
+        left: var(--padding-x);
+        position: absolute;
+        top: 0;
+        width: var(--taille-image); }
+        body.deux-colonnes .entry-content > .thumbnail img {
+          -o-object-fit: cover;
+          object-fit: cover;
+          -o-object-position: center;
+          object-position: center;
+          width: 100%; } }
+  @media (min-width: 960px) {
+    body.deux-colonnes .entry-content {
+      --taille-image: 50rem; } }
+
 .alignfull, .bleed-container {
   width: 100vw;
   margin-left: 50%;
