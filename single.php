@@ -41,16 +41,23 @@ function kasutan_single_entry_content_before() {
 //Retour vers la page d'archive
 add_action('tha_entry_bottom','kasutan_single_entry_bottom');
 function kasutan_single_entry_bottom() {
+	if(!function_exists('get_field')) {
+		return;
+	}
 	$post_type=get_post_type();
-	$archive_id='';
+	$archive_id=$texte='';
 	if($post_type==='post') {
 		$archive_id=get_option('page_for_posts');
+		$texte=esc_html(get_field('texte_retour_blog','option'));
+	} elseif($post_type==='producteur') {
+		$archive_id=esc_attr(get_field('page_producteurs','option'));
+		$texte=esc_html(get_field('texte_retour_producteurs','option'));
 	}
-	//TODO ID vers page producteur
-	if(!empty($archive_id)) {
-		printf('<a href="%s" class="retour-archive">Retourner à la page %s</a>',
-			get_the_permalink( $archive_id), //TODO texte en option
-			get_the_title($archive_id)
+	
+	if(!empty($archive_id) && !empty($texte)) {
+		printf('<a href="%s" class="retour-archive">%s</a>',
+			get_the_permalink( $archive_id), 
+			$texte
 		);
 	}
 }

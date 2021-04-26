@@ -3,33 +3,9 @@
     "title": "Options générales",
     "fields": [
         {
-            "key": "field_5f0c2bdaaf7b2",
-            "label": "Image bannière par défaut",
-            "name": "banniere_defaut",
-            "type": "image",
-            "instructions": "Cette image sera utilisée comme image bannière sous le titre pour les pages\/articles\/ressources dont l'image mise en avant n'est pas définie.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "JPG, PNG"
-        },
-        {
             "key": "field_5f0c602815106",
-            "label": "Page des actualités",
-            "name": "page_actualites",
+            "label": "Page des producteurs",
+            "name": "page_producteurs",
             "type": "post_object",
             "instructions": "Réglage utilisé pour le fil d'ariane",
             "required": 1,
@@ -88,6 +64,44 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6087253e2438f",
+            "label": "Texte du lien retourner au blog",
+            "name": "texte_retour_blog",
+            "type": "text",
+            "instructions": "Affiché au bas de chaque article du blog",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Retourner au blog",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6087257824390",
+            "label": "Texte du lien retourner aux producteurs",
+            "name": "texte_retour_producteurs",
+            "type": "text",
+            "instructions": "Affiché au bas de chaque fiche producteur",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Retourner aux producteurs",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -107,5 +121,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618854332
+    "modified": 1619469723
 }
