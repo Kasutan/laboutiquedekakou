@@ -220,12 +220,13 @@ function kasutan_scripts() {
 	wp_enqueue_style( 'kakou-google-font', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
 	// Move jQuery to footer
+	//TODO bien vérifier que ça ne perturbe pas WooCommerce !
 	if( ! is_admin() ) {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
 		wp_enqueue_script( 'jquery' );
 	}
-	
+
 	wp_enqueue_script( 'kakou-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'kakou-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -234,7 +235,7 @@ function kasutan_scripts() {
 
 	wp_register_script( 'kakou-modaal',get_template_directory_uri() . '/lib/modaal/modaal.min.js', array('jquery'), '0.4.4', true );
 
-	wp_register_script( 'kakou-list',get_template_directory_uri() . '/lib/list/list.min.js', array(), '1.5.0', true );
+	wp_register_script( 'kakou-list',get_template_directory_uri() . '/lib/list/list.min.js', array('jquery'), '1.5.0', true );
 
 	wp_enqueue_script( 'kakou-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'kakou-owl-carousel', 'kakou-modaal','kakou-list'), '', true );
 }

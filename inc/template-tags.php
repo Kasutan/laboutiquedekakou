@@ -228,7 +228,30 @@ function kasutan_affiche_thumbnail_dans_contenu() {
 *
 */
 function kasutan_affiche_filtre_taxonomy($taxonomy) {
-	echo '<p>Filtre ici pour '.$taxonomy.'</p>';
+	$terms = get_terms( array(
+		'taxonomy' => $taxonomy //Ordre modifié par le plugin Taxonomy Order
+	) );
+	if(empty($terms)) {
+		return;
+	}
+	printf('<form id="filtre-liste" class="filtre %s">',$taxonomy);
+		echo '<p class="screen-reader-text">Filtrer par type de contenu</p>';
+		echo '<input type="radio" name="filtre" id="tous" value="tous" class="type filtre-input" checked>';
+		echo '<label for="tous" class="filtre-label">Tous</label>';
+		foreach($terms as $term) : 
+			$nom=$term->name;
+			$slug=$term->slug;
+			echo '<div class="filtre-sep">|</div>';
+			printf('<input type="radio" id="%s" name="filtre" value="%s" class="type filtre-input">',
+				$slug,
+				$slug
+			);
+			printf('<label for="%s" class="filtre-label">%s</label>',
+				$slug,
+				$nom
+			);
+		endforeach;
+	echo '</form>';
 }
 
 /**
@@ -239,13 +262,13 @@ function kasutan_affiche_filtre_taxonomy($taxonomy) {
 
 function kasutan_affiche_bloc_deux_colonnes_alternees($args) {
 	printf('<%s class="colonnes-alternees">',$args['balise']);
+		if(!empty($args['type_producteur'])) {
+			printf('<span class="term screen-reader-text">%s</span>',$args['type_producteur']); //pour le filtre
+		}
 		printf('<div class="col-image">%s</div>',wp_get_attachment_image( $args['image'], 'large'));
 		echo '<div class="col-texte">';
 			printf('<h2 class="titre">%s</h2>',$args['titre']);
 			printf('<div class="texte">%s</div>',$args['texte']);
-			if(!empty($args['type_producteur'])) {
-				printf('<span class="type_producteur screen-reader-text">%s</span>',$args['type_producteur']);
-			}
 		echo '</div>';
 	printf('</%s">',$args['balise']);
 }

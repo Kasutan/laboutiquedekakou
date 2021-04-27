@@ -29,13 +29,13 @@ if(empty($producteurs)) {
 	return;
 }
 
-printf('<section class="acf-producteurs %s">', $className);
+printf('<section id="liste-filtrable" class="acf-producteurs %s" data-pagination="%s">', $className,$pagination);
 	if($filtre && function_exists('kasutan_affiche_filtre_taxonomy')) {
 		kasutan_affiche_filtre_taxonomy('type_producteur');
 	}
 
 	if(function_exists('kasutan_affiche_bloc_deux_colonnes_alternees')) {
-		printf('<ul class="list producteurs" data-pagination="%s">',$pagination);
+		printf('<ul class="list producteurs">');
 		foreach($producteurs as $producteur) {
 			$producteur_id=$producteur->ID;
 			$type_producteur=ea_first_term(
@@ -54,7 +54,8 @@ printf('<section class="acf-producteurs %s">', $className);
 			));
 		}
 
-		echo '<ul>';
+		echo '</ul>';
+		echo '<ul class="pagination"></ul>';
 	}
 
 if( have_rows('producteurs') ):
