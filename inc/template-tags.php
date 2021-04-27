@@ -99,14 +99,37 @@ if ( ! function_exists( 'kasutan_fil_ariane' ) ) :
 				strip_tags(get_the_title($accueil))
 			);
 
+			$post_type=get_post_type();
 			//Afficher la page des actualités pour les articles (single ou archive de catégorie ou archive des articles ou archive de tag)
-			if ( (is_single() && 'post' === get_post_type()) || is_category() || is_tag() || is_home() ) :
+			if ( (is_single() && 'post' === $post_type) || is_category() || is_tag() ) :
 				//l'ID de la page est stockée dans les options ACF
-				$actus=kasutan_get_page_ID('page_actualites'); 
+				$actus=get_option('page_for_posts'); 
 				if($actus) :
 					printf('<a href="%s">%s</a> > ',
 						get_the_permalink( $actus),
 						strip_tags(get_the_title($actus))
+					);
+				endif;
+				//Ajouter la catégorie d'article pour les posts single
+				if(is_single()) {
+					$term=ea_first_term();
+					if(!empty($term)) {
+						printf('<a href="%s">%s</a> > ',
+							get_category_link( $term ),
+							$term->name
+						);
+					}
+				}
+			endif;
+
+			//Afficher la page des producteurs pour les fiches producteurs
+			if ( (is_single() && 'producteur' === $post_type) ):
+				//l'ID de la page est stockée dans les options ACF
+				$page_producteurs=kasutan_get_page_ID('page_producteurs'); ; 
+				if($page_producteurs) :
+					printf('<a href="%s">%s</a> > ',
+						get_the_permalink( $page_producteurs),
+						strip_tags(get_the_title($page_producteurs))
 					);
 				endif;
 			endif;
@@ -136,7 +159,7 @@ if ( ! function_exists( 'kasutan_fil_ariane' ) ) :
 			elseif (is_tag()) :  //archives tags d'articles
 				echo '<span class="current">'.strip_tags(single_tag_title( '', false )).'</span>';
 			elseif (is_home()) :
-				echo '<span class="current">Tous les articles</span>';
+				echo '<span class="current">Blog</span>';
 			elseif (is_search()) :
 				echo '<span class="current">Recherche : '.get_search_query().'</span>';
 			elseif (is_404()) :
