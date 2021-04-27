@@ -44,11 +44,11 @@ function ea_page_layout_metabox() {
 
 	acf_add_local_field_group(array(
 		'key' => 'group_5dd714b369526',
-		'title' => 'Largeur page',
+		'title' => 'Mise en page',
 		'fields' => array(
 			array(
 				'key' => 'field_5dd715a02eaf0',
-				'label' => 'Largeur page',
+				'label' => 'Mise en page',
 				'name' => 'ea_page_layout',
 				'type' => 'select',
 				'instructions' => '',
