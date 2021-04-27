@@ -29,7 +29,7 @@ gulp.task('styles', function() {
 // Compile Sass for blocks
 gulp.task('blocks-styles', function() {
     
-	return gulp.src('blocks/*/*.scss')
+	return gulp.src('partials/blocks/*/*.scss')
 		.pipe(sass())
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions'],
@@ -42,6 +42,7 @@ gulp.task('blocks-styles', function() {
 });
 
 gulp.task('all-styles', ['styles','blocks-styles']);
+gulp.task('styles-all', ['styles','blocks-styles']);
 
 // Watch files for changes (without Browser-Sync)
 gulp.task('watch', function() {
@@ -50,7 +51,7 @@ gulp.task('watch', function() {
 	gulp.watch('sass/*/*.scss', ['styles']);
 
 	// Watch blocks .scss files
-	gulp.watch('blocks/*/*.scss', ['blocks-styles']);
+	gulp.watch('partials/blocks/*/*.scss', ['blocks-styles']);
 
 
 

@@ -155,26 +155,29 @@ class BE_ACF_Customizations {
 		if( ! function_exists('acf_register_block_type') )
 			return;
 
-		/*********Bloc 1***************/
+		/*********Bloc tous producteurs ***************/
 		acf_register_block_type( [
-			'name'            => 'acf-visuels',
-			'title'           => 'Bloc visuels',
-			'description'     => 'Galerie de visuels, cliquables ou non',
-			'render_callback' => 'kasutan_bloc_visuels',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/visuels/visuels.css',
-			'enqueue_script' => get_stylesheet_directory_uri() . '/partials/blocks/visuels/visuels.js',
+			'name'            => 'tous-producteurs',
+			'title'           => 'Bloc tous les producteurs',
+			'description'     => 'Liste de tous les producteurs, avec filtre et pagination',
+			'render_template' => 'partials/blocks/tous-producteurs/tous-producteurs.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/tous-producteurs/tous-producteurs.css',
 			'category'        => 'kakou',
-			'icon'            => 'format-gallery', 
+			'icon'            => 'buddicons-replies', 
 			'mode'			=> "edit",
 			'supports' => array( 
 				'mode' => false,
 				'align'=>false,
-				'multiple'=>true,
-				'anchor' => true,
+				'multiple'=>false,
+				'anchor' => false,
 			),
-			'keywords'        => [ 'visuels', 'kakou'],
+			'keywords'        => [ 'producteur', 'kakou'],
 		] );
-		require_once(get_stylesheet_directory_uri().'/partials/blocks/visuels/visuels.php');
+		
+
+
+
+
 	}
 }
 new BE_ACF_Customizations();

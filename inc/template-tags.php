@@ -222,3 +222,30 @@ function kasutan_affiche_thumbnail_dans_contenu() {
 		echo '</div>';
 	}
 }
+
+/**
+* Filtre pour une taxonomie
+*
+*/
+function kasutan_affiche_filtre_taxonomy($taxonomy) {
+	echo '<p>Filtre ici pour '.$taxonomy.'</p>';
+}
+
+/**
+* Deux colonnes avec texte et image
+* Utilisé pour le bloc ACF du même nom et pour la liste de producteurs
+* Argument : tableau contenant balise, titre, texte, image, type_producteur
+*/
+
+function kasutan_affiche_bloc_deux_colonnes_alternees($args) {
+	printf('<%s class="colonnes-alternees">',$args['balise']);
+		printf('<div class="col-image">%s</div>',wp_get_attachment_image( $args['image'], 'large'));
+		echo '<div class="col-texte">';
+			printf('<h2 class="titre">%s</h2>',$args['titre']);
+			printf('<div class="texte">%s</div>',$args['texte']);
+			if(!empty($args['type_producteur'])) {
+				printf('<span class="type_producteur screen-reader-text">%s</span>',$args['type_producteur']);
+			}
+		echo '</div>';
+	printf('</%s">',$args['balise']);
+}
