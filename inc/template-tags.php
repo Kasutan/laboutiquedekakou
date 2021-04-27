@@ -25,7 +25,13 @@ add_action( 'tha_entry_top', 'ea_entry_title' );
  *
  */
 function ea_entry_category($contexte='archive') {
-	$term = ea_first_term();
+	$post_type=get_post_type();
+	$term=false;
+	if($post_type==='post') {
+		$term = ea_first_term();
+	} elseif($post_type==='producteur') {
+		$term=ea_first_term(array('taxonomy'=>'type_producteur'));
+	}
 	if( !empty( $term ) && ! is_wp_error( $term ) )
 		if($contexte==='archive') {
 			echo '<p class="entry-category"><a href="' . get_term_link( $term, 'category' ) . '">' . $term->name . '</a></p>';

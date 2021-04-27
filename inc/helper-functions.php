@@ -40,46 +40,36 @@ function ea_first_term( $args = [] ) {
 	$field = !empty( $args['field'] ) ? esc_attr( $args['field'] ) : false;
 	$term = false;
 
-	// Use WP SEO Primary Term
-	// from https://github.com/Yoast/wordpress-seo/issues/4038
-	if( class_exists( 'WPSEO_Primary_Term' ) ) {
-		$term = get_term( ( new WPSEO_Primary_Term( $args['taxonomy'],  $post_id ) )->get_primary_term(), $args['taxonomy'] );
-	}
+	$terms = get_the_terms( $post_id, $args['taxonomy'] );
 
-	// Fallback on term with highest post count
-	if( ! $term || is_wp_error( $term ) ) {
+	if( empty( $terms ) || is_wp_error( $terms ) )
+		return false;
 
-		$terms = get_the_terms( $post_id, $args['taxonomy'] );
+	// If there's only one term, use that
+	if( 1 == count( $terms ) ) {
+		$term = array_shift( $terms );
 
-		if( empty( $terms ) || is_wp_error( $terms ) )
-			return false;
+	// If there's more than one...
+	} else {
 
-		// If there's only one term, use that
-		if( 1 == count( $terms ) ) {
-			$term = array_shift( $terms );
+		// Sort by term order if available
+		// @uses WP Term Order plugin
+		if( isset( $terms[0]->order ) ) {
+			$list = array();
+			foreach( $terms as $term )
+				$list[$term->order] = $term;
+			ksort( $list, SORT_NUMERIC );
 
-		// If there's more than one...
+		// Or sort by post count
 		} else {
-
-			// Sort by term order if available
-			// @uses WP Term Order plugin
-			if( isset( $terms[0]->order ) ) {
-				$list = array();
-				foreach( $terms as $term )
-					$list[$term->order] = $term;
-				ksort( $list, SORT_NUMERIC );
-
-			// Or sort by post count
-			} else {
-				$list = array();
-				foreach( $terms as $term )
-					$list[$term->count] = $term;
-				ksort( $list, SORT_NUMERIC );
-				$list = array_reverse( $list );
-			}
-
-			$term = array_shift( $list );
+			$list = array();
+			foreach( $terms as $term )
+				$list[$term->count] = $term;
+			ksort( $list, SORT_NUMERIC );
+			$list = array_reverse( $list );
 		}
+
+		$term = array_shift( $list );
 	}
 
 	// Output
