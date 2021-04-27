@@ -1,0 +1,65 @@
+.colonnes-alternees {
+	//Mobile : 2 colonnes l'une au-dessus de l'autre
+	.col-image {
+		height: 60vw; //forcer ratio de l'image
+		display: flex;
+		width:100%;
+		img {
+			@include object-fit;
+		}
+	}
+	.col-texte {
+		padding:var(--margin-y-2) var(--padding-x);
+
+	}
+	
+	//Tablette : 2 colonnes l'une à côté de l'autre, image à gauche
+	@include bp(md) {
+		display:flex;
+		.col-image, .col-texte {
+			flex-basis : 50%;
+		}
+		.col-image {
+			height: 31vw;
+		}
+		.col-texte {
+			padding-left:var(--margin-y-1);
+		}
+
+		//image à droite et texte à gauche pour les éléments en position impaire
+		&:nth-of-type(2n+1) {
+			flex-direction: row-reverse;
+			.col-texte {
+				padding-left:var(--padding-x);
+				padding-right:var(--margin-y-1);
+			}
+		}
+	}
+	//Grand écran : on augmente le padding des colonnes de texte
+	@include bp(lg) {
+		.col-texte {
+			padding:var(--margin-y-2);
+			padding-right:var(--padding-x); //texte à droite
+		}
+		&:nth-of-type(2n+1) {
+			.col-texte {
+				padding-left:var(--padding-x); //texte à gauche
+				padding-right:var(--margin-y-2);
+			}
+		}
+	}
+	//Très grand écran : on limite la largeur de l'ensemble et on fige la hauteur de l'image
+	@include bp(xxl) {
+		.col-image {
+			height:60rem;
+			padding-left:var(--padding-x-pleine-largeur); //image à gauche
+		}
+		&:nth-of-type(2n+1) {
+			.col-image {
+				padding-right:var(--padding-x-pleine-largeur); //image à droite
+				padding-left:0;
+			}
+		}
+	
+	}
+}

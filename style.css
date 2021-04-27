@@ -656,9 +656,6 @@ body.largeur-normale .entry-content {
 body.largeur-reduite .entry-content {
   padding: 0 var(--padding-x-largeur-reduite); }
 
-body.pleine-largeur .entry-content {
-  padding: 0 var(--padding-x-pleine-largeur); }
-
 body.deux-colonnes .entry-content {
   padding: 0 var(--padding-x); }
   @media (min-width: 768px) {
@@ -2283,6 +2280,59 @@ button.modaal-close {
   transform: translateX(-50%);
   padding: 0 var(--padding-x-grille);
   margin-bottom: var(--margin-y); }
+
+.colonnes-alternees .col-image {
+  height: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .colonnes-alternees .col-image img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 100%; }
+
+.colonnes-alternees .col-texte {
+  padding: var(--margin-y-2) var(--padding-x); }
+
+@media (min-width: 768px) {
+  .colonnes-alternees {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .colonnes-alternees .col-image, .colonnes-alternees .col-texte {
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
+    .colonnes-alternees .col-image {
+      height: 31vw; }
+    .colonnes-alternees .col-texte {
+      padding-left: var(--margin-y-1); }
+    .colonnes-alternees:nth-of-type(2n+1) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse; }
+      .colonnes-alternees:nth-of-type(2n+1) .col-texte {
+        padding-left: var(--padding-x);
+        padding-right: var(--margin-y-1); } }
+
+@media (min-width: 960px) {
+  .colonnes-alternees .col-texte {
+    padding: var(--margin-y-2);
+    padding-right: var(--padding-x); }
+  .colonnes-alternees:nth-of-type(2n+1) .col-texte {
+    padding-left: var(--padding-x);
+    padding-right: var(--margin-y-2); } }
+
+@media (min-width: 1920px) {
+  .colonnes-alternees .col-image {
+    height: 60rem;
+    padding-left: var(--padding-x-pleine-largeur); }
+  .colonnes-alternees:nth-of-type(2n+1) .col-image {
+    padding-right: var(--padding-x-pleine-largeur);
+    padding-left: 0; } }
 
 .owl-nav {
   display: -webkit-box;

@@ -81,3 +81,9 @@ $colors: (
 	color:#727272;
 	opacity:1;
 }
+
+@mixin object-fit {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}

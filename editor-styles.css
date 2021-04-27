@@ -635,9 +635,6 @@ body.largeur-normale .entry-content {
 body.largeur-reduite .entry-content {
   padding: 0 var(--padding-x-largeur-reduite); }
 
-body.pleine-largeur .entry-content {
-  padding: 0 var(--padding-x-pleine-largeur); }
-
 body.deux-colonnes .entry-content {
   padding: 0 var(--padding-x); }
   @media (min-width: 768px) {
