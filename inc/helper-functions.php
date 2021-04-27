@@ -202,3 +202,14 @@ function kasutan_get_page_ID($nom) {
 
 	return $page;
 }
+
+/**
+* Enlever le s à la fin d'un mot
+*/
+function kasutan_enleve_s_final($mot) {
+	if(substr($mot,-1)==='s') {
+		return substr_replace($mot ,"", -1);
+	} else {
+		return $mot;
+	}
+}

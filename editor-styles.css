@@ -625,7 +625,7 @@ body {
       --padding-x: calc(50vw - 1613px/2);
       --padding-x-pleine-largeur: calc(50vw - 1920px/2); } }
 
-.site-main .fil-ariane, .site-main h1 {
+.site-main .fil-ariane, .site-main .entry-title {
   padding-left: var(--padding-x);
   padding-right: var(--padding-x); }
 

@@ -37,7 +37,7 @@ function ea_entry_category($contexte='archive') {
 			echo '<p class="entry-category"><a href="' . get_term_link( $term, 'category' ) . '">' . $term->name . '</a></p>';
 		} else {
 			//contexte single
-			echo '<p class="entry-category h1 entry-title">' . $term->name . '</p>';
+			echo '<p class="entry-category h1 entry-title">' . kasutan_enleve_s_final($term->name) . '</p>';
 		}
 		
 }

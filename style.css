@@ -646,7 +646,7 @@ body {
       --padding-x: calc(50vw - 1613px/2);
       --padding-x-pleine-largeur: calc(50vw - 1920px/2); } }
 
-.site-main .fil-ariane, .site-main h1 {
+.site-main .fil-ariane, .site-main .entry-title {
   padding-left: var(--padding-x);
   padding-right: var(--padding-x); }
 
@@ -2216,6 +2216,21 @@ button.modaal-close {
   .no-results .search-field {
     border: solid 1px var(--bleu);
     padding-left: 12px; }
+
+.single-title {
+  font-size: calc(42 * var(--taille-texte) / 21);
+  margin-bottom: 0;
+  text-align: left;
+  text-transform: unset; }
+
+.single .entry-content > p {
+  line-height: 1.7;
+  margin-bottom: 2em; }
+
+.entry-footer {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: var(--margin-y-1); }
 
 .wp-block-columns.antennes-regionales {
   -webkit-box-align: center;
