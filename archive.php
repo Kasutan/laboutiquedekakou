@@ -66,5 +66,27 @@ add_action( 'tha_content_while_before', 'ea_archive_header' );
 // Breadcrumbs
 add_action( 'ea_archive_header_before', 'kasutan_fil_ariane', 5 );
 
+//Filtre si c'est la page du blog + balises html pour que le filtre avec list.js fonctionne
+add_action('tha_content_while_before','kasutan_blog_content_while_before');
+function kasutan_blog_content_while_before() {
+	if(is_home() && function_exists('kasutan_affiche_filtre_taxonomy')) {
+		echo '<section id="liste-filtrable" data-pagination="4">';
+			kasutan_affiche_filtre_taxonomy('category');
+			echo '<ul class="list loop">';
+	} else {
+		//Simple conteneur pour la mise en page grille
+		echo '<ul class="loop">';
+	}
+}
+
+//Fermer les balises
+add_action('tha_content_while_after','kasutan_blog_content_while_after');
+function kasutan_blog_content_while_after() {
+	if(is_home() && function_exists('kasutan_affiche_filtre_taxonomy')) {
+		echo '</ul><ul class="pagination"></ul></section>';
+	} else {
+		echo '</ul>';
+	}
+}
 // Build the page
 require get_template_directory() . '/index.php';

@@ -17,7 +17,6 @@ function ea_default_loop() {
 	if ( have_posts() ) :
 
 		tha_content_while_before();
-
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 

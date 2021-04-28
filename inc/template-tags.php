@@ -35,6 +35,8 @@ function ea_entry_category($contexte='archive') {
 	if( !empty( $term ) && ! is_wp_error( $term ) )
 		if($contexte==='archive') {
 			echo '<p class="entry-category"><a href="' . get_term_link( $term, 'category' ) . '">' . $term->name . '</a></p>';
+			//pour le filtre
+			printf('<span class="term screen-reader-text">%s</span>',$term->slug);
 		} else {
 			//contexte single
 			echo '<p class="entry-category h1 entry-title">' . kasutan_enleve_s_final($term->name) . '</p>';
