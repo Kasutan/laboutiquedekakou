@@ -70,7 +70,7 @@ add_action( 'ea_archive_header_before', 'kasutan_fil_ariane', 5 );
 add_action('tha_content_while_before','kasutan_blog_content_while_before');
 function kasutan_blog_content_while_before() {
 	if(is_home() && function_exists('kasutan_affiche_filtre_taxonomy')) {
-		echo '<section id="liste-filtrable" data-pagination="4">';
+		echo '<section id="liste-filtrable" data-pagination="4">'; //Si besoin : pagination blog = option du thème
 			kasutan_affiche_filtre_taxonomy('category');
 			echo '<ul class="list loop">';
 	} else {
