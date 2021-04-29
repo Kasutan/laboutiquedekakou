@@ -903,72 +903,6 @@ big, .has-big-font-size {
     -webkit-transition-duration: 0s !important;
     transition-duration: 0s !important; } }
 
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  scroll-behavior: smooth; }
-
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit; }
-
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em; }
-
-ul:not([class]),
-ol:not([class]) {
-  margin: 0 0 1.5em 0;
-  padding-left: 1em; }
-
-ul:not([class]) {
-  list-style: none;
-  padding-left: 1em; }
-  ul:not([class]) > li::before {
-    content: '•';
-    color: var(--bleu);
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em; }
-
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin: 0 1.5em 1.5em; }
-
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
-figure {
-  margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */ }
-  figure figcaption {
-    text-align: center; }
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%; }
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
 button:not(.picto),
 input[type="button"],
 input[type="reset"],
@@ -1037,6 +971,72 @@ a.button.picto {
   a.button.picto svg {
     max-width: 100%; }
 
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+ul:not([class]),
+ol:not([class]) {
+  margin: 0 0 1.5em 0;
+  padding-left: 1em; }
+
+ul:not([class]) {
+  list-style: none;
+  padding-left: 1em; }
+  ul:not([class]) > li::before {
+    content: '•';
+    color: var(--bleu);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */ }
+  figure figcaption {
+    text-align: center; }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
 input[type="text"],
 input[type="email"],
 input[type="url"],

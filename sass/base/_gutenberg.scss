@@ -2,6 +2,10 @@
 	background-color: var(--bleu-bouton);
 	text-transform: uppercase;
 }
-.block-editor-writing-flow > * {
-	font-size:50%;
+
+.block-list-appender button {
+	min-width:unset;
+	&, &:hover,&:focus {
+		background-color:transparent;
+	}
 }

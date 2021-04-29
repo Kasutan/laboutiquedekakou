@@ -1,0 +1,44 @@
+
+button:not(.picto),
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+a.button:not(.picto),
+a.wp-block-button__link {
+	@include bouton;
+
+	background: var(--bleu-bouton);
+	border-radius: 1rem;
+	color: var(--blanc);
+	font-size: 1em;
+	font-weight:400;
+	letter-spacing: 1.05px;
+	line-height: 1.1;
+	min-height:4.4rem;
+	min-width:21rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all var(--transition);
+
+	&:hover, &:focus, &:active {
+		background: var(--bleu-fonce);
+		outline: none;
+		text-decoration: none;
+	}
+	&:focus-visible {
+		outline : solid 1px var(--bleu-fonce);
+	}
+	
+}
+
+button.picto,
+a.button.picto {
+	@include bouton;
+
+	background-color:transparent;
+	border-radius:0;
+	transition:all 0.3s;
+	svg {
+		max-width:100%;
+	}
+}

@@ -1,0 +1,8 @@
+//Styles communs avec l'archive producteurs dans sass/components/colonnes-alternees.scc
+//Adaptations pour le bloc acf
+.colonnes-alternees.acf {
+	.col-texte {
+		padding-bottom:var(--margin-y-1);
+		padding-top:var(--margin-y-1);
+	}
+}

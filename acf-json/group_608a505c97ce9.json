@@ -1,0 +1,145 @@
+{
+    "key": "group_608a505c97ce9",
+    "title": "Bloc deux colonnes alternées",
+    "fields": [
+        {
+            "key": "field_608a512d5d9d0",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Format recommandé : 1000px de large par 600 px de haut.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_608a50745d9cb",
+            "label": "Titre",
+            "name": "titre",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_608a50815d9cc",
+            "label": "Texte",
+            "name": "texte",
+            "type": "textarea",
+            "instructions": "400 caractères maximum",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 400,
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_608a50b15d9cd",
+            "label": "Label du bouton",
+            "name": "label_bouton",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_608a50c35d9ce",
+            "label": "Lien du bouton",
+            "name": "cible_bouton",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_608a50d75d9cf",
+            "label": "Au clic sur le bouton, ouvrir le lien dans un nouvel onglet ?",
+            "name": "onglet_bouton",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "same": "ouvrir le lien dans le même onglet",
+                "blank": "ouvrir le lien dans un nouvel onglet"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "same",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/colonnes-alternees"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1619678759
+}

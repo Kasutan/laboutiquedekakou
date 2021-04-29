@@ -174,7 +174,24 @@ class BE_ACF_Customizations {
 			'keywords'        => [ 'producteur', 'kakou'],
 		] );
 		
-
+		/*********Bloc colonnes alternées ***************/
+		acf_register_block_type( [
+			'name'            => 'colonnes-alternees',
+			'title'           => 'Bloc colonnes alternées',
+			'description'     => 'Une colonne de texte et une colonne avec une image, alternativement à droite puis à gauche du texte - selon la position du bloc dans la page. La colonne de texte peut contenir un bouton (facultatif). Insérez ce bloc dans une page "Pleine Largeur"..',
+			'render_template' => 'partials/blocks/colonnes-alternees/colonnes-alternees.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/colonnes-alternees/colonnes-alternees.css',
+			'category'        => 'kakou',
+			'icon'            => 'align-right', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>true,
+				'anchor' => true,
+			),
+			'keywords'        => [ 'colonne', 'image','kakou'],
+		] );
 
 
 
