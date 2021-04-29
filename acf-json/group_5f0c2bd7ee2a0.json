@@ -3,6 +3,28 @@
     "title": "Options générales",
     "fields": [
         {
+            "key": "field_608ac16ae3a8c",
+            "label": "Page de la boutique",
+            "name": "page_boutique",
+            "type": "post_object",
+            "instructions": "Réglage utilisé pour le fil d'ariane",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_5f0c602815106",
             "label": "Page des producteurs",
             "name": "page_producteurs",
@@ -121,5 +143,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619469723
+    "modified": 1619706253
 }

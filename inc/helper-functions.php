@@ -80,6 +80,26 @@ function ea_first_term( $args = [] ) {
 		return $term;
 }
 
+
+/**
+ * Catégories de produits pour fil d'ariane
+ * d'après https://wordpress.stackexchange.com/questions/56784/get-main-parent-categories-for-a-product */
+function kasutan_categories_produit() {
+
+	$descendant = get_the_terms( get_the_ID(), 'product_cat' );
+	$descendant = array_reverse($descendant);
+	$descendant = $descendant[0];
+
+	$descendant_id = $descendant->term_id;
+	$ancestors = array_reverse(get_ancestors($descendant_id, 'product_cat'));
+	$origin_ancestor_term = get_term_by("id", $ancestors[0], "product_cat");
+	
+	return array(
+		'categorie_parente' => $origin_ancestor_term,
+		'sous_categorie' => $descendant
+	);
+}
+
 /**
  * Conditional CSS Classes
  *
