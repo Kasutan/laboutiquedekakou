@@ -30,8 +30,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "base/navigation"; 
 @import "base/print";
 @import "lib/modaal";
-@import "templates/footer";
 @import "templates/header";
+@import "templates/footer";
+@import "templates/loop";
 @import "templates/home";
 @import "templates/post";
 @import "templates/search";
@@ -41,3 +42,4 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "components/filtres";
 @import "components/owl_nav";
 @import "components/pagination";
+@import "components/post-summary";

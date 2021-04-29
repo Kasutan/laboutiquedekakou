@@ -188,7 +188,7 @@ add_filter( 'excerpt_more', 'ea_excerpt_more' );
 * Excerpt Length
 */
 function kasutan_custom_excerpt_length( $length ) {
-	return 60;
+	return 35;
 }
 add_filter( 'excerpt_length', 'kasutan_custom_excerpt_length', 999 );
 
