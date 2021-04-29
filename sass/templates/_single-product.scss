@@ -1,0 +1,51 @@
+h1.titre-produit {
+	@include fs(48);
+	color:var(--noir);
+	margin-bottom:2rem;
+	margin-top:0;
+	text-align: left;
+	text-transform: unset;
+}
+
+.single-product .product .summary p.price {
+	@include fs(40);
+	color:var(--bleu-fonce);
+	font-weight: 700;
+	margin-bottom: var(--margin-y-2);
+}
+
+.woocommerce div.product form.cart div.quantity {
+	float:none;
+	margin-bottom: var(--margin-y-1);
+}
+.single-product {
+	.summary {
+		> .stock {
+			display: none;
+		}
+		
+	}
+
+	.form-container {
+		display: flex;
+	}
+
+	.quantity {
+		justify-content: space-between;
+	}
+
+	.cart {
+		margin-right: 2rem;
+		@include bp(lg) {
+			margin-right:10rem;
+		}
+	}
+
+
+}
+
+//TODO corriger picto loupe au-desus de la galerie
+//TODO espacer vignettes de la galerie
+
+
+

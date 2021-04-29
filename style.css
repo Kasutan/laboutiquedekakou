@@ -2250,6 +2250,43 @@ button.modaal-close {
   font-weight: 400;
   margin-bottom: var(--margin-y-1); }
 
+h1.titre-produit {
+  font-size: calc(48 * var(--taille-texte) / 21);
+  color: var(--noir);
+  margin-bottom: 2rem;
+  margin-top: 0;
+  text-align: left;
+  text-transform: unset; }
+
+.single-product .product .summary p.price {
+  font-size: calc(40 * var(--taille-texte) / 21);
+  color: var(--bleu-fonce);
+  font-weight: 700;
+  margin-bottom: var(--margin-y-2); }
+
+.woocommerce div.product form.cart div.quantity {
+  float: none;
+  margin-bottom: var(--margin-y-1); }
+
+.single-product .summary > .stock {
+  display: none; }
+
+.single-product .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.single-product .quantity {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.single-product .cart {
+  margin-right: 2rem; }
+  @media (min-width: 960px) {
+    .single-product .cart {
+      margin-right: 10rem; } }
+
 .wp-block-columns.antennes-regionales {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2494,5 +2531,46 @@ h2.post-summary__title {
     -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 0.5rem 0; } }
+
+/*******************************Boutons + et - pour les inputs quantity ******************************/
+.change-quantity, .woocommerce .quantity input.qty {
+  border: none;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: var(--bleu);
+  background-color: var(--rose-pale);
+  font-size: 12px; }
+
+.woocommerce .quantity input.qty {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -moz-appearance: textfield;
+  padding: 0;
+  min-height: 0; }
+
+button.change-quantity {
+  color: var(--texte-gris);
+  cursor: pointer;
+  min-width: unset; }
+  button.change-quantity, button.change-quantity:hover, button.change-quantity:focus {
+    background-color: #fff;
+    border-radius: none; }
+  button.change-quantity:hover, button.change-quantity:focus {
+    color: var(--texte); }
+
+.woocommerce .quantity, .cadre-quantite {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.cadre-quantite {
+  border: solid 1px var(--texte);
+  margin-left: 1ch; }
 
 /*# sourceMappingURL=style.css.map */

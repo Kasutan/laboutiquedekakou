@@ -25,6 +25,9 @@ remove_action( 'tha_entry_top', 'ea_entry_title' );
 //Titre et date insérés avant le contenu pour mise en page grille
 add_action('tha_entry_content_before', 'kasutan_single_entry_content_before');
 function kasutan_single_entry_content_before() {
+	if(get_post_type() === 'product') {
+		return;
+	}
 	//image 
 	if(function_exists('kasutan_affiche_thumbnail_dans_contenu')) {
 		kasutan_affiche_thumbnail_dans_contenu();

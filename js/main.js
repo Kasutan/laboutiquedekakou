@@ -203,30 +203,6 @@
 			});
 		}
 
-		/*********Afficher/masquer les filtres ressources **********/
-		var toggleFiltre=$('#toggle-filtre');
-		if($(toggleFiltre).length>0) {
-			if(width>=768) {
-				toggleFiltre.hide();
-				$('#filtre-liste').show();
-				$('#filtre-liste').removeAttr('aria-expanded');
-			} else {
-				$('#filtre-liste').hide();
-				toggleFiltre.click(function(){
-					if(toggleFiltre.hasClass('ouvert')) {
-						$('#filtre-liste').slideUp('slow');
-						$('#filtre-liste').attr('aria-expanded','false');
-						$(toggleFiltre).attr('aria-expanded','false');
-					} else {
-						$('#filtre-liste').slideDown('slow');
-						$('#filtre-liste').attr('aria-expanded','true');
-						$(toggleFiltre).attr('aria-expanded','true');
-					}
-					toggleFiltre.toggleClass('ouvert');
-				});
-			}
-		}
-
 		/*********Filtrer les ressources si paramètre videos ds l'url **********/
 		var url_string = window.location.href;
 		var url = new URL(url_string);
@@ -235,6 +211,62 @@
 			$('#filtre-liste input').prop( "checked", false );
 			$('#videos').prop( "checked", true );
 			$('#filtre-liste').trigger("change");
+		}
+
+
+		/*=================================================
+		CART PAGE : changer la quantité avec les boutons + et - puis mettre à jour
+		=================================================*/
+
+		var $cart_shop_table = $('table.shop_table.cart');
+		if($cart_shop_table.length>0) {
+			var timeout;
+
+			kasutan_bind_qty(); // on lie les évènements dès le chargement de la page
+
+			$( document.body ).on( 'updated_wc_div', function(){
+				kasutan_bind_qty(); // on recommence après mise à jour du panier
+			});
+		}
+		function kasutan_bind_qty() {
+
+			//Modifier quantité au clic sur un bouton +/-
+			$('.change-quantity').click(function(e){
+				e.preventDefault();
+				var action=$(this).attr("data-value");
+				var input=$(this).parent('.quantity').find('input.qty');
+				var currentQty=parseInt($(input).val());
+				var minQty=parseInt($(input).attr('min'));
+				var maxQty=parseInt($(input).attr('max'));
+				if(currentQty>minQty && action=="-") {
+					$(input).val(currentQty-1);
+					kasutan_update_cart();
+				} else if (currentQty<maxQty && action=="+") {
+					$(input).val(currentQty+1);
+					kasutan_update_cart();
+				}
+			});
+
+			$cart_shop_table.on('change keyup mouseup', 'input.qty', function(){ 
+				kasutan_update_cart();
+			});
+		}
+
+		function kasutan_update_cart() {
+			//console.log('womoon update cart');
+			if (timeout != undefined) clearTimeout(timeout); //cancel previously scheduled event
+			timeout = setTimeout(function() {
+				$('button[name="update_cart"]').prop("disabled", false);
+				$('button[name="update_cart"]').trigger('click');
+			}, 1000 );
+		}
+
+		/*=================================================
+		PRODUCT PAGE : changer la quantité avec les boutons + et -
+		=================================================*/
+		var singleProductButton=$('.single-product .summary .single_add_to_cart_button');
+		if(singleProductButton.length>0) {
+			kasutan_bind_qty();
 		}
 
 		

@@ -23,6 +23,9 @@ include_once( get_template_directory() . '/inc/template-tags.php' );
 include_once( get_template_directory() . '/inc/site-header.php' );
 include_once( get_template_directory() . '/inc/site-footer.php' );
 
+//WooCommerce
+include_once( get_template_directory() . '/inc/actions-single-product.php' );
+
 // Editor
 include_once( get_template_directory() . '/inc/disable-editor.php' );
 include_once( get_template_directory() . '/inc/tinymce.php' );
