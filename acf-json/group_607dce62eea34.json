@@ -1,7 +1,64 @@
 {
     "key": "group_607dce62eea34",
-    "title": "Associer ce produit à un producteur",
+    "title": "Informations complémentaires sur le produit",
     "fields": [
+        {
+            "key": "field_608ab830ade36",
+            "label": "Poids ou volume net",
+            "name": "kakou_poids_net",
+            "type": "text",
+            "instructions": "Texte libre, utilisez l'unité de votre choix",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_608abb23c9e72",
+            "label": "Ingrédients",
+            "name": "kakou_ingredients",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_608abb52c9e73",
+            "label": "Allergènes",
+            "name": "kakou_allergènes",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop"
+        },
         {
             "key": "field_607dce831b2f6",
             "label": "Producteur",
@@ -23,6 +80,84 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_608ab850ade37",
+            "label": "Conseil de Kakou",
+            "name": "kakou_conseil",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_608ab928447b5",
+            "label": "Avis clients",
+            "name": "kakou_avis",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_608ab952447b6",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Ajouter un avis client",
+            "sub_fields": [
+                {
+                    "key": "field_608ab952447b6",
+                    "label": "Texte de l'avis",
+                    "name": "texte",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_608ab978447b7",
+                    "label": "Information sur l'auteur de l'avis",
+                    "name": "auteur",
+                    "type": "text",
+                    "instructions": "Par exemple : Justine Dumas, Cholet",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -34,13 +169,15 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 50,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
-    "modified": 1618857688
+    "modified": 1619705073
 }
