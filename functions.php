@@ -31,6 +31,7 @@ include_once( get_template_directory() . '/inc/tinymce.php' );
 include_once( get_template_directory() . '/inc/login-logo.php' );
 include_once( get_template_directory() . '/inc/block-area.php' );
 include_once( get_template_directory() . '/inc/social-links.php' );
+include_once( get_template_directory() . '/inc/traductions.php' );
 
 // Plugin Support
 include_once( get_template_directory() . '/inc/acf.php' );
