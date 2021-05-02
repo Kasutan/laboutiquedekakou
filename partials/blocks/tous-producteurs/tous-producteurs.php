@@ -57,33 +57,5 @@ printf('<section id="liste-filtrable" class="acf-producteurs %s" data-pagination
 		echo '</ul>';
 		echo '<ul class="pagination"></ul>';
 	}
-
-if( have_rows('producteurs') ):
-	printf('<div class="acf-producteurs %s"%s>', $className,$anchor);
-
-	// loop through the rows of data
-	while ( have_rows('producteurs') ) : the_row();
-		if($cible=esc_url(get_sub_field('cible'))) {
-			//le producteur est cliquable
-			printf('<a class="producteur" href="%s"><figure>%s<figcaption class="screen-reader-text">%s</figcaption></figure><span class="bouton">%s</span></a>',
-				$cible,
-				wp_get_attachment_image( esc_attr(get_sub_field('image')),'large' ),
-				wp_get_attachment_caption(esc_attr(get_sub_field('image'))),
-				$texte
-			);
-		} else {
-			//le producteur n'est pas cliquable
-			printf('<div class="producteur"><figure>%s<figcaption class="screen-reader-text">%s</figcaption></figure></div>',
-				wp_get_attachment_image( esc_attr(get_sub_field('image')),'large' ),
-				wp_get_attachment_caption(esc_attr(get_sub_field('image')))
-			);
-		}
-
-	endwhile;
-	if($sources) {
-		printf('<a href="%s"><small>Sources</small></a>',$sources);
-	}
-	echo "</div>";
-endif;
-
+echo '</section>';
 	
