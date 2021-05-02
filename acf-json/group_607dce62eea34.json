@@ -43,7 +43,7 @@
         {
             "key": "field_608abb52c9e73",
             "label": "Allergènes",
-            "name": "kakou_allergènes",
+            "name": "kakou_allergenes_2",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -179,5 +179,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1619705073
+    "modified": 1619980196
 }
