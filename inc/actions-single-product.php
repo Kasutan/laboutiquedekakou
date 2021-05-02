@@ -138,8 +138,3 @@ function kasutan_new_product_tab_avis() {
 		echo '</blockquote>';
 	endwhile;
 }
-
-
-
-
-//TODO produits associés

@@ -7,6 +7,9 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 			case 'Description courte du produit' :
 				return 'Présentation commerciale';
 				break;
+			case 'Vous aimerez peut-être aussi&hellip;' :
+				return 'Produits recommandés';
+				break;
 			default:
 				break;
 		}
