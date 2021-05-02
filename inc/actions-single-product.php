@@ -42,7 +42,104 @@ function womoon_after_quantity_input_field() {
 //Enlever les métas dans le résumé
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
-//TODO onglets personnalisés
+
+/**
+* Onglets personnalisés
+* https://docs.woocommerce.com/document/editing-product-data-tabs/#
+*/
+add_filter( 'woocommerce_product_tabs', 'kasutan_product_tabs', 98 );
+function kasutan_product_tabs( $tabs ) {
+	unset( $tabs['reviews'] );             // Remove the reviews tab
+	unset( $tabs['additional_information'] );     // Remove the additional information tab
+
+	if(!function_exists('get_field')) {
+		return $tabs; //on affiche l'onglet description, même vide, pour ne pas casser la mise en page
+	}
+
+	$ingredients=wp_kses_post(get_field('kakou_ingredients'));//zone de texte
+	$allergenes=wp_kses_post(get_field('kakou_allergenes_2'));//zone de texte
+	$conseil=wp_kses_post(get_field('kakou_conseil'));//zone de texte
+	$producteur=get_field('kakou_producteur'); //objet producteur
+
+	if(!empty($ingredients) || !empty($allergenes)) {
+		unset( $tabs['description'] );          // Remove the description tab
+		$tabs['composition'] = array(
+			'title' 	=>'Composition',
+			'priority' 	=> 10,
+			'callback' 	=> 'kasutan_new_product_tab_composition'
+		);
+	}
+
+	if(!empty($producteur)) {
+		$tabs['producteur'] = array(
+			'title' 	=>'Producteur',
+			'priority' 	=> 20,
+			'callback' 	=> 'kasutan_new_product_tab_producteur'
+		);
+	}
+
+	if(!empty($conseil)) {
+		$tabs['conseil'] = array(
+			'title' 	=>'Conseil de Kakou',
+			'priority' 	=> 30,
+			'callback' 	=> 'kasutan_new_product_tab_conseil'
+		);
+	}
+
+	if(have_rows('kakou_avis')) {
+		$tabs['avis'] = array(
+			'title' 	=>'Avis',
+			'priority' 	=> 40,
+			'callback' 	=> 'kasutan_new_product_tab_avis'
+		);
+	}
+
+
+	return $tabs;
+}
+
+function kasutan_new_product_tab_composition() {
+	$ingredients=wp_kses_post(get_field('kakou_ingredients'));//zone de texte
+	$allergenes=wp_kses_post(get_field('kakou_allergenes_2'));//zone de texte
+
+	echo '<h2 class="screen-reader-text">Composition</h2>';
+
+	if(!empty($ingredients)) {
+		echo '<h3 class="titre-interne-onglet">Ingrédients</h3>';
+		echo $ingredients;
+	}
+
+	if(!empty($allergenes)) {
+		echo '<h3 class="titre-interne-onglet">Allergènes</h3>';
+		echo $allergenes;
+	}
+	
+}
+
+function kasutan_new_product_tab_conseil() {
+	$conseil=wp_kses_post(get_field('kakou_conseil'));//zone de texte
+
+	echo '<h2 class="screen-reader-text">Conseil</h2>';
+	echo $conseil;
+}
+
+function kasutan_new_product_tab_producteur() {
+	$producteur=get_field('kakou_producteur'); //objet producteur
+	echo '<h2 class="screen-reader-text">Producteur</h2>';
+	printf('<h3 class="titre-interne-onglet">%s</h3>',$producteur->post_title);
+	echo $producteur->post_content;
+}
+
+function kasutan_new_product_tab_avis() {
+	while ( have_rows('kakou_avis') ) : the_row();
+		echo '<blockquote>';
+			echo wp_kses_post(get_sub_field('texte'));
+			printf('<cite>%s</cite>',wp_kses_post(get_sub_field('auteur')));
+		echo '</blockquote>';
+	endwhile;
+}
+
+
 
 
 //TODO produits associés
