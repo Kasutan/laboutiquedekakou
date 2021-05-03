@@ -20,7 +20,24 @@ function kasutan_after_add_to_cart_form() {
 		global $product;
 		echo wc_get_stock_html( $product ); //TODO picto checkmark quand le produit est en stock
 		echo '</div>'; //on referme la balise div.form-container
-		echo '<p>TODO Boutons de partage ici</p>';
+
+		/**************Boutons de partage**********/
+		if(function_exists('kasutan_picto')) :
+			$link=str_replace(":", "%3A", get_the_permalink());?>
+			<div class="boutons-partage">
+				<nav>
+					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $link;?>"  class="icone-partage"
+					title="Cliquez pour partager sur Facebook" rel="noopener noreferrer" target="blank"   >
+					<?php echo kasutan_picto(array('icon'=>'facebook-simple', 'size'=>'36'));?>
+					<span class="screen-reader-text">Cliquez pour partager sur Facebook (ouvre dans une nouvelle fenêtre)</span></a>
+
+					<a href="https://twitter.com/home?status=<?php echo $link;?>"  class="icone-partage twitter"
+					title="Cliquez pour partager sur Twitter" rel="noopener noreferrer" target="blank"   >
+					<?php echo kasutan_picto(array('icon'=>'twitter', 'size'=>'36'));?>
+					<span class="screen-reader-text">Cliquez pour partager sur Twitter (ouvre dans une nouvelle fenêtre)</span></a>
+				</nav>
+			</div>
+		<?php endif;
 	}
 }
 

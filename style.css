@@ -2164,54 +2164,6 @@ button.modaal-close {
     font-weight: 700;
     text-decoration: none; }
 
-.post-footer {
-  border-top: solid 1px #707070;
-  margin-bottom: var(--margin-y);
-  margin-top: var(--margin-y); }
-  .post-footer a {
-    font-weight: 700;
-    text-decoration: none; }
-  .post-footer .tags, .post-footer .related {
-    border-bottom: solid 1px #707070;
-    padding: 20px 0; }
-  .post-footer .related p {
-    margin-bottom: 5px; }
-  .post-footer .related ul {
-    list-style: none;
-    margin-bottom: 0; }
-  .post-footer .related li {
-    margin-bottom: 5px;
-    position: relative; }
-    .post-footer .related li::before {
-      content: "\25CF";
-      color: var(--cyan);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      -webkit-transition: color var(--transition);
-      transition: color var(--transition); }
-    .post-footer .related li:hover::before, .post-footer .related li:focus-within::before {
-      color: var(--bleu); }
-
-.boutons-partage {
-  margin-bottom: 20px;
-  margin-top: 28px;
-  text-align: center; }
-  .boutons-partage .h4 {
-    color: var(--noir);
-    margin-bottom: 20px; }
-    .boutons-partage .h4::after {
-      display: none; }
-  .boutons-partage nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    .boutons-partage nav a:not(:last-of-type) {
-      margin-right: 20px; }
-
 .entry-content .search-form {
   margin: 2rem auto; }
 
@@ -2302,6 +2254,36 @@ h1.titre-produit {
   @media (min-width: 960px) {
     .single-product .cart {
       margin-right: 10rem; } }
+
+.single-product .boutons-partage {
+  margin: var(--margin-y-1); }
+  .single-product .boutons-partage nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .single-product .boutons-partage nav a {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #395398;
+      border-radius: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 48px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-right: 20px;
+      transition: transform 0.3s, -webkit-transform 0.3s;
+      width: 48px; }
+      .single-product .boutons-partage nav a.twitter {
+        background-color: #7bc5f8; }
+      .single-product .boutons-partage nav a svg path {
+        fill: #fff; }
+      .single-product .boutons-partage nav a:focus, .single-product .boutons-partage nav a:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1); }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
   padding-left: 0;
