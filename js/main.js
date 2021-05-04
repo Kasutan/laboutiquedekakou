@@ -155,7 +155,7 @@
 		});
 
 
-		/****************** Filtre articles et producteurs *************************/	
+		/****************** Filtre articles, producteurs et produits *************************/	
 		if($("#filtre-liste").length>0) {
 
 			var page=parseInt($('#liste-filtrable').attr('data-pagination'));
@@ -201,18 +201,24 @@
 				);
 				
 			});
-		}
 
-		/*********Filtrer les ressources si paramètre videos ds l'url **********/
-		var url_string = window.location.href;
-		var url = new URL(url_string);
-		filtreRessources = url.searchParams.get("filtre_ressources");
-		if(filtreRessources=="videos" && $('#filtre-liste.filtre-ressources').length>0) {
-			$('#filtre-liste input').prop( "checked", false );
-			$('#videos').prop( "checked", true );
-			$('#filtre-liste').trigger("change");
-		}
 
+
+			//Activer filtre si paramètre filtre_cat ds l'url
+			const queryString = window.location.search;
+			console.log(queryString);
+			const urlParams = new URLSearchParams(queryString);
+			if(urlParams.has('filtre_cat')) {
+				//s'il y a un paramètre filtre_cat dans l'url, on coche l'input du filtre correspondant
+				$("#filtre-liste input").each(function (index, element) {
+					if($(element).val() === urlParams.get('filtre_cat')) {
+						$(element).prop("checked", true);
+						//on force la mise en oeuvre du filtre
+						$('#filtre-liste').trigger('change');
+					}
+				});
+			}
+		}
 
 		/*=================================================
 		CART PAGE : changer la quantité avec les boutons + et - puis mettre à jour
