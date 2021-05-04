@@ -18,11 +18,24 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+$queried_object=get_queried_object(  );
+
+//Rediriger vers la page de la catégorie parente s'il y en a une (avec paramètre dans l'url pour activer le filtre)
+$ancestors=array_reverse(get_ancestors($queried_object->term_id,'product_cat'));
+if(!empty($ancestors)) {
+	$lien=get_term_link( $ancestors[0],'product_cat' ).'?filtre_cat='.$queried_object->slug;
+	wp_redirect( $lien );
+	exit;
+} 
 
 get_header();
 
 	echo '<div class="' . ea_class( 'content-area', 'wrap', apply_filters( 'ea_content_area_wrap', true ) ) . '">';
 	echo '<main class="site-main" role="main">';
+	if(function_exists('kasutan_fil_ariane')) {
+		kasutan_fil_ariane();
+	}
+	echo'<div class="entry-content">';
 	$queried_object=get_queried_object(  );
 	$args=array( 
 		'post_type' => 'product',
@@ -54,7 +67,7 @@ get_header();
 	/* Restore original Post Data */
 	wp_reset_postdata();
 
-	echo '</main>';
+	echo '</div></main>';
 	echo '</div>';
 
 get_footer();

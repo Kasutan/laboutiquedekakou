@@ -105,7 +105,7 @@ function kasutan_fil_ariane() {
 			);
 		endif;
 		//Ajouter la catégorie de produits pour les fiches produits
-		if(is_single()) {
+		if(is_singular()) {
 			$categories=kasutan_categories_produit();
 			if(is_array($categories)) {
 				$parente=$categories['categorie_parente'];
