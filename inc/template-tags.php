@@ -258,9 +258,12 @@ function kasutan_affiche_thumbnail_dans_contenu() {
 * Filtre pour une taxonomie
 *
 */
-function kasutan_affiche_filtre_taxonomy($taxonomy) {
+function kasutan_affiche_filtre_taxonomy($taxonomy,$child_of=0) {
 	$terms = get_terms( array(
-		'taxonomy' => $taxonomy //Ordre modifié par le plugin Taxonomy Order
+		'taxonomy' => $taxonomy,
+		'child_of' => $child_of,
+		'hide_empty' => false, //TODO enlever après tests,
+		//Pas d'arguments pour l'ordre : l'ordre est géré par le plugin Taxonomy Order
 	) );
 	if(empty($terms)) {
 		return;

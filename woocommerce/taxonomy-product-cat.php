@@ -51,7 +51,11 @@ get_header();
 	$products=new WP_Query($args);
 	if ( $products->have_posts() ) {
 		echo '<section id="liste-filtrable" data-pagination="8">';
-			echo '<p>filtre produits ici</p>';
+
+			if(function_exists('kasutan_fil_ariane')) {
+				kasutan_affiche_filtre_taxonomy('product_cat',$queried_object->term_id);
+			}
+		
 			echo '<ul class="list produits">';
 			while ( $products->have_posts() ) {
 				$products->the_post();
