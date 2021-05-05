@@ -5,7 +5,23 @@
 *
 **/
 
-//On garde la balise <a> au début de la vignette mais on la referme juste après l'image 
+//Insérer overlay et pictos après image
+add_action( 'woocommerce_before_shop_loop_item_title', 'kasutan_overlay_pictos_vignette_produit', 12 );
+function kasutan_overlay_pictos_vignette_produit() {
+	echo '<div class="overlay-vignette">Je découvre</div>';
+	$etiquettes = get_the_terms( get_the_ID(), 'product_tag' );
+	if(!empty($etiquettes) && function_exists('get_field')) {
+		echo '<div class="pictos">';
+		foreach($etiquettes as $etiquette) {
+			$titre=$etiquette->name;
+			$term_id=$etiquette->term_id;
+			$picto_id=get_field('picto','product_tag_'.$term_id);
+			echo wp_get_attachment_image( $picto_id, 'thumbnail', false, array('title'=>$titre) );
+		}
+		echo '</div>';
+	}
+}
+//On garde la balise <a> au début de la vignette mais on la referme après l'image, l'overlay et les pictos 
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 15 );
 
 //Insérer la catégorie entre l'image et le titre

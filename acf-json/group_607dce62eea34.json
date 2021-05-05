@@ -82,6 +82,28 @@
             "ui": 1
         },
         {
+            "key": "field_6092c5a551615",
+            "label": "Pictos",
+            "name": "kakou_pictos",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_tag",
+            "field_type": "checkbox",
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
             "key": "field_608ab850ade37",
             "label": "Conseil de Kakou",
             "name": "kakou_conseil",
@@ -179,5 +201,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1619980196
+    "modified": 1620231654
 }
