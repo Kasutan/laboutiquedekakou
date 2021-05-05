@@ -111,8 +111,12 @@ function ea_page_layout( $id = false ) {
 	$available_layouts = ea_page_layout_options();
 	$layout = 'largeur-normale';
 
-	if(is_single() && get_post_type()!=='product' && !is_tax('product_cat')) {
+	if(is_single() && get_post_type()!=='product') {
 		$layout='deux-colonnes';
+	}
+
+	if(is_tax('product_cat')) {
+		$layout = 'pleine-largeur';
 	}
 
 	if( is_singular() || $id ) {
