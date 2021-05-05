@@ -14,6 +14,14 @@ add_action( 'tha_entry_top', 'kasutan_fil_ariane', 8 );
 
 if(is_tax('product_cat')) {
 	wc_get_template( 'taxonomy-product-cat.php' );
+} else if (is_tax('product_tag') && function_exists('get_field')) {
+	//Si c'est une page archive des étiquettes produits, on redirige vers la boutique
+	$page_boutique=get_field('page_boutique','option');
+	if(!empty($page_boutique)) {
+		$lien=get_the_permalink( $page_boutique );
+		wp_redirect( $lien );
+		exit;
+	}
 } else {
 
 	// Image bannière au-dessus du titre de la page (titre inséré par la même action en priorité 10)
