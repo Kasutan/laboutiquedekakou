@@ -79,13 +79,3 @@ function kasutan_producteur_post_type() {
 	register_post_type( 'producteur', $args );
 
 }
-
-/***************************************************************
-	Fonctions communes
-/***************************************************************/
-function kasutan_get_type_producteur($post_id) {
-	$terms=get_the_terms($post_id,'type_producteur');
-	if($terms) {
-		return $terms[0]; //renvoie l'objet Term
-	}
-}
