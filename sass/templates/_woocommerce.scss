@@ -1,0 +1,125 @@
+//Style des messages
+
+.woocommerce-info {
+	border-top-color:var(--bleu-fonce);
+	&::before {
+		color:var(--bleu-fonce);
+	}
+}
+
+.woocommerce-message {
+	border-top-color:var(--vert);
+	&::before {
+		color:var(--vert);
+	}
+}
+
+//Onglets de la page mon compte
+.woocommerce-MyAccount-navigation {
+	ul {
+		list-style: none;
+		margin:0;
+		padding:0;
+		padding-right:2rem;
+		padding-bottom:var(--margin-y-1);
+	}
+	ul li {
+		border-bottom:solid 1px var(--bleu-fonce);
+		padding:1rem;
+		&::before {
+			display: none;
+		}
+		a {
+			text-decoration: none;
+		}
+
+		&.is-active {
+			a {
+				font-weight:700;
+			}
+		}
+	}
+}
+
+//Page panier - table principale
+.woocommerce table.shop_table {
+	thead {
+		@include fs(24);
+		background-color:var(--fond);
+		color:var(--noir);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.product-thumbnail img {
+		width:20rem;
+	}
+	a.remove {
+		color:#494949 !important;
+		transition:transform 0.3s;
+
+		&:hover, &:focus {
+			background-color:transparent;
+			transform:scale(1.05);
+		}
+	}
+	.product-name a, .product-price, .product-subtotal {
+		@include fs(24);
+		color:var(--bleu-fonce);
+		text-decoration: none;
+	}
+	.product-price, .product-subtotal {
+		font-weight: 700;
+		.tax_label {
+			display: none;
+		}
+	}
+
+	.cadre-quantite {
+		border-color:#ebebeb;
+	}
+	.quantity input.qty {
+		@include fs(24);
+		color:var(--texte);
+		font-weight: 700;
+	}
+}
+
+//Page panier - récap totaux
+.cart_totals {
+	h2 {
+		display: none;
+	}
+	th {
+		@include fs(24);
+		color:var(--noir);
+	}
+	.cart-subtotal, .order-total {
+		td {
+			@include fs(24);
+			color:var(--bleu);
+			font-weight: 700;
+			text-align: right;
+			.tax_label {
+				display: none;
+			}
+			.includes_tax {
+				display: block;
+			}
+		}
+	}
+	.order-total td {
+		@include fs(29);
+	}
+	.wc-proceed-to-checkout {
+		text-align: right;
+	}
+	a.checkout-button.button.alt {
+		background-color: var(--bleu);
+		display: inline-block;
+		padding-top:1.4rem;
+		padding-bottom:1.4rem;
+		&:hover, &:focus, &:active {
+			background: var(--bleu-fonce);
+		}
+	}
+}

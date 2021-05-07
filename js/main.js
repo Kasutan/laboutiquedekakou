@@ -238,16 +238,24 @@
 
 			//Modifier quantité au clic sur un bouton +/-
 			$('.change-quantity').click(function(e){
+				console.log('clic');
 				e.preventDefault();
 				var action=$(this).attr("data-value");
-				var input=$(this).parent('.quantity').find('input.qty');
+				var input=$(this).parents('.quantity').find('input.qty');
 				var currentQty=parseInt($(input).val());
 				var minQty=parseInt($(input).attr('min'));
 				var maxQty=parseInt($(input).attr('max'));
+				console.log('action',action);
+				console.log('input',input);
+				console.log('currentQty',currentQty);
+				console.log('minQty',minQty);
+				console.log('maxQty',maxQty);
 				if(currentQty>minQty && action=="-") {
+					console.log('on diminue la quantité');
 					$(input).val(currentQty-1);
 					kasutan_update_cart();
 				} else if (currentQty<maxQty && action=="+") {
+					console.log('on augmente la quantité');
 					$(input).val(currentQty+1);
 					kasutan_update_cart();
 				}
