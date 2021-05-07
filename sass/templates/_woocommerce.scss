@@ -62,7 +62,7 @@
 			transform:scale(1.05);
 		}
 	}
-	.product-name a, .product-price, .product-subtotal {
+	.product-name a, .product-price span, .product-subtotal span{
 		@include fs(24);
 		color:var(--bleu-fonce);
 		text-decoration: none;
@@ -73,7 +73,9 @@
 			display: none;
 		}
 	}
-
+	.quantity {
+		justify-content: flex-end;
+	}
 	.cadre-quantite {
 		border-color:#ebebeb;
 	}
@@ -81,6 +83,45 @@
 		@include fs(24);
 		color:var(--texte);
 		font-weight: 700;
+	}
+
+	td.actions {
+		.coupon {
+			display: flex;
+			flex-wrap: wrap;
+			.input-text {
+				margin-bottom: 1rem;
+				margin-right:1ch;
+				width: unset;
+			}
+		}
+
+		button.button {
+			background-color:var(--fond);
+			border-radius: 1rem;
+			&:hover, &:focus, &:active {
+				filter:brightness(0.95);
+			}
+		}		
+	} 
+}
+
+@include bp(md) {
+	.woocommerce table.shop_table {
+		//Déplacer le formulaire coupons en tablette et desktop
+		position: relative;
+		.coupon {
+			position: absolute;
+			max-width: 40vw;
+			bottom: -125px;
+			flex-direction: column;
+			left: 0;
+		}
+
+		.quantity {
+			justify-content: flex-start;
+		}
+
 	}
 }
 
@@ -94,7 +135,7 @@
 		color:var(--noir);
 	}
 	.cart-subtotal, .order-total {
-		td {
+		td span {
 			@include fs(24);
 			color:var(--bleu);
 			font-weight: 700;
@@ -116,8 +157,8 @@
 	a.checkout-button.button.alt {
 		background-color: var(--bleu);
 		display: inline-block;
-		padding-top:1.4rem;
-		padding-bottom:1.4rem;
+		padding-top:1rem;
+		padding-bottom:1rem;
 		&:hover, &:focus, &:active {
 			background: var(--bleu-fonce);
 		}

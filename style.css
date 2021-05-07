@@ -2526,7 +2526,7 @@ h3.titre-interne-onglet {
     -webkit-transform: scale(1.05);
     transform: scale(1.05); }
 
-.woocommerce table.shop_table .product-name a, .woocommerce table.shop_table .product-price, .woocommerce table.shop_table .product-subtotal {
+.woocommerce table.shop_table .product-name a, .woocommerce table.shop_table .product-price span, .woocommerce table.shop_table .product-subtotal span {
   font-size: calc(24 * var(--taille-texte) / 21);
   color: var(--bleu-fonce);
   text-decoration: none; }
@@ -2536,6 +2536,11 @@ h3.titre-interne-onglet {
   .woocommerce table.shop_table .product-price .tax_label, .woocommerce table.shop_table .product-subtotal .tax_label {
     display: none; }
 
+.woocommerce table.shop_table .quantity {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
 .woocommerce table.shop_table .cadre-quantite {
   border-color: #ebebeb; }
 
@@ -2544,6 +2549,41 @@ h3.titre-interne-onglet {
   color: var(--texte);
   font-weight: 700; }
 
+.woocommerce table.shop_table td.actions .coupon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .woocommerce table.shop_table td.actions .coupon .input-text {
+    margin-bottom: 1rem;
+    margin-right: 1ch;
+    width: unset; }
+
+.woocommerce table.shop_table td.actions button.button {
+  background-color: var(--fond);
+  border-radius: 1rem; }
+  .woocommerce table.shop_table td.actions button.button:hover, .woocommerce table.shop_table td.actions button.button:focus, .woocommerce table.shop_table td.actions button.button:active {
+    -webkit-filter: brightness(0.95);
+    filter: brightness(0.95); }
+
+@media (min-width: 768px) {
+  .woocommerce table.shop_table {
+    position: relative; }
+    .woocommerce table.shop_table .coupon {
+      position: absolute;
+      max-width: 40vw;
+      bottom: -125px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      left: 0; }
+    .woocommerce table.shop_table .quantity {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; } }
+
 .cart_totals h2 {
   display: none; }
 
@@ -2551,14 +2591,14 @@ h3.titre-interne-onglet {
   font-size: calc(24 * var(--taille-texte) / 21);
   color: var(--noir); }
 
-.cart_totals .cart-subtotal td, .cart_totals .order-total td {
+.cart_totals .cart-subtotal td span, .cart_totals .order-total td span {
   font-size: calc(24 * var(--taille-texte) / 21);
   color: var(--bleu);
   font-weight: 700;
   text-align: right; }
-  .cart_totals .cart-subtotal td .tax_label, .cart_totals .order-total td .tax_label {
+  .cart_totals .cart-subtotal td span .tax_label, .cart_totals .order-total td span .tax_label {
     display: none; }
-  .cart_totals .cart-subtotal td .includes_tax, .cart_totals .order-total td .includes_tax {
+  .cart_totals .cart-subtotal td span .includes_tax, .cart_totals .order-total td span .includes_tax {
     display: block; }
 
 .cart_totals .order-total td {
@@ -2570,8 +2610,8 @@ h3.titre-interne-onglet {
 .cart_totals a.checkout-button.button.alt {
   background-color: var(--bleu);
   display: inline-block;
-  padding-top: 1.4rem;
-  padding-bottom: 1.4rem; }
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
   .cart_totals a.checkout-button.button.alt:hover, .cart_totals a.checkout-button.button.alt:focus, .cart_totals a.checkout-button.button.alt:active {
     background: var(--bleu-fonce); }
 
