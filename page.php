@@ -11,10 +11,17 @@
 // Breadcrumbs above page title
 add_action( 'tha_entry_top', 'kasutan_fil_ariane', 8 );
 
+$redirection_boutique=false;
+if(is_tax('product_tag')) {
+	$redirection_boutique=true;
+}
+if(kasutan_is_woo_active() && is_shop()) {
+	$redirection_boutique=true;
+}
 
 if(is_tax('product_cat')) {
 	wc_get_template( 'taxonomy-product-cat.php' );
-} else if (is_tax('product_tag') && function_exists('get_field')) {
+} else if ($redirection_boutique && function_exists('get_field')) {
 	//Si c'est une page archive des étiquettes produits, on redirige vers la boutique
 	$page_boutique=get_field('page_boutique','option');
 	if(!empty($page_boutique)) {

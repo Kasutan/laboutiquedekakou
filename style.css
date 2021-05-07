@@ -1525,6 +1525,16 @@ button.recherche {
     background-color: transparent !important;
     color: #000 !important; } }
 
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
 /*!
 	Modaal - accessible modals - v0.4.4
 	by Humaan, for all humans.
@@ -2178,30 +2188,51 @@ li.product {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    li.product .actions-vignette a {
+    li.product .actions-vignette a.oeil, li.product .actions-vignette a.add_to_cart_button {
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: left center;
       color: transparent;
       display: inline-block;
-      height: 28px;
+      height: 2.8rem;
       overflow: hidden;
-      width: 30px;
+      width: 3rem;
       -webkit-transition: -webkit-transform 0.3s;
       transition: -webkit-transform 0.3s;
       transition: transform 0.3s;
       transition: transform 0.3s, -webkit-transform 0.3s; }
-      li.product .actions-vignette a.oeil {
-        background-image: url("icons/oeil.png");
-        height: 1.9rem;
-        width: 3rem; }
-      li.product .actions-vignette a.add_to_cart_button {
-        background-image: url("icons/panier-bleu.png");
-        height: 2.3rem;
-        margin-left: 2rem;
-        width: 2.4rem; }
-      li.product .actions-vignette a:hover, li.product .actions-vignette a:focus {
+      li.product .actions-vignette a.oeil:hover, li.product .actions-vignette a.oeil:focus, li.product .actions-vignette a.add_to_cart_button:hover, li.product .actions-vignette a.add_to_cart_button:focus {
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
+    li.product .actions-vignette a.oeil {
+      background-image: url("icons/oeil.png");
+      background-size: 3rem 1.9rem; }
+    li.product .actions-vignette a.add_to_cart_button {
+      background-image: url("icons/panier-bleu.png");
+      background-size: 2.4rem 2.3rem;
+      margin-left: 2rem;
+      position: relative; }
+      li.product .actions-vignette a.add_to_cart_button.loading, li.product .actions-vignette a.add_to_cart_button.added {
+        width: 5.3rem; }
+        li.product .actions-vignette a.add_to_cart_button.loading::after, li.product .actions-vignette a.add_to_cart_button.added::after {
+          color: var(--bleu-fonce);
+          content: '✓';
+          display: block;
+          font-size: 150%;
+          font-weight: 700;
+          position: absolute;
+          right: 0;
+          top: -0.6rem; }
+      li.product .actions-vignette a.add_to_cart_button.loading::after {
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+        content: "↻"; }
+    li.product .actions-vignette a.added_to_cart.wc-forward {
+      color: var(--bleu-fonce);
+      margin-left: 1rem;
+      padding: 0;
+      text-decoration: underline;
+      width: auto; }
   li.product.outofstock .actions-vignette {
     display: none; }
   li.product.avec-alcool .add_to_cart_button {
