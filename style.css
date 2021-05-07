@@ -2235,7 +2235,7 @@ li.product {
       width: auto; }
   li.product.outofstock .actions-vignette {
     display: none; }
-  li.product.avec-alcool .add_to_cart_button {
+  li.product.avec-alcool .actions-vignette a.add_to_cart_button {
     display: none; }
 
 .archive .actualites, .blog .actualites {

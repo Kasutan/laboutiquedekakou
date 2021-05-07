@@ -155,7 +155,7 @@ li.product {
 
 	//Ajout au panier masqué pour produits avec alcool
 	&.avec-alcool {
-		.add_to_cart_button {
+		.actions-vignette a.add_to_cart_button {
 			display: none;
 		}
 	}
