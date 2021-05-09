@@ -1,0 +1,88 @@
+{
+    "key": "group_6098108207b93",
+    "title": "Bloc réassurance",
+    "fields": [
+        {
+            "key": "field_609810820c5a8",
+            "label": "Arguments",
+            "name": "arguments",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_6097fafd5ccb9",
+            "min": 3,
+            "max": 3,
+            "layout": "row",
+            "button_label": "Ajouter un argument",
+            "sub_fields": [
+                {
+                    "key": "field_609810820e690",
+                    "label": "Picto",
+                    "name": "picto",
+                    "type": "image",
+                    "instructions": "Format recommandé : png",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "shop_thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "0.5",
+                    "mime_types": "png, jpg, jpeg"
+                },
+                {
+                    "key": "field_609810820e6ce",
+                    "label": "Texte",
+                    "name": "texte",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/reassurance"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1620578790
+}

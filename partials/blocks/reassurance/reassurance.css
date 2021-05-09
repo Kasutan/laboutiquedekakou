@@ -1,0 +1,33 @@
+.reassurance {
+  padding: var(--margin-y-1) var(--padding-x); }
+  .reassurance .argument {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: var(--margin-y-1); }
+    .reassurance .argument .picto {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 5rem;
+      flex: 0 0 5rem;
+      margin-right: 2rem; }
+    .reassurance .argument .texte {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      font-weight: 400;
+      line-height: 1.2; }
+  @media (min-width: 768px) {
+    .reassurance {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .reassurance .argument {
+        -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+        margin-bottom: 0; } }

@@ -197,7 +197,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'carrousel',
 			'title'           => 'Bloc carrousel',
-			'description'     => 'Carrousel avec images bannières et message (cliquable en option). Insérez ce bloc dans une page "Pleine Largeur".',
+			'description'     => 'Carrousel avec images bannières, messages et boutons en option. Insérez ce bloc dans une page "Pleine Largeur".',
 			'render_template' => 'partials/blocks/carrousel/carrousel.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.css',
 			'enqueue_script' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.js',
@@ -213,6 +213,24 @@ class BE_ACF_Customizations {
 			'keywords'        => [ 'slide', 'carrousel','kakou','accueil'],
 		] );
 
+		/*********Bloc reassurance ***************/
+		acf_register_block_type( [
+			'name'            => 'reassurance',
+			'title'           => 'Bloc réassurance',
+			'description'     => 'Bandeau avec 3 pictos et leurs textes de réassurance. Insérez ce bloc dans une page "Pleine Largeur".',
+			'render_template' => 'partials/blocks/reassurance/reassurance.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/reassurance/reassurance.css',
+			'category'        => 'kakou',
+			'icon'            => 'format-status', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>true,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'reassurance','kakou','accueil'],
+		] );
 	}
 }
 new BE_ACF_Customizations();
