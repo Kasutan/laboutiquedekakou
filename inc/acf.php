@@ -193,7 +193,25 @@ class BE_ACF_Customizations {
 			'keywords'        => [ 'colonne', 'image','kakou'],
 		] );
 
-
+		/*********Bloc carrousel ***************/
+		acf_register_block_type( [
+			'name'            => 'carrousel',
+			'title'           => 'Bloc carrousel',
+			'description'     => 'Carrousel avec images bannières et message (cliquable en option). Insérez ce bloc dans une page "Pleine Largeur".',
+			'render_template' => 'partials/blocks/carrousel/carrousel.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.css',
+			'enqueue_script' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.js',
+			'category'        => 'kakou',
+			'icon'            => 'slides', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>false,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'slide', 'carrousel','kakou','accueil'],
+		] );
 
 	}
 }

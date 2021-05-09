@@ -1,0 +1,78 @@
+.carrousel .slide {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 31vw;
+  position: relative;
+  padding: var(--margin-y-2) var(--padding-x); }
+  .carrousel .slide .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .carrousel .slide .image img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      width: 100%; }
+  .carrousel .slide .texte {
+    background-color: #fff;
+    color: var(--bleu);
+    font-weight: 400;
+    max-width: 80rem;
+    padding: var(--margin-y-2) var(--margin-y-2);
+    position: relative;
+    text-align: center; }
+    .carrousel .slide .texte strong {
+      color: var(--rouge);
+      font-weight: 400; }
+    .carrousel .slide .texte br {
+      display: none; }
+
+@media (min-width: 960px) {
+  .carrousel .slide .texte {
+    font-size: calc(45 * var(--taille-texte) / 21); }
+    .carrousel .slide .texte br {
+      display: block; }
+    .carrousel .slide .texte a.button {
+      font-size: calc(21 * var(--taille-texte) / 21); } }
+
+.carrousel .owl-dots {
+  bottom: calc(var(--margin-y-1) / 2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%; }
+  .carrousel .owl-dots button {
+    background-color: #fff;
+    border-radius: 100%;
+    height: 2.5rem;
+    margin-right: 1rem;
+    min-height: unset;
+    min-width: unset;
+    opacity: 0.5;
+    width: 2.5rem; }
+    .carrousel .owl-dots button:last-of-type {
+      margin-right: 0; }
+    .carrousel .owl-dots button.active, .carrousel .owl-dots button:hover, .carrousel .owl-dots button:focus {
+      background-color: #fff;
+      opacity: 1; }
