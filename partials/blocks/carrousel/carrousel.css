@@ -52,6 +52,11 @@
     .carrousel .slide .texte a.button {
       font-size: calc(21 * var(--taille-texte) / 21); } }
 
+@media (min-width: 1920px) {
+  .carrousel .slide {
+    height: 700px;
+    min-height: unset; } }
+
 .carrousel .owl-dots {
   bottom: calc(var(--margin-y-1) / 2);
   display: -webkit-box;

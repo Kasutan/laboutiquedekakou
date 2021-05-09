@@ -52,6 +52,13 @@
 		}
 	}
 
+	@include bp(xxl) {
+		.slide {
+			height : 700px;
+			min-height:unset;
+		}
+	}
+
 	.owl-dots {
 		bottom: calc(var(--margin-y-1) / 2);
 		display: flex;
