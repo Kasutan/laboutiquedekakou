@@ -231,6 +231,25 @@ class BE_ACF_Customizations {
 			),
 			'keywords'        => [ 'reassurance','kakou','accueil'],
 		] );
+
+		/*********Bloc categories de produits ***************/
+		acf_register_block_type( [
+			'name'            => 'categories-produits',
+			'title'           => 'Bloc catégories de produits',
+			'description'     => 'Section avec 1 image et un titre cliquable par catégorie de produit.',
+			'render_template' => 'partials/blocks/categories-produits/categories-produits.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/categories-produits/categories-produits.css',
+			'category'        => 'kakou',
+			'icon'            => 'cart', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>false,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'categorie', 'produit','kakou','accueil'],
+		] );
 	}
 }
 new BE_ACF_Customizations();

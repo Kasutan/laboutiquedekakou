@@ -1,0 +1,83 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.categories-produits {
+	.categorie {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		height:20rem;
+		position: relative;
+	}
+	.image {
+		display: flex;
+		height:100%;
+		left:0;
+		position:absolute;
+		top:0;
+		width:100%;
+		img {
+			@include object-fit;
+		}
+	}
+
+	.texte {
+		@include fs(28);
+
+		align-items: center;
+		background-color: #fff;
+		color:var(--texte);
+		display: flex;
+		font-weight: 700;
+		justify-content: center;
+		padding:1em;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition:padding var(--transition);
+
+		&:hover, &:focus {
+			padding:2em;
+		}
+	}
+	
+	@include bp (md) {
+		display: flex;
+		&.col-2 {
+			.categorie {
+				flex-basis:50%;
+			}
+		}
+		&.col-3 {
+			.categorie {
+				flex-basis:33.33%;
+			}
+		}
+		&.col-4 {
+			flex-wrap:wrap;
+			.categorie {
+				flex-basis:50%;
+			}
+		}
+	}
+	@include bp(lg) {
+		.categorie {
+			height:30rem;
+		}
+	}
+	@include bp(xl) {
+		.categorie {
+			height:42rem;
+		}
+		.texte {
+			@include fs(35);
+		}
+		&.col-4 {
+			flex-wrap:nowrap;
+			.categorie {
+				flex-basis:25%;
+			}
+		}
+	}
+	
+}
