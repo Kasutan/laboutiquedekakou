@@ -236,12 +236,12 @@ a.wp-block-button__link.has-noir-background-color {
 @import "base/utilities";
 @import "base/layout";
 @import "base/typography";
-@import "base/elements";*/
-button:not(.picto),
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-a.button:not(.picto),
+@import "base/elements";
+@import "base/boutons"; */
+.wp-block-button__link {
+  background-color: var(--bleu-bouton);
+  text-transform: uppercase; }
+
 a.wp-block-button__link {
   border: none;
   cursor: pointer;
@@ -262,56 +262,17 @@ a.wp-block-button__link {
   text-transform: uppercase;
   -webkit-transition: all var(--transition);
   transition: all var(--transition); }
-  button:not(.picto):hover, button:not(.picto):focus, button:not(.picto):active,
-  input[type="button"]:hover,
-  input[type="button"]:focus,
-  input[type="button"]:active,
-  input[type="reset"]:hover,
-  input[type="reset"]:focus,
-  input[type="reset"]:active,
-  input[type="submit"]:hover,
-  input[type="submit"]:focus,
-  input[type="submit"]:active,
-  a.button:not(.picto):hover,
-  a.button:not(.picto):focus,
-  a.button:not(.picto):active,
-  a.wp-block-button__link:hover,
-  a.wp-block-button__link:focus,
-  a.wp-block-button__link:active {
+  a.wp-block-button__link:hover, a.wp-block-button__link:focus, a.wp-block-button__link:active {
     background: var(--bleu-fonce);
     outline: none;
     text-decoration: none; }
-  button:not(.picto):focus-visible,
-  input[type="button"]:focus-visible,
-  input[type="reset"]:focus-visible,
-  input[type="submit"]:focus-visible,
-  a.button:not(.picto):focus-visible,
   a.wp-block-button__link:focus-visible {
     outline: solid 1px var(--bleu-fonce); }
 
-button.picto,
-a.button.picto {
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  padding: 1rem 2rem;
-  text-align: center;
-  vertical-align: middle;
-  background-color: transparent;
-  border-radius: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
-  button.picto svg,
-  a.button.picto svg {
-    max-width: 100%; }
-
-.wp-block-button__link {
-  background-color: var(--bleu-bouton);
-  text-transform: uppercase; }
-
-.block-list-appender button {
-  min-width: unset; }
-  .block-list-appender button, .block-list-appender button:hover, .block-list-appender button:focus {
+.block-list-appender button, button.acf-button, .wp-editor-tabs button {
+  min-width: unset;
+  padding: unset; }
+  .block-list-appender button, .block-list-appender button:hover, .block-list-appender button:focus, button.acf-button, button.acf-button:hover, button.acf-button:focus, .wp-editor-tabs button, .wp-editor-tabs button:hover, .wp-editor-tabs button:focus {
     background-color: transparent; }
 
 .wp-block-columns.antennes-regionales {
