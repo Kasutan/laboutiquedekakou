@@ -309,3 +309,10 @@ function ea_template_hierarchy( $template ) {
 	return $template;
 }
 add_filter( 'template_include', 'ea_template_hierarchy' );
+
+/**
+* Fix local pickup plugin
+* le plugin affiche le sélecteur de créneau quelle que soit la méthode de livraison choisie
+*
+*/
+require_once( 'inc/fix-local-pickup.php' );
