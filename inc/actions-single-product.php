@@ -11,6 +11,14 @@ function kasutan_single_product_title() {
 add_action('woocommerce_before_add_to_cart_form','kasutan_before_add_to_cart_form');
 function kasutan_before_add_to_cart_form() {
 	if(is_single()) {
+		//Ajouter contenance poids ou volume net
+		if(function_exists('get_field')) {
+			$contenance=get_field('kakou_poids_net');
+			if(!empty($contenance)) {
+				printf('<p><strong>%s</strong></p>',$contenance);
+			}
+		}
+		//Ouvrir un conteneur pour affichage en 2 colonnes avec le stock à droite
 		echo '<div class="form-container">';
 	}
 }
@@ -18,7 +26,7 @@ add_action('woocommerce_after_add_to_cart_form','kasutan_after_add_to_cart_form'
 function kasutan_after_add_to_cart_form() {
 	if(is_single()) {
 		global $product;
-		echo wc_get_stock_html( $product ); //TODO picto checkmark quand le produit est en stock
+		echo wc_get_stock_html( $product );
 		echo '</div>'; //on referme la balise div.form-container
 
 		/**************Boutons de partage**********/
