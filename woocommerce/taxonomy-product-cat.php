@@ -35,43 +35,47 @@ get_header();
 	if(function_exists('kasutan_fil_ariane')) {
 		kasutan_fil_ariane();
 	}
-	echo'<div class="entry-content">';
-	$queried_object=get_queried_object(  );
-	$args=array( 
-		'post_type' => 'product',
-		'posts_per_page'=>-1,
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'product_cat',
-				'field'    => 'slug',
-				'terms'    => $queried_object->slug,
-			),
-		),
-	);
-	$products=new WP_Query($args);
-	if ( $products->have_posts() ) {
-		echo '<section id="liste-filtrable" data-pagination="8">';
-
-			if(function_exists('kasutan_fil_ariane')) {
-				kasutan_affiche_filtre_taxonomy('product_cat',$queried_object->term_id);
-			}
+	echo '<div class="entry-content">';
+		echo '<div class="container">';
+			do_action('kakou_avant_archive_produit');
+		echo '</div>';
 		
-			echo '<ul class="list produits">';
-			while ( $products->have_posts() ) {
-				$products->the_post();
-				wc_get_template_part( 'content', 'product' );
+		$queried_object=get_queried_object(  );
+		$args=array( 
+			'post_type' => 'product',
+			'posts_per_page'=>-1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'product_cat',
+					'field'    => 'slug',
+					'terms'    => $queried_object->slug,
+				),
+			),
+		);
+		$products=new WP_Query($args);
+		if ( $products->have_posts() ) {
+			echo '<section id="liste-filtrable" data-pagination="8">';
 
-			}
-			echo '</ul>';
-			echo '<ul class="pagination"></ul>';
-		echo '</section>';
-	} else {
-		echo '<p>Aucun produit dans cette catégorie.</p>';
-	}
-	/* Restore original Post Data */
-	wp_reset_postdata();
+				if(function_exists('kasutan_fil_ariane')) {
+					kasutan_affiche_filtre_taxonomy('product_cat',$queried_object->term_id);
+				}
+			
+				echo '<ul class="list produits">';
+				while ( $products->have_posts() ) {
+					$products->the_post();
+					wc_get_template_part( 'content', 'product' );
 
-	echo '</div></main>';
+				}
+				echo '</ul>';
+				echo '<ul class="pagination"></ul>';
+			echo '</section>';
+		} else {
+			echo '<p>Aucun produit dans cette catégorie.</p>';
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+		echo '</div></main>';
 	echo '</div>';
 
 get_footer();

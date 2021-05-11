@@ -3,6 +3,25 @@
     "title": "Options générales",
     "fields": [
         {
+            "key": "field_609a9ba534b7b",
+            "label": "Message d'absence",
+            "name": "kakou_message_absence",
+            "type": "textarea",
+            "instructions": "Utilisez ce champ pour signaler à vos visiteurs que vous êtes absente et que leur commande sera traitée à votre retour le xx\/xx\/... Laisser ce champ vide pour n'afficher aucun message en temps normal.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
             "key": "field_608ac16ae3a8c",
             "label": "Page de la boutique",
             "name": "page_boutique",
@@ -124,6 +143,28 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_609176dd04390",
+            "label": "Catégorie des produits avec alcool",
+            "name": "categorie_avec_alcool",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_cat",
+            "field_type": "radio",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
         }
     ],
     "location": [
@@ -143,5 +184,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619706253
+    "modified": 1620745266
 }

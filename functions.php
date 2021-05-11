@@ -316,3 +316,9 @@ add_filter( 'template_include', 'ea_template_hierarchy' );
 *
 */
 require_once( 'inc/fix-local-pickup.php' );
+
+/**
+* Afficher un message à différents endroits de la boutique en cas d'absence et de "fermeture" de la boutique
+*
+*/
+require_once( 'inc/message-absence.php' );
