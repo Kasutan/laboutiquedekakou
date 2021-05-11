@@ -66,7 +66,6 @@ function kasutan_conditionally_hidding_pickuptime(){
 // add_action( 'woocommerce_checkout_process', array( $this, 'field_process' ) );
 // dans le fichier public/class-local-pickup-time.php 
 if ( class_exists( 'Local_Pickup_Time' ) ) {
-	// Remove the default local pickup time field from the checkout page.
 	remove_action( 'woocommerce_checkout_process', array( Local_Pickup_Time::get_instance(), 'field_process') );
 }
 
