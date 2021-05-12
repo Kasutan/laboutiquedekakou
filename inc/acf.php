@@ -250,6 +250,25 @@ class BE_ACF_Customizations {
 			),
 			'keywords'        => [ 'categorie', 'produit','kakou','accueil'],
 		] );
+
+		/*********Bloc section animée ***************/
+		acf_register_block_type( [
+			'name'            => 'section-animee',
+			'title'           => 'Bloc section avec décors animés',
+			'description'     => 'Section avec 2 images, 2 titres, un texte, un bouton et éléments de décor animés.',
+			'render_template' => 'partials/blocks/section-animee/section-animee.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/section-animee/section-animee.css',
+			'category'        => 'kakou',
+			'icon'            => 'art', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>false,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'animee', 'animée', 'decor', 'décor','kakou','accueil'],
+		] );
 	}
 }
 new BE_ACF_Customizations();

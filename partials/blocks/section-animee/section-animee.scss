@@ -1,0 +1,164 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.section-animee {
+	margin-bottom: var(--margin-y-2);
+	min-height: 40rem;
+
+	//images + presque tous les décors masqués en mobile
+	.col-images, .decor {
+		display: none;
+	}
+	.decors-wrap { 
+		position: relative;
+	}
+	.decor {
+		position: absolute;
+	}
+	.decor-5, .decor-6 {
+		display: block;
+	}
+	.decor-5 {
+		right:var(--padding-x);
+		top:-4rem;
+	}
+	.decor-6 {
+		right:0;
+		top: 2rem;
+		width: 28rem;
+	}
+	.col-texte {
+		padding:0 var(--padding-x);
+		position: relative;
+	}
+
+	@include bp(md) {
+		//on affiche l'image portrait et une partie du décor à gauche du texte
+		.decors-wrap {
+			display: flex;
+		}
+		.col-images {
+			display: block;
+			flex-basis: 50%;
+			padding-right:2rem;
+			padding-left:var(--padding-x);
+		}
+		.carre {
+			display: none;
+		}
+		.decor-3 {
+			bottom:0;
+			display: block;
+			right:50%; //placé sur la colonne de gauche
+			width:20%;
+		}
+		.col-texte {
+			flex-basis:50%;
+			padding-left:0;
+			padding-top: 3rem;
+		}
+		
+	}
+	@include bp(lg) {
+		//on affiche l'image carrée et tous les autres éléments de décor
+		.col-images {
+			align-items: center;
+			display: flex;
+			flex-direction: row-reverse;
+		}
+		.portrait {
+			max-width:60%;
+		}
+		.carre {
+			display: block;
+			max-width:40%;
+			position: relative;
+			left:3rem;
+		}
+		.decor {
+			display: block;
+		}
+		.decor-1 {
+			left:0;
+			top:0;
+			width:15%;
+		}
+		.decor-2 {
+			left:0;
+			bottom:2rem;
+			width:15%;
+		}
+		.decor-3 {
+			width:15%;
+		}
+		.decor-4 {
+			left:5%;
+			bottom:0;
+			width:40%;
+		}
+		.decor-5 {
+			top:-2rem;
+		}
+	}
+
+	@include bp(xl) {
+		.decors-wrap {
+			padding-top:var(--margin-y-1);
+		}
+		.col-images {
+			padding-right: var(--margin-y-2);
+		}
+		.decor-1 {
+			left:var(--padding-x);
+		}
+		.decor-2 {
+			width:18%;
+		}
+		.decor-4 {
+			left: 2%;
+			bottom: -15%;
+			width: 40%;
+		}
+		.decor-5 {
+			top: var(--margin-y-1);
+		}
+		.decor-6 {
+			top:calc(2 * var(--margin-y-1));
+			width:25%;
+		}
+	}
+	@include bp(xxl) {
+		.carre {
+			max-width: 45%;
+			left: 5rem;
+		}
+		//largeur des décors figées
+		//positions sur l'axe X réglées par rapport aux variables padding
+		.decor-1 {
+			width: 28rem;
+			top: -8rem;
+			left: calc(var(--padding-x) + 10rem);
+		}
+		.decor-2 {
+			left: var(--padding-x-pleine-largeur);
+			width: 37rem;
+		}
+		.decor-3 {
+			width: 22rem;
+		}
+		.decor-4 {
+			left: var(--padding-x);
+			width: 72rem;
+		}
+		.decor-5 {
+			top: calc(2 * var(--margin-y-1));
+			width: 14rem;
+			right: calc(var(--padding-x) - 12rem);
+		}
+		.decor-6 {
+			top: -2rem;
+			width: 40rem;
+			right: var(--padding-x-pleine-largeur);
+		}
+	}
+	
+}
