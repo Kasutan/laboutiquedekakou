@@ -15,7 +15,7 @@ if(function_exists('get_field')) :
 	} else $className='';
 
 	if(have_rows('slides')) : 
-		printf('<section class="carrousel %s owl-carousel">',$className);
+		printf('<section class="carrousel %s owl-carousel js-fade-in-on-visible">',$className);
 		while ( have_rows('slides') ) : the_row();
 			$image=esc_attr( get_sub_field('image') );
 			$texte=wp_kses_post(get_sub_field('texte'));

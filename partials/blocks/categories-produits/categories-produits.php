@@ -16,7 +16,7 @@ if(function_exists('get_field')) :
 
 	if(have_rows('categories')) : 
 		$nb=count( get_field( 'categories' ));
-		printf('<section class="categories-produits col-%s %s">',$nb, $className);
+		printf('<section class="categories-produits col-%s %s js-cascade-on-visible">',$nb, $className);
 		while ( have_rows('categories') ) : the_row();
 			$image=esc_attr( get_sub_field('image') );
 			$term=get_sub_field('categorie');
