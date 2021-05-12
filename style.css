@@ -1535,6 +1535,122 @@ button.recherche {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
+/*https://tympanus.net/codrops/2014/08/05/page-preloading-effect/*/
+/*https://alligator.io/js/intersection-observer*/
+/*Cette classe est ajoutée en JS avec intersection observer aux éléments qui portent la classe js-fade-in-on-visible*/
+.fade-in {
+  opacity: 1;
+  -webkit-animation: animFadeIn 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animFadeIn 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+@-webkit-keyframes animFadeIn {
+  from {
+    opacity: 0; } }
+
+@keyframes animFadeIn {
+  from {
+    opacity: 0; } }
+
+@-webkit-keyframes animCascade {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0); } }
+
+@keyframes animCascade {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0); } }
+
+/*Cette classe est ajoutée en JS avec intersection observer aux enfants des éléments qui portent la class js-cascade-on-visible*/
+.cascade {
+  opacity: 1;
+  -webkit-animation: animCascade 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animCascade 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+/* Si besoin d'une cascade plus complexe ou plus longue : utiliser sass*/
+/*.cascade:nth-child(n) {
+	animation-delay:calc(0.2s + 0.1s * n);
+}*/
+.cascade:nth-child(1) {
+  -webkit-animation-delay: calc(0.2s + 0.1s * 1);
+  animation-delay: calc(0.2s + 0.1s * 1); }
+
+.cascade:nth-child(2) {
+  -webkit-animation-delay: calc(0.2s + 0.1s * 2);
+  animation-delay: calc(0.2s + 0.1s * 2); }
+
+.cascade:nth-child(3) {
+  -webkit-animation-delay: calc(0.2s + 0.1s * 3);
+  animation-delay: calc(0.2s + 0.1s * 3); }
+
+.cascade:nth-child(4) {
+  -webkit-animation-delay: calc(0.2s + 0.1s * 4);
+  animation-delay: calc(0.2s + 0.1s * 4); }
+
+.cascade:nth-child(5) {
+  -webkit-animation-delay: calc(0.2s + 0.1s * 5);
+  animation-delay: calc(0.2s + 0.1s * 5); }
+
+/*Cette classe est ajoutée en JS avec intersection observer aux éléments de la section avec décors animés*/
+@-webkit-keyframes animCascadeX {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-15%, 0, 0);
+    transform: translate3d(-15%, 0, 0); } }
+@keyframes animCascadeX {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-15%, 0, 0);
+    transform: translate3d(-15%, 0, 0); } }
+
+@-webkit-keyframes animCascadeXdroite {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(15%, 0, 0);
+    transform: translate3d(15%, 0, 0); } }
+
+@keyframes animCascadeXdroite {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(15%, 0, 0);
+    transform: translate3d(15%, 0, 0); } }
+
+.cascade-x, .cascade-x-droite {
+  --delai-initial:1s;
+  --delai-supp:0.5s;
+  opacity: 1;
+  -webkit-animation: animCascadeX 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animCascadeX 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  -webkit-animation-delay: var(--delai-initial);
+  animation-delay: var(--delai-initial); }
+
+.cascade-x-droite {
+  -webkit-animation: animCascadeXdroite 1s cubic-bezier(0.7, 0, 0.3, 1) both;
+  animation: animCascadeXdroite 1s cubic-bezier(0.7, 0, 0.3, 1) both; }
+
+.retard-1 {
+  -webkit-animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 1);
+  animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 1); }
+
+.retard-2 {
+  -webkit-animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 2);
+  animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 2); }
+
+.retard-3 {
+  -webkit-animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 3);
+  animation-delay: calc(var(--delai-initial) + var(--delai-supp) * 3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .cascade, .cascade-x, .cascade-x-droite {
+    animation: none;
+    -webkit-animation: none; } }
+
 /*!
 	Modaal - accessible modals - v0.4.4
 	by Humaan, for all humans.

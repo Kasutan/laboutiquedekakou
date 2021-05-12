@@ -288,3 +288,72 @@
 	}); //fin document ready
 })( jQuery );
 
+
+/*=================================================
+Animations
+=================================================*/
+//Only Use the IntersectionObserver if it is supported
+
+if ('IntersectionObserver' in window) {
+	const config = {
+		//rootMargin: '50px 20px 75px 30px',
+		//threshold: [0, 0.25, 0.75, 1]
+		};
+
+		
+	observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0) {
+			entry.target.classList.add('fade-in');
+			observer.unobserve(entry.target);
+			} else {
+			entry.target.classList.remove('fade-in');
+			}
+		}, config);
+	});
+
+	const fadeInElements=document.querySelectorAll('.js-fade-in-on-visible');
+	fadeInElements.forEach(elem => {
+		observer.observe(elem);
+	});
+
+
+	observer2 = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0) {
+			jQuery(entry.target).children().addClass('cascade');
+			observer.unobserve(entry.target);
+			} 
+		}, config);
+	});
+
+	const cascadeElements=document.querySelectorAll('.js-cascade-on-visible');
+	cascadeElements.forEach(item => {
+		observer2.observe(item);
+	});
+
+	observer3 = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.intersectionRatio > 0) {
+				console.log('on voit la section animée');
+				jQuery(entry.target).find('.decor-1, .decor-2, .decor-3, .decor-4, .col-images').addClass('cascade-x');
+				jQuery(entry.target).find('.decor-5, .decor-6, .col-texte').addClass('cascade-x-droite');
+				jQuery(entry.target).find('.decor-3, .decor-5').addClass('retard-1');
+				jQuery(entry.target).find('.decor-2, .decor-6').addClass('retard-2');
+			} else {
+				jQuery(entry.target).find('.decor-1, .decor-2, .decor-3, .decor-4, .col-images').removeClass('cascade-x');
+				jQuery(entry.target).find('.decor-5, .decor-6, .col-texte').removeClass('cascade-x-droite');
+			}
+		}, config);
+	});
+
+	const cascadeElementsX=document.querySelectorAll('.section-animee');
+	cascadeElementsX.forEach(item => {
+		observer3.observe(item);
+	});
+
+} else {
+	//if Intersection Observer is not supported, add classes right away
+	jQuery('.js-animate-on-visible-cascade').addClass('cascade');
+	jQuery('.js-animate-on-visible').addClass('fade-in');
+}
