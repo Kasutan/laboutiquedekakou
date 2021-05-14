@@ -270,7 +270,7 @@ class BE_ACF_Customizations {
 			'keywords'        => [ 'animee', 'animée', 'decor', 'décor','kakou','accueil'],
 		] );
 
-		/*********Bloc section animée ***************/
+		/*********Bloc nouveautés produits ***************/
 		acf_register_block_type( [
 			'name'            => 'nouveautes-produits',
 			'title'           => 'Bloc nouveautés produits',
@@ -289,6 +289,24 @@ class BE_ACF_Customizations {
 			'keywords'        => [ 'produit', 'nouveau', 'nouveauté','kakou','accueil'],
 		] );
 
+		/*********Bloc section bannière ***************/
+		acf_register_block_type( [
+			'name'            => 'section-banniere',
+			'title'           => 'Bloc section banniere',
+			'description'     => 'Section titre principal, image bannière et cadre blanc avec titre, texte et bouton optionnel.',
+			'render_template' => 'partials/blocks/section-banniere/section-banniere.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/section-banniere/section-banniere.css',
+			'category'        => 'kakou',
+			'icon'            => 'cover-image', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>true,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'section', 'banniere', 'image','kakou','accueil'],
+		] );
 		
 	}
 }
