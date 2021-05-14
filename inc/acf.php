@@ -326,6 +326,25 @@ class BE_ACF_Customizations {
 			),
 			'keywords'        => [ 'personnalisation', 'image','kakou','accueil'],
 		] );
+
+		/*********Bloc blog ***************/
+		acf_register_block_type( [
+			'name'            => 'blog',
+			'title'           => 'Bloc blog',
+			'description'     => 'Section avec titre principal et les deux derniers articles publiés sur le blog.',
+			'render_template' => 'partials/blocks/blog/blog.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/blog/blog.css',
+			'category'        => 'kakou',
+			'icon'            => 'welcome-write-blog', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>false,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'blog', 'article','kakou','accueil'],
+		] );
 		
 	}
 }
