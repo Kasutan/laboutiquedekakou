@@ -269,6 +269,27 @@ class BE_ACF_Customizations {
 			),
 			'keywords'        => [ 'animee', 'animée', 'decor', 'décor','kakou','accueil'],
 		] );
+
+		/*********Bloc section animée ***************/
+		acf_register_block_type( [
+			'name'            => 'nouveautes-produits',
+			'title'           => 'Bloc nouveautés produits',
+			'description'     => 'Section avec les 4 derniers produits (contenu automatique).',
+			'render_template' => 'partials/blocks/nouveautes-produits/nouveautes-produits.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/nouveautes-produits/nouveautes-produits.css',
+			'category'        => 'kakou',
+			'icon'            => 'cart', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>false,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'produit', 'nouveau', 'nouveauté','kakou','accueil'],
+		] );
+
+		
 	}
 }
 new BE_ACF_Customizations();

@@ -1,0 +1,8 @@
+.nouveautes-produits {
+  padding: 0 var(--padding-x) var(--margin-y-2); }
+  .nouveautes-produits .produits {
+    padding-top: var(--margin-y-1);
+    grid-template-columns: repeat(2, 1fr); }
+    @media screen and (min-width: 1200px) {
+      .nouveautes-produits .produits {
+        grid-template-columns: repeat(4, 1fr); } }
