@@ -1,0 +1,93 @@
+.personnalisations .option {
+  padding: var(--margin-y-2) 0;
+  position: relative;
+  text-align: right; }
+
+.personnalisations .legende {
+  font-size: calc(26 * var(--taille-texte) / 21);
+  background-color: #fff;
+  color: var(--bleu);
+  display: inline-block;
+  font-weight: 700;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%; }
+
+.personnalisations .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+  .personnalisations .image img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center bottom;
+    object-position: center bottom; }
+
+.personnalisations .texte-wrap {
+  display: inline-block;
+  padding: var(--padding-x); }
+
+@media (min-width: 960px) {
+  .personnalisations {
+    --largeur-col-texte:30rem; }
+    .personnalisations .contenu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      min-height: 39vw;
+      padding-left: var(--padding-x); }
+    .personnalisations .texte-wrap {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--largeur-col-texte);
+      flex: 0 0 var(--largeur-col-texte);
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+      padding-left: 0;
+      padding-right: var(--margin-y-1); }
+    .personnalisations .option {
+      -ms-flex-preferred-size: calc( (100% - var(--largeur-col-texte)) / 3);
+      flex-basis: calc( (100% - var(--largeur-col-texte)) / 3);
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2; } }
+
+@media (min-width: 1400px) {
+  .personnalisations {
+    --largeur-col-texte:43rem; }
+    .personnalisations .legende {
+      font-size: calc(30 * var(--taille-texte) / 21); } }
+
+@media (min-width: 1920px) {
+  .personnalisations .contenu {
+    min-height: unset;
+    height: 75rem; }
+  .personnalisations .legende {
+    font-size: calc(37 * var(--taille-texte) / 21);
+    padding: 2rem;
+    width: 36rem; } }

@@ -293,7 +293,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'section-banniere',
 			'title'           => 'Bloc section banniere',
-			'description'     => 'Section titre principal, image bannière et cadre blanc avec titre, texte et bouton optionnel.',
+			'description'     => 'Section avec titre principal, image bannière et cadre blanc avec titre, texte et bouton optionnel.',
 			'render_template' => 'partials/blocks/section-banniere/section-banniere.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/section-banniere/section-banniere.css',
 			'category'        => 'kakou',
@@ -306,6 +306,25 @@ class BE_ACF_Customizations {
 				'anchor' => false,
 			),
 			'keywords'        => [ 'section', 'banniere', 'image','kakou','accueil'],
+		] );
+
+		/*********Bloc personnalisations ***************/
+		acf_register_block_type( [
+			'name'            => 'personnalisations',
+			'title'           => 'Bloc vos personnalisations',
+			'description'     => 'Section avec titre principal, trois images légendées, titre secondaire, texte et bouton optionnel.',
+			'render_template' => 'partials/blocks/personnalisations/personnalisations.php',
+			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/personnalisations/personnalisations.css',
+			'category'        => 'kakou',
+			'icon'            => 'format-gallery', 
+			'mode'			=> "edit",
+			'supports' => array( 
+				'mode' => false,
+				'align'=>false,
+				'multiple'=>true,
+				'anchor' => false,
+			),
+			'keywords'        => [ 'personnalisation', 'image','kakou','accueil'],
 		] );
 		
 	}

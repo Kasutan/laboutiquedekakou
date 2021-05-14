@@ -31,7 +31,7 @@ if(function_exists('get_field')) :
 	}
 	
 
-	printf('<section class="section-banniere acf %s"%s>',$className,$anchor);
+	printf('<section class="section-banniere acf %s js-fade-in-on-visible"%s>',$className,$anchor);
 		
 		if($titre_2) printf('<h2 class="titre-section h1">%s</h2>',$titre_2);
 

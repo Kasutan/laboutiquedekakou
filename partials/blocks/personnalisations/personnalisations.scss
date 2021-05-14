@@ -1,0 +1,79 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.personnalisations {
+	.option {
+		padding:var(--margin-y-2) 0;
+		position: relative;
+		text-align: right;
+	}
+	.legende {
+		@include fs(26);
+		background-color: #fff;
+		color:var(--bleu);
+		display: inline-block;
+		font-weight: 700;
+		padding:1rem;
+		position: relative; // pour être visible au-dessus de l'image en absolute
+		text-align: center;
+		text-transform: uppercase;
+		width:80%;
+	}
+	.image {
+		display: flex;
+		height:100%;
+		left:0;
+		position:absolute;
+		top:0;
+		width:100%;
+		img {
+			object-fit: cover;
+			object-position: center bottom;
+		}
+	}
+	.texte-wrap {
+		display: inline-block;
+		padding:var(--padding-x);
+	}
+
+	@include bp(lg) {
+		--largeur-col-texte:30rem;
+		.contenu {
+			display: flex;
+			min-height:39vw;
+			padding-left:var(--padding-x); // c'est le contenu qui prend le padding-left
+		}
+		.texte-wrap {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			flex: 0 0 var(--largeur-col-texte);
+			justify-content: center;
+			order:1;
+			padding-left:0; // on déplace le padding-left au niveau du contenu
+			padding-right:var(--margin-y-1);
+		}
+		.option {
+			flex-basis:calc( (100% - var(--largeur-col-texte)) / 3);
+			flex-grow:0;
+			flex-shrink:1;
+			order:2;
+		}
+	}
+	@include bp(xl) {
+		--largeur-col-texte:43rem;
+		.legende {
+			@include fs(30);
+		}
+	}
+	@include bp(xxl) {
+		.contenu {
+			min-height: unset;
+			height: 75rem;
+		}
+		.legende {
+			@include fs(37);
+			padding:2rem;
+			width:36rem;
+		}
+	}
+}
