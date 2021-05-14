@@ -33,7 +33,7 @@ printf('<section class="acf nouveautes-produits %s">', $className);
 
 	if($titre) printf('<h2 class="h1">%s</h2>',$titre);
 
-	echo '<ul class="list produits">';
+	echo '<ul class="list produits js-cascade-on-visible">';
 	while ( $produits->have_posts() ) {
 		$produits->the_post();
 		wc_get_template_part( 'content', 'product' );

@@ -61,13 +61,16 @@ li.product {
 		width:100%;
 	}
 	.pictos {
-		height:6rem;
-		left:-3rem;
+		--taille-picto:18%;
+		height:var(--taille-picto);
+		left:calc(-0.5 * var(--taille-picto));
 		position: absolute;
-		top:-3rem;
+		text-align: left;
+		top:calc(-0.5 * var(--taille-picto));
+		width: 100%;
 		img {
-			max-width:6rem;
-			margin-right:7px;
+			max-width:var(--taille-picto);
+			margin-right:2%;
 		}
 
 	}
