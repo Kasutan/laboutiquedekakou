@@ -32,12 +32,19 @@ textarea {
 
 h1, .h1 {
 	color:var(--noir);
-	@include fs(55);
-	font-weight: 400;
+	font-style: 3rem;
+	font-weight: 500;
 	margin:1.5em 0 1em;
 	padding:0;
 	text-align:center;
 	text-transform: uppercase;
+}
+
+@include bp(sm) {
+	h1, .h1 {
+		@include fs(55);
+		font-weight: 400;
+	}
 }
 
 h2,

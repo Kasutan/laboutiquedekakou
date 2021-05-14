@@ -792,12 +792,17 @@ textarea {
 
 h1, .h1 {
   color: var(--noir);
-  font-size: calc(55 * var(--taille-texte) / 21);
-  font-weight: 400;
+  font-style: 3rem;
+  font-weight: 500;
   margin: 1.5em 0 1em;
   padding: 0;
   text-align: center;
   text-transform: uppercase; }
+
+@media (min-width: 500px) {
+  h1, .h1 {
+    font-size: calc(55 * var(--taille-texte) / 21);
+    font-weight: 400; } }
 
 h2,
 h3,
