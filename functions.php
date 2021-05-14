@@ -322,3 +322,6 @@ require_once( 'inc/fix-local-pickup.php' );
 *
 */
 require_once( 'inc/message-absence.php' );
+
+
+//TODO de-register les blocs gutenberg en doublon avec des blocs custom (notamment WooCommerce)
