@@ -1,0 +1,70 @@
+/* Override styles du plugin WPC fly cart + quelques ajustements au contenu dans traductions.php */
+
+.woofc-area.woofc-style-02 {
+	.cadre-quantite {
+		border:none;
+		margin:0;
+		button, label {
+			display: none;
+		}
+	}
+	.tax_label {
+		display: none;
+	}
+	.woofc-area-bot .woofc-action .woofc-action-inner {
+		> div a {
+			@include bouton;
+			background: var(--bleu-bouton);
+			border-radius: 1rem;
+			color: var(--blanc);
+			font-size: 1em;
+			font-weight:400;
+			height: unset;
+			letter-spacing: 1.05px;
+			line-height: 1.1;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: all var(--transition);
+
+			&:hover, &:focus, &:active {
+				background: var(--bleu-fonce);
+				color: var(--blanc);
+				outline: none;
+				text-decoration: none;
+			}
+		}
+	}
+
+}
+
+/*Picto avec compteur dans le menu */
+li.woofc-menu-item {
+	background-image:url('icons/panier.png');
+	background-size:contain;
+	background-repeat: no-repeat;
+	height:28px;
+	width:30px;
+	transition:transform 0.3s;
+	a, .woofc-menu-item-inner {
+		width: 100%;
+		display: block;
+		height: 100%;
+		position: relative;
+		&:focus-visible {
+			outline-color:var(--blanc);
+		}
+	}
+	&:hover, &:focus-within {
+		transform:scale(1.1);
+	}
+	.woofc-menu-item-inner i, .woofc-menu-item-inner-subtotal {
+		display: none;
+	}
+	.woofc-menu-item-inner::after {
+		background-color: var(--rouge);
+		left:unset;
+		letter-spacing: 0;
+		right:-8px;
+		top:0;
+	}
+}

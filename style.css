@@ -2897,6 +2897,71 @@ h3.titre-interne-onglet {
 .filtre-input:checked + .filtre-label {
   font-weight: 700; }
 
+/* Override styles du plugin WPC fly cart + quelques ajustements au contenu dans traductions.php */
+.woofc-area.woofc-style-02 .cadre-quantite {
+  border: none;
+  margin: 0; }
+  .woofc-area.woofc-style-02 .cadre-quantite button, .woofc-area.woofc-style-02 .cadre-quantite label {
+    display: none; }
+
+.woofc-area.woofc-style-02 .tax_label {
+  display: none; }
+
+.woofc-area.woofc-style-02 .woofc-area-bot .woofc-action .woofc-action-inner > div a {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-align: center;
+  vertical-align: middle;
+  background: var(--bleu-bouton);
+  border-radius: 1rem;
+  color: var(--blanc);
+  font-size: 1em;
+  font-weight: 400;
+  height: unset;
+  letter-spacing: 1.05px;
+  line-height: 1.1;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition); }
+  .woofc-area.woofc-style-02 .woofc-area-bot .woofc-action .woofc-action-inner > div a:hover, .woofc-area.woofc-style-02 .woofc-area-bot .woofc-action .woofc-action-inner > div a:focus, .woofc-area.woofc-style-02 .woofc-area-bot .woofc-action .woofc-action-inner > div a:active {
+    background: var(--bleu-fonce);
+    color: var(--blanc);
+    outline: none;
+    text-decoration: none; }
+
+/*Picto avec compteur dans le menu */
+li.woofc-menu-item {
+  background-image: url("icons/panier.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 28px;
+  width: 30px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s; }
+  li.woofc-menu-item a, li.woofc-menu-item .woofc-menu-item-inner {
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: relative; }
+    li.woofc-menu-item a:focus-visible, li.woofc-menu-item .woofc-menu-item-inner:focus-visible {
+      outline-color: var(--blanc); }
+  li.woofc-menu-item:hover, li.woofc-menu-item:focus-within {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  li.woofc-menu-item .woofc-menu-item-inner i, li.woofc-menu-item .woofc-menu-item-inner-subtotal {
+    display: none; }
+  li.woofc-menu-item .woofc-menu-item-inner::after {
+    background-color: var(--rouge);
+    left: unset;
+    letter-spacing: 0;
+    right: -8px;
+    top: 0; }
+
 .owl-nav {
   display: -webkit-box;
   display: -ms-flexbox;

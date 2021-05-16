@@ -18,8 +18,11 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 		}
 	} else if($domain == 'woofc') {
 		switch ($original) {
-			case 'You may be interested in&hellip;' :
-				return 'Vous aimerez aussi&hellip;';
+			case 'Checkout' :
+				return 'Paiement';
+				break;
+			case 'Subtotal' : 
+				return 'Total (hors frais de livraison)';
 				break;
 			default:
 				break;
