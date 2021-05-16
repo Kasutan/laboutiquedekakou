@@ -1315,10 +1315,7 @@ button.menu-toggle {
     .topbar .menu-topbar li.current-menu-item a, .topbar .menu-topbar li.current-menu-ancestor a {
       font-weight: 700; }
   .topbar .compte {
-    background-image: url("icons/mon-compte.png"); }
-  .topbar .panier {
-    background-image: url("icons/panier.png"); }
-  .topbar .compte, .topbar .panier {
+    background-image: url("icons/mon-compte.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 28px;
@@ -1328,11 +1325,11 @@ button.menu-toggle {
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s; }
-    .topbar .compte a, .topbar .panier a {
+    .topbar .compte a {
       color: transparent; }
-      .topbar .compte a:focus-visible, .topbar .panier a:focus-visible {
+      .topbar .compte a:focus-visible {
         outline-color: var(--blanc); }
-    .topbar .compte:hover, .topbar .compte:focus-within, .topbar .panier:hover, .topbar .panier:focus-within {
+    .topbar .compte:hover, .topbar .compte:focus-within {
       -webkit-transform: scale(1.1);
       transform: scale(1.1); }
   @media (min-width: 1400px) {
