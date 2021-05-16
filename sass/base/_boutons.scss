@@ -1,6 +1,7 @@
 
 button:not(.picto),
 input[type="button"],
+.site-container .nf-form-content input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button:not(.picto),
@@ -22,6 +23,7 @@ a.wp-block-button__link {
 
 	&:hover, &:focus, &:active {
 		background: var(--bleu-fonce);
+		color: var(--blanc);
 		outline: none;
 		text-decoration: none;
 	}

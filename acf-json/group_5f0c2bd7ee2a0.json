@@ -165,6 +165,49 @@
             "load_terms": 0,
             "return_format": "id",
             "multiple": 0
+        },
+        {
+            "key": "field_60a0e74ac0bdd",
+            "label": "Formulaire d'inscription à la newsletter",
+            "name": "formulaire_newsletter",
+            "type": "text",
+            "instructions": "Coller ici le code court du formulaire.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60a0e771c0bde",
+            "label": "Image de fond pour le formulaire d'inscription à la newsletter",
+            "name": "formulaire_newsletter_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "0.5",
+            "mime_types": "jpg, jpeg"
         }
     ],
     "location": [
@@ -184,5 +227,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620745266
+    "modified": 1621158384
 }

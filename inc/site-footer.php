@@ -6,9 +6,17 @@
  */
 add_action( 'tha_footer_before', 'kasutan_affiche_banniere_newsletter' );
 function kasutan_affiche_banniere_newsletter() {
-	echo '<div class="banniere-newsletter" style="background:grey; padding:20px;height:100px">';
-	echo '<p>Formulaire inscription newlsetter ici</p>';
-	echo '</div>';
+	if(!function_exists(('get_field'))) return; 
+
+	$formulaire=wp_kses_post(get_field('formulaire_newsletter','option'));
+	$image=esc_attr(get_field('formulaire_newsletter_image','option'));
+	
+	if(empty($formulaire)) return;
+
+	echo '<section class="banniere-newsletter">';
+		printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere'));
+		printf('<div class="cadre">%s</div>',do_shortcode( $formulaire));
+	echo '</section>';
 }
 
 /**

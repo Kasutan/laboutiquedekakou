@@ -1,0 +1,65 @@
+.banniere-newsletter {
+	min-height:22vw;
+	padding:var(--margin-y-2) var(--padding-x);
+	position: relative;
+	.image {
+		display: flex;
+		height:100%;
+		left:0;
+		position:absolute;
+		top:0;
+		width:100%;
+		img {
+			@include object-fit;
+		}
+	}
+	.cadre {
+		background-color: rgba(0,0,0,0.39);
+		border-radius: 12px;
+		margin: auto;
+		max-width: 70rem;
+		padding:var(--margin-y-1);
+		position: relative;
+	}
+	h3 {
+		@include fs(40);
+		color:#fff;
+	}
+	.nf-form-fields-required {
+		display: none;
+	}
+	.nf-field-container {
+		margin-bottom: 0;
+	}
+	.nf-error.field-wrap .nf-field-element::after {
+		border-radius: 7px;
+	}
+	.nf-response-msg {
+		color:#fff;
+	}
+	.nf-form-content input[type="email"].ninja-forms-field {
+		@include placeholder;
+		background-color:#fff;
+		border-radius: 7px;
+		border:none;
+		padding: 0.5rem 1rem;
+	}
+	nf-field:first-of-type {
+		margin-bottom: 1rem;
+	}
+	@include bp(sm) {
+		nf-fields-wrap {
+			display: flex;
+		}
+		nf-field:first-of-type {
+			flex-grow:1;
+			margin-bottom: 0;
+			margin-right: 2rem;
+		}
+	}
+	
+	@include bp(xxl) {
+		min-height:unset;
+		height:43rem;
+	}
+}
