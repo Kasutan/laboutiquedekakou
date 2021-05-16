@@ -16,7 +16,7 @@ function kasutan_overlay_pictos_vignette_produit() {
 			$titre=$etiquette->name;
 			$term_id=$etiquette->term_id;
 			$picto_id=get_field('picto','product_tag_'.$term_id);
-			echo wp_get_attachment_image( $picto_id, 'thumbnail', false, array('title'=>$titre) );
+			echo wp_get_attachment_image( $picto_id, 'thumbnail', false, array('title'=>$titre,'class'=>'picto') );
 		}
 		echo '</div>';
 	}

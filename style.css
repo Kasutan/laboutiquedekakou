@@ -914,7 +914,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button:not(.picto),
-a.wp-block-button__link {
+a.wp-block-button__link,
+.woocommerce button.button.alt {
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -952,7 +953,10 @@ a.wp-block-button__link {
   a.button:not(.picto):active,
   a.wp-block-button__link:hover,
   a.wp-block-button__link:focus,
-  a.wp-block-button__link:active {
+  a.wp-block-button__link:active,
+  .woocommerce button.button.alt:hover,
+  .woocommerce button.button.alt:focus,
+  .woocommerce button.button.alt:active {
     background: var(--bleu-fonce);
     color: var(--blanc);
     outline: none;
@@ -963,7 +967,8 @@ a.wp-block-button__link {
   input[type="reset"]:focus-visible,
   input[type="submit"]:focus-visible,
   a.button:not(.picto):focus-visible,
-  a.wp-block-button__link:focus-visible {
+  a.wp-block-button__link:focus-visible,
+  .woocommerce button.button.alt:focus-visible {
     outline: solid 1px var(--bleu-fonce); }
 
 button.picto,
@@ -2285,7 +2290,7 @@ li.product {
       font-weight: 700; }
   li.product .attachment-woocommerce_thumbnail {
     width: 100%; }
-  li.product .pictos {
+  li.product a.woocommerce-LoopProduct-link .pictos {
     --taille-picto:18%;
     height: var(--taille-picto);
     left: calc(-0.5 * var(--taille-picto));
@@ -2293,9 +2298,12 @@ li.product {
     text-align: left;
     top: calc(-0.5 * var(--taille-picto));
     width: 100%; }
-    li.product .pictos img {
+    li.product a.woocommerce-LoopProduct-link .pictos img.picto {
+      display: inline-block;
       max-width: var(--taille-picto);
-      margin-right: 2%; }
+      margin-right: 2%;
+      margin-bottom: 0;
+      width: unset; }
   li.product .categorie {
     font-size: calc(14 * var(--taille-texte) / 21);
     color: var(--texte-gris);
@@ -2533,6 +2541,10 @@ h1.titre-produit {
     .single-product .cart {
       margin-right: 10rem; } }
 
+.single-product button.button.loading {
+  padding-right: 4rem;
+  position: relative; }
+
 .single-product .boutons-partage {
   margin: var(--margin-y-1); }
   .single-product .boutons-partage nav {
@@ -2609,9 +2621,9 @@ h3.titre-interne-onglet {
   color: var(--noir); }
 
 .woocommerce-info {
-  border-top-color: var(--bleu-fonce); }
+  border-top-color: var(--bleu); }
   .woocommerce-info::before {
-    color: var(--bleu-fonce); }
+    color: var(--bleu); }
 
 .woocommerce-message {
   border-top-color: var(--vert); }

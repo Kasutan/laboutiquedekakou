@@ -5,7 +5,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button:not(.picto),
-a.wp-block-button__link {
+a.wp-block-button__link,
+.woocommerce button.button.alt {
 	@include bouton;
 
 	background: var(--bleu-bouton);

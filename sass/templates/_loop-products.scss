@@ -60,7 +60,7 @@ li.product {
 	.attachment-woocommerce_thumbnail {
 		width:100%;
 	}
-	.pictos {
+	a.woocommerce-LoopProduct-link .pictos {
 		--taille-picto:18%;
 		height:var(--taille-picto);
 		left:calc(-0.5 * var(--taille-picto));
@@ -68,9 +68,12 @@ li.product {
 		text-align: left;
 		top:calc(-0.5 * var(--taille-picto));
 		width: 100%;
-		img {
+		img.picto {
+			display: inline-block; //contrer styles Woo
 			max-width:var(--taille-picto);
 			margin-right:2%;
+			margin-bottom: 0; //contrer styles Woo
+			width:unset; //contrer styles Woo
 		}
 
 	}

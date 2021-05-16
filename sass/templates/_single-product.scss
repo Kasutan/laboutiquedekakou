@@ -62,7 +62,10 @@ h1.titre-produit {
 		}
 	}
 
-
+	button.button.loading {
+		padding-right:4rem;
+		position: relative;
+	}
 	.boutons-partage {
 		margin: var(--margin-y-1);
 		nav {

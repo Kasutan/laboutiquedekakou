@@ -1,9 +1,9 @@
 //Style des messages
 
 .woocommerce-info {
-	border-top-color:var(--bleu-fonce);
+	border-top-color:var(--bleu);
 	&::before {
-		color:var(--bleu-fonce);
+		color:var(--bleu);
 	}
 }
 
