@@ -92,10 +92,19 @@ if ( class_exists( 'Local_Pickup_Time' ) ) {
 // Ajouter le créneau de retrait seulement aux emails seulement s'il y en a un 
 add_filter('woocommerce_email_order_meta_fields','kasutan_email_order_meta_fields',20,3);
 function kasutan_email_order_meta_fields( $fields, $sent_to_admin, $order ) {
+	if ( !class_exists( 'Local_Pickup_Time' ) ) {
+		return $fields;
+	}
+
 	$key='_local_pickup_time_select';
 	$value = get_post_meta($order->get_id(),$key, true );
 	if($value!=="Aucun") {
-		$creneau=date('d/m/Y à H:i',$value);
+
+		// Get an instance of the Public plugin.
+		$plugin = Local_Pickup_Time::get_instance();
+		//Utiliser la méthode de formatage du plugin pour avoir le bon fuseau horaire
+		$creneau=$plugin->pickup_time_select_translatable( $value );
+
 		$fields[$key] = array(
 			'label' => 'Rendez-vous est pris pour le retrait à la date du ',
 			'value' => $creneau,
@@ -120,10 +129,17 @@ if ( class_exists( 'Local_Pickup_Time_Admin' ) ) {
 
 // Ajouter le créneau de retrait dans l'écran d'édition de la commande seulement s'il y en a un 
 function kasutan_affiche_creneau_commande_admin($order) {
+	if ( !class_exists( 'Local_Pickup_Time' ) ) {
+		return;
+	}
+
 	$key='_local_pickup_time_select';
 	$value = esc_html(get_post_meta($order->get_id(),$key, true )); //timestamp ou aucun
+	
 	if(!empty($value) && $value!=="Aucun") {
-		$creneau=date('d/m/Y à H:i',$value);
+		// Get an instance of the Public plugin.
+		$plugin = Local_Pickup_Time::get_instance();
+		$creneau=$plugin->pickup_time_select_translatable( $value );
 		echo '<p><strong>Créneau de retrait à la boutique</strong> ' . $creneau . '</p>';
 	}
 }
