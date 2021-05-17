@@ -1176,21 +1176,22 @@ object {
 
 a,
 a:visited {
-  color: var(--cyan);
+  color: var(--bleu);
   -webkit-transition: all var(--transition);
   transition: all var(--transition); }
 
 a:hover,
 a:active,
 a:focus {
-  color: var(--bleu); }
-
-a:focus {
-  outline: medium dotted; }
+  color: var(--bleu-fonce); }
 
 a:hover,
+a:focus,
 a:active {
   outline: 0; }
+
+a:focus-visible {
+  outline: medium dotted; }
 
 /*--------------------------------------------------------------
 ## Ancres

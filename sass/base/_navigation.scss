@@ -6,23 +6,25 @@
 }
 a,
 a:visited {
-	color: var(--cyan);
+	color: var(--bleu);
 	transition: all var(--transition);
 }
 
 a:hover,
 a:active,
 a:focus {
-	color: var(--bleu);
+	color: var(--bleu-fonce);
 }
 
-a:focus {
-	outline: medium dotted;
-}
+
 
 a:hover,
+a:focus,
 a:active {
 	outline: 0;
+}
+a:focus-visible {
+	outline: medium dotted;
 }
 
 
