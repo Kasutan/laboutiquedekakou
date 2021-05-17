@@ -80,3 +80,28 @@ function kasutan_validate_pickup( $fields, $errors ){
 		}
 	}
 }
+
+
+// Empêcher le pludgin d'ajouter systématiquement le créneau de retrait aux emails (en plus il écrasait toutes les autres métas)
+// add_filter( 'woocommerce_email_order_meta_fields', array( $this, 'update_order_email_fields' ), 10, 3 );
+// dans le fichier public/class-local-pickup-time.php 
+if ( class_exists( 'Local_Pickup_Time' ) ) {
+	remove_filter( 'woocommerce_email_order_meta_fields', array( Local_Pickup_Time::get_instance(), 'update_order_email_fields') );
+}
+
+// Ajouter le créneau de retrait seulement aux emails seulement s'il y en a un 
+add_filter('woocommerce_email_order_meta_fields','kasutan_email_order_meta_fields',20,3);
+function kasutan_email_order_meta_fields( $fields, $sent_to_admin, $order ) {
+	$key='_local_pickup_time_select';
+	$value = get_post_meta($order->get_id(),$key, true );
+	error_log('creneau timestamp : '.$value);
+	if($value!=="Aucun") {
+		$creneau=date('d/m/Y à H:i',$value);
+		error_log('creneau formaté : '.$creneau);
+		$fields[$key] = array(
+			'label' => 'Rendez-vous est pris pour le retrait à la date du ',
+			'value' => $creneau,
+		);
+	}
+	return $fields;
+}
