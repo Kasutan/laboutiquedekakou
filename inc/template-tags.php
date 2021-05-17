@@ -34,7 +34,7 @@ function ea_entry_category($contexte='archive') {
 	}
 	if( !empty( $term ) && ! is_wp_error( $term ) )
 		if($contexte==='archive') {
-			echo '<p class="entry-category"><a href="' . get_term_link( $term, 'category' ) . '">' . $term->name . '</a></p>';
+			echo '<p class="entry-category">' . $term->name . '</p>';
 			//pour le filtre
 			printf('<span class="term screen-reader-text">%s</span>',$term->slug);
 		} else {
@@ -145,8 +145,9 @@ function kasutan_fil_ariane() {
 		if(is_single()) {
 			$term=ea_first_term();
 			if(!empty($term)) {
-				printf('<a href="%s">%s</a> > ',
-					get_category_link( $term ),
+				printf('<a href="%s?filtre_cat=%s">%s</a> > ',
+				get_the_permalink( $actus),
+					$term->slug,
 					$term->name
 				);
 			}
