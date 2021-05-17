@@ -164,3 +164,38 @@
 		}
 	}
 }
+
+
+//Page validation de commande
+//Mise en page grille en desktop pour les navigateurs qui le supportent
+@include bp(md) {
+	@supports(column-gap: 4rem) {
+		.checkout {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 4rem auto;
+			column-gap: 4rem;
+			#order_review {
+				grid-row-start: 2;
+				grid-column-start: 2;
+			}
+			#customer_details {
+				grid-row: 1 / span 2;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		.woocommerce .col2-set .col-1,
+		.woocommerce-page .col2-set .col-1,
+		.woocommerce .col2-set .col-2, 
+		.woocommerce-page .col2-set .col-2 {
+			float:none;
+			width:100%;
+		}
+	}
+}
+
+//Taille du logo paiement
+.wc_payment_method.payment_method_etransactions_std img {
+	max-width: 10rem;
+}

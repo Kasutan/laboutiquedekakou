@@ -2754,6 +2754,36 @@ h3.titre-interne-onglet {
   .cart_totals a.checkout-button.button.alt:hover, .cart_totals a.checkout-button.button.alt:focus, .cart_totals a.checkout-button.button.alt:active {
     background: var(--bleu-fonce); }
 
+@media (min-width: 768px) {
+  @supports ((-webkit-column-gap: 4rem) or (column-gap: 4rem)) {
+    .checkout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 4rem auto;
+      -webkit-column-gap: 4rem;
+      column-gap: 4rem; }
+      .checkout #order_review {
+        grid-row-start: 2;
+        grid-column-start: 2; }
+      .checkout #customer_details {
+        grid-row: 1 / span 2;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+    .woocommerce .col2-set .col-1,
+    .woocommerce-page .col2-set .col-1,
+    .woocommerce .col2-set .col-2,
+    .woocommerce-page .col2-set .col-2 {
+      float: none;
+      width: 100%; } } }
+
+.wc_payment_method.payment_method_etransactions_std img {
+  max-width: 10rem; }
+
 .wp-block-columns.antennes-regionales {
   -webkit-box-align: center;
   -ms-flex-align: center;
