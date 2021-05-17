@@ -2514,7 +2514,7 @@ h1.titre-produit {
   float: none;
   margin-bottom: var(--margin-y-1); }
 
-.single-product .summary > .stock {
+.single-product .summary > .stock.in-stock {
   display: none; }
 
 .single-product .form-container {

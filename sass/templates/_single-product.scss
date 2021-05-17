@@ -35,7 +35,7 @@ h1.titre-produit {
 }
 .single-product {
 	.summary {
-		> .stock {
+		> .stock.in-stock {
 			display: none;
 		}
 		
