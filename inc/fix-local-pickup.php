@@ -82,7 +82,7 @@ function kasutan_validate_pickup( $fields, $errors ){
 }
 
 
-// Empêcher le pludgin d'ajouter systématiquement le créneau de retrait aux emails (en plus il écrasait toutes les autres métas)
+// Empêcher le plugin d'ajouter systématiquement le créneau de retrait aux emails (en plus il écrasait toutes les autres métas)
 // add_filter( 'woocommerce_email_order_meta_fields', array( $this, 'update_order_email_fields' ), 10, 3 );
 // dans le fichier public/class-local-pickup-time.php 
 if ( class_exists( 'Local_Pickup_Time' ) ) {
@@ -94,14 +94,36 @@ add_filter('woocommerce_email_order_meta_fields','kasutan_email_order_meta_field
 function kasutan_email_order_meta_fields( $fields, $sent_to_admin, $order ) {
 	$key='_local_pickup_time_select';
 	$value = get_post_meta($order->get_id(),$key, true );
-	error_log('creneau timestamp : '.$value);
 	if($value!=="Aucun") {
 		$creneau=date('d/m/Y à H:i',$value);
-		error_log('creneau formaté : '.$creneau);
 		$fields[$key] = array(
 			'label' => 'Rendez-vous est pris pour le retrait à la date du ',
 			'value' => $creneau,
 		);
 	}
 	return $fields;
+}
+
+
+// Empêcher le plugin d'ajouter systématiquement le créneau de retrait aux détails de la commande
+// add_action( $admin_hooked_location, array( $this, 'show_metabox' ), 10, 1 );
+// dans le fichier plugins\woocommerce-local-pickup-time-select\admin\class-local-pickup-time-admin.php
+if ( class_exists( 'Local_Pickup_Time_Admin' ) ) {
+	$admin_hooked_location = apply_filters( 'local_pickup_time_admin_location', 'woocommerce_admin_order_data_after_billing_address' );
+
+	//Décrocher l'action du plugin
+	remove_action($admin_hooked_location, array( Local_Pickup_Time_Admin::get_instance(), 'show_metabox'),10 );
+
+	//Raccrocher mon action
+	add_action($admin_hooked_location,'kasutan_affiche_creneau_commande_admin',10,1);
+}
+
+// Ajouter le créneau de retrait dans l'écran d'édition de la commande seulement s'il y en a un 
+function kasutan_affiche_creneau_commande_admin($order) {
+	$key='_local_pickup_time_select';
+	$value = esc_html(get_post_meta($order->get_id(),$key, true )); //timestamp ou aucun
+	if(!empty($value) && $value!=="Aucun") {
+		$creneau=date('d/m/Y à H:i',$value);
+		echo '<p><strong>Créneau de retrait à la boutique</strong> ' . $creneau . '</p>';
+	}
 }
