@@ -2528,6 +2528,9 @@ h1.titre-produit {
   display: inline-block;
   padding-right: 1ch; }
 
+.single-product .woosb-availability .in-stock {
+  display: none; }
+
 .single-product .quantity {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;

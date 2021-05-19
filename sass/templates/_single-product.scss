@@ -51,6 +51,11 @@ h1.titre-produit {
 			padding-right:1ch;
 		}
 	}
+
+	//Masquer info en stock pour les composants d'un lot intelligent
+	.woosb-availability .in-stock {
+		display: none;
+	}
 	.quantity {
 		justify-content: space-between;
 	}
