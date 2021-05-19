@@ -2763,14 +2763,20 @@ h3.titre-interne-onglet {
     .checkout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 4rem auto;
+      grid-template-rows: auto 4rem auto;
       -webkit-column-gap: 4rem;
       column-gap: 4rem; }
-      .checkout #order_review {
+      .checkout .woocommerce-NoticeGroup {
+        grid-row-start: 1;
+        grid-column: 1 / span 2; }
+      .checkout #order_review_heading {
         grid-row-start: 2;
         grid-column-start: 2; }
+      .checkout #order_review {
+        grid-row-start: 3;
+        grid-column-start: 2; }
       .checkout #customer_details {
-        grid-row: 1 / span 2;
+        grid-row: 2 / span 2;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
