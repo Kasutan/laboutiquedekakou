@@ -26,7 +26,7 @@
 		var boutonRecherche=$("button.recherche");
 		if($(boutonRecherche).length>0) {
 			$(boutonRecherche).click(function(){
-				var voletRecherche=$(this).attr('aria-controls');
+				var voletRecherche=$('#'+$(this).attr('aria-controls'));
 				if($(boutonRecherche).attr('aria-expanded')=="false") {
 					$(voletRecherche).show();
 					$(voletRecherche).css('width','200px');

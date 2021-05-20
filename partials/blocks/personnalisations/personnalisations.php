@@ -48,7 +48,7 @@ if(function_exists('get_field')) :
 				
 				printf('<div class="texte-wrap">');
 					if($titre_3) printf('<h3 class="h2">%s</h3>',$titre_3);
-					if($texte) printf('<p class="texte">%s</p>',$texte);
+					if($texte) printf('<div class="texte">%s</div>',$texte);
 					if($cible_bouton && $label_bouton) {
 						printf('<a href="%s" class="button"%s>%s</a>',$cible_bouton,$target_attr,$label_bouton);
 					}

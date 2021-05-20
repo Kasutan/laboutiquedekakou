@@ -53,10 +53,10 @@ function kasutan_affiche_coordonnees_boutique() {
 			if (kasutan_is_woo_active()) {
 				$adresse_ligne_2=WC()->countries->get_base_address_2();
 				echo '<p class="adresse-boutique">';
-					printf('<strong>%s</strong></br>',get_option('blogname'));
-					echo WC()->countries->get_base_address().'</br>';
+					printf('<strong>%s</strong><br/>',get_option('blogname'));
+					echo WC()->countries->get_base_address().'<br/>';
 					if($adresse_ligne_2) {
-						echo $adresse_ligne_2.'</br>';
+						echo $adresse_ligne_2.'<br/>';
 					}
 					echo WC()->countries->get_base_postcode().' ';
 					echo WC()->countries->get_base_city();

@@ -22,7 +22,7 @@ if(function_exists('get_field')) :
 			$term=get_sub_field('categorie');
 			
 			echo '<div class="categorie">';
-				printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'medium_large'));
+				printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'medium'));
 				printf('<a class="texte" href="%s">%s</a>',get_term_link($term,'product_cat'),$term->name);
 			echo '</div>';
 		endwhile;

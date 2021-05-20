@@ -220,7 +220,7 @@ function kasutan_affiche_recherche($contexte='desktop') {
 		get_search_form();
 	echo '</div>';
 	//bouton ouvrir/fermer volet de recherche
-	printf('<div class="centreur"><button id="ouvrir-recherche-%s" aria-expanded="false" class="recherche picto" aria-controls="#volet-recherche-%s" aria-label="Ouvrir le formulaire de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
+	printf('<div class="centreur"><button id="ouvrir-recherche-%s" aria-expanded="false" class="recherche picto" aria-controls="volet-recherche-%s" aria-label="Ouvrir le formulaire de recherche">%s<span class="screen-reader-text">Ouvrir le formulaire de recherche</span></button></div>',
 		$contexte,
 		$contexte,
 		kasutan_picto(array('icon'=>'loupe','size'=>'33'))
