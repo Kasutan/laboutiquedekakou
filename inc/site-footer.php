@@ -13,10 +13,11 @@ function kasutan_affiche_banniere_newsletter() {
 	
 	if(empty($formulaire)) return;
 
-	echo '<section class="banniere-newsletter">';
+	echo '<aside class="banniere-newsletter">';
+		echo '<h2 class="screen-reader-text">A propos de notre newsletter</h2>';
 		printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere'));
 		printf('<div class="cadre">%s</div>',do_shortcode( $formulaire));
-	echo '</section>';
+	echo '</aside>';
 }
 
 /**

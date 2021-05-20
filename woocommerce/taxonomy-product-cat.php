@@ -37,6 +37,7 @@ get_header();
 	}
 	echo '<div class="entry-content">';
 		echo '<div class="container">';
+			printf('<h1 class="screen-reader-text">Produits de la catégorie : %s</h1>',$queried_object->name);
 			do_action('kakou_avant_archive_produit');
 		echo '</div>';
 		

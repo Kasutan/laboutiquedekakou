@@ -33,7 +33,7 @@ function kasutan_after_add_to_cart_form() {
 		if(function_exists('kasutan_picto')) :
 			$link=str_replace(":", "%3A", get_the_permalink());?>
 			<div class="boutons-partage">
-				<nav>
+				<nav aria-label="Partager sur les réseaux sociaux">
 					<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $link;?>"  class="icone-partage"
 					title="Cliquez pour partager sur Facebook" rel="noopener noreferrer" target="blank"   >
 					<?php echo kasutan_picto(array('icon'=>'facebook-simple', 'size'=>'36'));?>

@@ -283,7 +283,15 @@
 			kasutan_bind_qty();
 		}
 
-		
+		/*=================================================
+		Corrections pour l'accessibilité
+		=================================================*/
+		$(document.body).on('woofc_cart_loaded',function() {
+			$('.woofc-menu-item a').attr('title',"Mon panier");
+		});
+		setTimeout(function(){ 
+			$('.woocommerce-product-gallery__trigger').attr('title',"Afficher les images du produit en plein écran");
+		}, 1000);		
 
 	}); //fin document ready
 })( jQuery );
