@@ -22,7 +22,7 @@ if(function_exists('get_field')) :
 			$label=wp_kses_post( get_sub_field('label') );
 			$cible=esc_url( get_sub_field('cible') );
 			echo '<div class="slide">';
-				printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere'));
+				printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere',false,array('decoding'=>'async')));
 				printf('<div class="texte">%s',wpautop($texte));
 				if(!empty($cible) && !empty($label)) {
 					printf('<a class="button" href="%s">%s</a>',$cible,$label);

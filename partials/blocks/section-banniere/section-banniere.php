@@ -36,7 +36,7 @@ if(function_exists('get_field')) :
 		if($titre_2) printf('<h2 class="titre-section h1">%s</h2>',$titre_2);
 
 		echo '<div class="banniere-wrap">';
-			if($image) printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere'));
+			if($image) printf('<div class="image">%s</div>',wp_get_attachment_image( $image, 'banniere',false,array('decoding'=>'async')));
 			printf('<div class="cadre">');
 				if($titre_3) printf('<h3 class="h2">%s</h3>',$titre_3);
 				if($texte) printf('<p class="texte">%s</p>',$texte);

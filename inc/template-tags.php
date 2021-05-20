@@ -239,7 +239,7 @@ function kasutan_page_banniere() {
 	}
 	$image_id=esc_attr(get_field('kakou_page_banniere'));
 	if(!empty($image_id)) {
-		printf('<div class="page-banniere">%s</div>',wp_get_attachment_image( $image_id, 'banniere'));
+		printf('<div class="page-banniere">%s</div>',wp_get_attachment_image( $image_id, 'banniere',false,array('decoding'=>'async')));
 	}
 }
 
