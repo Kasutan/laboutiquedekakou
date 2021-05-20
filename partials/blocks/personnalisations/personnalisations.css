@@ -1,3 +1,6 @@
+.personnalisations .contenu {
+  background-color: var(--fond); }
+
 .personnalisations .option {
   padding: var(--margin-y-2) 0;
   position: relative;
@@ -5,7 +8,7 @@
 
 .personnalisations .legende {
   font-size: calc(26 * var(--taille-texte) / 21);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   color: var(--bleu);
   display: inline-block;
   font-weight: 700;
@@ -28,11 +31,16 @@
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center bottom;
-    object-position: center bottom; }
+    object-position: center bottom;
+    width: 100%; }
 
 .personnalisations .texte-wrap {
   display: inline-block;
   padding: var(--padding-x); }
+
+.personnalisations h3 {
+  font-size: calc(42 * var(--taille-texte) / 21);
+  line-height: 1.1; }
 
 @media (min-width: 960px) {
   .personnalisations {
@@ -80,6 +88,8 @@
 @media (min-width: 1400px) {
   .personnalisations {
     --largeur-col-texte:43rem; }
+    .personnalisations .contenu {
+      padding-left: calc(6rem + var(--padding-x-pleine-largeur)); }
     .personnalisations .legende {
       font-size: calc(30 * var(--taille-texte) / 21); } }
 

@@ -1,7 +1,8 @@
 @import "./././sass/abstracts/variables-et-mixins";
 
 .nouveautes-produits {
-	padding:0 var(--padding-x) var(--margin-y-1);
+	background-color: var(--fond);
+	padding:1px 0 var(--margin-y-1); //le padding latéral est fourni par la grille .produits
 	.produits {
 		padding-top:var(--margin-y-1);
 		grid-template-columns: repeat(2,1fr);

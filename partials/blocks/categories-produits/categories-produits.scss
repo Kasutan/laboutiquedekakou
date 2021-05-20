@@ -24,11 +24,12 @@
 		@include fs(28);
 
 		align-items: center;
-		background-color: #fff;
+		background-color: rgba(255,255,255,0.9);
 		color:var(--texte);
 		display: flex;
 		font-weight: 700;
 		justify-content: center;
+		min-width:55%;
 		padding:1em;
 		position: relative;
 		text-align: center;

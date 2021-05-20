@@ -1,9 +1,9 @@
 .reassurance {
   padding: var(--margin-y-1) var(--padding-x); }
   .reassurance .argument {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -12,11 +12,12 @@
 	}
 	
 	a {
-		color:var(--bleu);
+		color:var(--bleu-fonce);
+		font-weight: 400;
 		text-decoration: none;
 		transition-duration: 0.3s;
 		&:hover, &:focus {
-			color:var(--bleu-fonce);
+			color:var(--bleu);
 			text-decoration: underline;
 		}
 		br {
@@ -29,7 +30,7 @@
 		padding:0;
 		margin:0;
 		li {
-			line-height: 30px;
+			line-height: 2em;
 		}
 	}
 
@@ -100,8 +101,8 @@
 		padding:2rem var(--padding-x);
 		
 		&, a {
-			color:var(--texte-gris);
-			
+			color: #8a8a8a;
+			font-weight: 400;
 		}
 
 		a {
@@ -202,7 +203,7 @@
 		}
 		.coordonnees-boutique {
 			padding-left:4rem;
-			padding-right:var(--padding-x);
+			padding-right:calc(6rem + var(--padding-x-pleine-largeur));
 			padding-bottom:5rem;
 		}
 		.copyright {
@@ -211,6 +212,9 @@
 		}
 		.nav-footer-legal li:first-of-type::before {
 			display: inline-block;
+		}
+		.backtotop {
+			right:calc(6rem + var(--padding-x-pleine-largeur));
 		}
 	}
 	@include bp(xxl) {

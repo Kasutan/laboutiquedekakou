@@ -3,7 +3,7 @@
 .reassurance {
 	padding:var(--margin-y-1) var(--padding-x);
 	.argument {
-		align-items: center;
+		align-items: flex-start;
 		display: flex;
 		margin-bottom: var(--margin-y-1);
 		.picto {

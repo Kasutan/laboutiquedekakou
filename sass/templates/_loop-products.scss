@@ -56,6 +56,14 @@ li.product {
 				font-weight: 700;
 			}
 		}
+
+		&:first-of-type {
+			display: flex;
+			margin-bottom: 0.5rem;
+			img {
+				@include object-fit;
+			}
+		}
 	}
 	.attachment-woocommerce_thumbnail {
 		width:100%;

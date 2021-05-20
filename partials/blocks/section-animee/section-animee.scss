@@ -56,6 +56,10 @@
 			padding-left:0;
 			padding-top: 3rem;
 		}
+
+		h3 {
+			@include fs(42);
+		}
 		
 	}
 	@include bp(lg) {

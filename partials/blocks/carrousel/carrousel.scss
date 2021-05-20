@@ -21,10 +21,10 @@
 			}
 		}
 		.texte {
-			background-color: #fff;
+			background-color: rgba(255,255,255,0.9);
 			color:var(--bleu);
 			font-weight: 400;
-			max-width: 80rem;
+			max-width: 94rem;
 			padding:var(--margin-y-2) var(--margin-y-2);
 			position: relative;
 			text-align: center;
@@ -33,7 +33,9 @@
 				color:var(--rouge);
 				font-weight: 400;
 			}
-
+			p {
+				margin-bottom: 0;
+			}
 			br {
 				display: none;
 			}

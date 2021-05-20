@@ -2058,12 +2058,13 @@ button.modaal-close {
   .site-footer h2 {
     margin-bottom: 0.5em; }
   .site-footer a {
-    color: var(--bleu);
+    color: var(--bleu-fonce);
+    font-weight: 400;
     text-decoration: none;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s; }
     .site-footer a:hover, .site-footer a:focus {
-      color: var(--bleu-fonce);
+      color: var(--bleu);
       text-decoration: underline; }
     .site-footer a br {
       display: none; }
@@ -2072,7 +2073,7 @@ button.modaal-close {
     padding: 0;
     margin: 0; }
     .site-footer ul li {
-      line-height: 30px; }
+      line-height: 2em; }
   .site-footer .backtotop {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -2121,7 +2122,8 @@ button.modaal-close {
     font-size: 1.3rem;
     padding: 2rem var(--padding-x); }
     .site-footer .copyright, .site-footer .copyright a {
-      color: var(--texte-gris); }
+      color: #8a8a8a;
+      font-weight: 400; }
     .site-footer .copyright a {
       display: inline-block; }
   .site-footer .annee::after {
@@ -2192,7 +2194,7 @@ button.modaal-close {
         grid-template-columns: minmax(12rem, 18rem) repeat(3, minmax(18rem, 1fr)); }
       .site-footer .coordonnees-boutique {
         padding-left: 4rem;
-        padding-right: var(--padding-x);
+        padding-right: calc(6rem + var(--padding-x-pleine-largeur));
         padding-bottom: 5rem; }
       .site-footer .copyright {
         -webkit-box-align: center;
@@ -2202,7 +2204,9 @@ button.modaal-close {
         display: -ms-flexbox;
         display: flex; }
       .site-footer .nav-footer-legal li:first-of-type::before {
-        display: inline-block; } }
+        display: inline-block; }
+      .site-footer .backtotop {
+        right: calc(6rem + var(--padding-x-pleine-largeur)); } }
   @media (min-width: 1920px) {
     .site-footer .menus-footer {
       grid-template-columns: repeat(4, 1fr); }
@@ -2286,6 +2290,17 @@ li.product {
       opacity: 1; }
     li.product .woocommerce-loop-product__link:hover .woocommerce-loop-product__title, li.product .woocommerce-loop-product__link:focus .woocommerce-loop-product__title {
       font-weight: 700; }
+    li.product .woocommerce-loop-product__link:first-of-type {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 0.5rem; }
+      li.product .woocommerce-loop-product__link:first-of-type img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+        width: 100%; }
   li.product .attachment-woocommerce_thumbnail {
     width: 100%; }
   li.product a.woocommerce-LoopProduct-link .pictos {
@@ -3064,12 +3079,13 @@ a.page {
   .post-summary a {
     text-decoration: none; }
   .post-summary p.entry-category {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--texte-gris);
     margin-bottom: 0;
     text-transform: uppercase; }
   .post-summary p.entry-date {
-    font-size: 1.1rem; }
+    font-size: 1.2rem;
+    font-weight: 400; }
 
 .post-summary__image {
   display: block;
@@ -3144,6 +3160,9 @@ button.change-quantity {
   margin-left: 1ch; }
 
 .banniere-newsletter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   min-height: 22vw;
   padding: var(--margin-y-2) var(--padding-x);
   position: relative; }
