@@ -218,6 +218,23 @@
 					}
 				});
 			}
+
+			//Au clic sur un élément de pagination, smooth scroll en haut de la liste
+			bindScroll(); // lier les écouteurs au premier affichage
+
+			//lier les écouteurs à chaque fois que la liste est mise à jour + attendre un peu pour que les liens de navigation soient reconstruits
+			listeFiltrable.on('updated',function(e) {
+				setTimeout(bindScroll,1000);
+			})
+
+			function bindScroll() {
+				$('.pagination li').click(function(e) {
+					$("html, body").animate({
+						scrollTop: $('#filtre-liste').offset().top - 60
+						}, 500);
+				});
+			}
+		
 		}
 
 		/*=================================================
