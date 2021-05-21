@@ -10,6 +10,9 @@ add_filter( 'gettext', function($translated, $original, $domain) {
 			case 'Vous aimerez peut-être aussi&hellip;' :
 				return 'Produits recommandés';
 				break;
+			case 'Produits apparentés' :
+				return 'Produits recommandés';
+				break;
 			case 'Valider la commande' :
 				return 'Paiement';
 				break;

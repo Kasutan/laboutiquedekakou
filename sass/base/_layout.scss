@@ -74,6 +74,10 @@ body.deux-colonnes .entry-content {
 				width: 100%;
 			}
 		}
+		p {
+			color:var(--noir);
+			line-height:2em;
+		}
 	}
 	@include bp(lg) {
 		--taille-image : 50rem;

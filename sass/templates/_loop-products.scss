@@ -3,11 +3,10 @@
 	display:grid;
 	grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
 	column-gap: 6rem;
-	row-gap:var(--margin-y-1);
+	row-gap:var(--margin-y-2);
 	list-style:none;
 	margin:0;
-	padding:calc(3rem + var(--margin-y-2)) var(--padding-x) 0;
-
+	padding:calc(3rem + var(--margin-y-2)) Max(3rem, var(--padding-x)) 0; // Max avec une majuscule sera ignoré par SASS (sensible à la casse) mais traité en CSS (insensible à la casse)
 	
 	@include bp(xl) {
 		grid-template-columns: repeat(4,1fr);
@@ -57,17 +56,29 @@ li.product {
 			}
 		}
 
-		&:first-of-type {
-			display: flex;
-			margin-bottom: 0.5rem;
-			img {
-				@include object-fit;
+		@include bp(md) {
+			.attachment-woocommerce_thumbnail {
+				width:100%;
+			}
+			&:first-of-type { //lien qui contient l'image principale et les pictos
+				border:solid 1px var(--fond);
+				margin-bottom: 0.5rem;
+				padding-top: 100%; //forcer format carré
+				position: relative;
+				width: 100%;
+				img.attachment-woocommerce_thumbnail { //viser uniquement l'image principale et pas les pictos
+					@include object-fit;
+					height: 100%;
+					left:0;
+					position: absolute;
+					top: 0;
+					width:100%;
+				}
 			}
 		}
+		
 	}
-	.attachment-woocommerce_thumbnail {
-		width:100%;
-	}
+	
 	a.woocommerce-LoopProduct-link .pictos {
 		--taille-picto:18%;
 		height:var(--taille-picto);

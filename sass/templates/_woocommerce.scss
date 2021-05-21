@@ -207,3 +207,13 @@
 .wc_payment_method.payment_method_etransactions_std img {
 	max-width: 10rem;
 }
+
+//Style des boutons disabled
+.woocommerce button.button.alt:disabled[disabled] {
+	background-color: #9eb6bd;
+}
+
+//Couleur fond bloc paiement
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+	background-color: var(--fond);
+}

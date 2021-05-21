@@ -9,12 +9,13 @@
 		}
 	}
 	.col-texte {
+		background-color: var(--fond);
 		padding:var(--margin-y-2) var(--padding-x);
-
 	}
 	
 	//Tablette : 2 colonnes l'une à côté de l'autre, image à gauche
 	@include bp(md) {
+		border-bottom:solid 1px var(--fond);
 		display:flex;
 		.col-image, .col-texte {
 			flex-basis : 50%;
@@ -30,6 +31,7 @@
 		&:nth-of-type(2n+1) {
 			flex-direction: row-reverse;
 			.col-texte {
+				background-color: #fff;
 				padding-left:var(--padding-x);
 				padding-right:var(--margin-y-1);
 			}

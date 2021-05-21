@@ -1,3 +1,16 @@
+//Changer la répartition image / summary dans la largeur de la page 
+@include bp(md) {
+	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+		width:33%;
+	}
+
+	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+		padding-left:3rem;
+		width:67%;
+	}
+}
+
+
 //Cacher la loupe en double
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger img.emoji {
 	display: none;
@@ -16,6 +29,7 @@
 h1.titre-produit {
 	@include fs(48);
 	color:var(--noir);
+	line-height: 1.1;
 	margin-bottom:0;
 	margin-top:0;
 	text-align: left;
@@ -35,6 +49,7 @@ h1.titre-produit {
 }
 .single-product {
 	.summary {
+		color:var(--noir);
 		> .stock.in-stock {
 			display: none;
 		}
@@ -72,7 +87,7 @@ h1.titre-produit {
 		position: relative;
 	}
 	.boutons-partage {
-		margin: var(--margin-y-1);
+		margin: var(--margin-y-1) 0;
 		nav {
 			display: flex;
 			a {
@@ -158,7 +173,35 @@ h1.titre-produit {
 h3.titre-interne-onglet {
 	@include fs(21);
 	color:var(--noir);
+	font-weight: 400;
+	margin-bottom: 0;
 }
 
+
+/*Produits apparentés */
+.single-product .related {
+	@include bleed;
+	background-color: var(--fond);
+	padding:var(--margin-y-1) var(--padding-x) 0;
+	> h2 {
+		@include fs(36);
+		color:var(--noir);
+		font-weight: 400;
+		margin-bottom: var(--margin-y-1);
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.products {
+		margin-bottom: 0;
+	}
+	ul.products li.product .price {
+		color:var(--bleu);
+		font-weight: 700;
+	}
+
+	ul.products li.product .woocommerce-loop-product__title {
+		padding:0;
+	}
+}
 
 
