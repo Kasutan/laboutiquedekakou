@@ -12,9 +12,16 @@
 .woocommerce .quantity input.qty {
 	box-shadow: none;
 	outline:none;
-	-moz-appearance: textfield;
+	-moz-appearance: textfield; //Firefox
 	padding:0;
 	min-height:0;
+	
+	/* Chrome, Safari, Edge, Opera */
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
 button.change-quantity {

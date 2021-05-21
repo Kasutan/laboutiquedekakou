@@ -1,16 +1,18 @@
 //Style des messages
 
 .woocommerce-info {
-	border-top-color:var(--bleu);
+	border-top-color: var(--bleu);
+
 	&::before {
-		color:var(--bleu);
+		color: var(--bleu);
 	}
 }
 
 .woocommerce-message {
-	border-top-color:var(--vert);
+	border-top-color: var(--vert);
+
 	&::before {
-		color:var(--vert);
+		color: var(--vert);
 	}
 }
 
@@ -18,24 +20,27 @@
 .woocommerce-MyAccount-navigation {
 	ul {
 		list-style: none;
-		margin:0;
-		padding:0;
-		padding-right:2rem;
-		padding-bottom:var(--margin-y-1);
+		margin: 0;
+		padding: 0;
+		padding-right: 2rem;
+		padding-bottom: var(--margin-y-1);
 	}
+
 	ul li {
-		border-bottom:solid 1px var(--bleu-fonce);
-		padding:1rem;
+		border-bottom: solid 1px var(--bleu-fonce);
+		padding: 1rem;
+
 		&::before {
 			display: none;
 		}
+
 		a {
 			text-decoration: none;
 		}
 
 		&.is-active {
 			a {
-				font-weight:700;
+				font-weight: 700;
 			}
 		}
 	}
@@ -45,43 +50,55 @@
 .woocommerce table.shop_table {
 	thead {
 		@include fs(24);
-		background-color:var(--fond);
-		color:var(--noir);
+		background-color: var(--fond);
+		color: var(--noir);
 		font-weight: 700;
 		text-transform: uppercase;
 	}
-	.product-thumbnail img {
-		width:20rem;
-	}
-	a.remove {
-		color:#494949 !important;
-		transition:transform 0.3s;
 
-		&:hover, &:focus {
-			background-color:transparent;
-			transform:scale(1.05);
+	.product-thumbnail img {
+		width: 20rem;
+	}
+
+	a.remove {
+		color: #494949 !important;
+		transition: transform 0.3s;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			transform: scale(1.05);
 		}
 	}
-	.product-name a, .product-price span, .product-subtotal span{
+
+	.product-name a,
+	.product-price span,
+	.product-subtotal span {
 		@include fs(24);
-		color:var(--bleu-fonce);
+		color: var(--bleu-fonce);
 		text-decoration: none;
 	}
-	.product-price, .product-subtotal {
+
+	.product-price,
+	.product-subtotal {
 		font-weight: 700;
+
 		.tax_label {
 			display: none;
 		}
 	}
+
 	.quantity {
 		justify-content: flex-end;
 	}
+
 	.cadre-quantite {
-		border-color:#ebebeb;
+		border-color: #ebebeb;
 	}
+
 	.quantity input.qty {
 		@include fs(24);
-		color:var(--texte);
+		color: var(--texte);
 		font-weight: 700;
 	}
 
@@ -89,27 +106,32 @@
 		.coupon {
 			display: flex;
 			flex-wrap: wrap;
+
 			.input-text {
 				margin-bottom: 1rem;
-				margin-right:1ch;
+				margin-right: 1ch;
 				width: unset;
 			}
 		}
 
 		button.button {
-			background-color:var(--fond);
+			background-color: var(--fond);
 			border-radius: 1rem;
-			&:hover, &:focus, &:active {
-				filter:brightness(0.95);
+
+			&:hover,
+			&:focus,
+			&:active {
+				filter: brightness(0.95);
 			}
-		}		
-	} 
+		}
+	}
 }
 
 @include bp(md) {
 	.woocommerce table.shop_table {
 		//Déplacer le formulaire coupons en tablette et desktop
 		position: relative;
+
 		.coupon {
 			position: absolute;
 			max-width: 40vw;
@@ -130,36 +152,47 @@
 	h2 {
 		display: none;
 	}
+
 	th {
 		@include fs(24);
-		color:var(--noir);
+		color: var(--noir);
 	}
-	.cart-subtotal, .order-total {
+
+	.cart-subtotal,
+	.order-total {
 		td span {
 			@include fs(24);
-			color:var(--bleu);
+			color: var(--bleu);
 			font-weight: 700;
 			text-align: right;
+
 			.tax_label {
 				display: none;
 			}
+
 			.includes_tax {
 				display: block;
 			}
 		}
 	}
+
 	.order-total td {
 		@include fs(29);
 	}
+
 	.wc-proceed-to-checkout {
 		text-align: right;
 	}
+
 	a.checkout-button.button.alt {
 		background-color: var(--bleu);
 		display: inline-block;
-		padding-top:1rem;
-		padding-bottom:1rem;
-		&:hover, &:focus, &:active {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+
+		&:hover,
+		&:focus,
+		&:active {
 			background: var(--bleu-fonce);
 		}
 	}
@@ -174,31 +207,37 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto 4rem auto;
+			grid-column-gap: 4rem;
 			column-gap: 4rem;
+
 			.woocommerce-NoticeGroup {
 				grid-row-start: 1;
 				grid-column: 1 / span 2;
 			}
+
 			#order_review_heading {
 				grid-row-start: 2;
 				grid-column-start: 2;
 			}
+
 			#order_review {
 				grid-row-start: 3;
 				grid-column-start: 2;
 			}
+
 			#customer_details {
 				grid-row: 2 / span 2;
 				display: flex;
 				flex-direction: column;
 			}
 		}
+
 		.woocommerce .col2-set .col-1,
 		.woocommerce-page .col2-set .col-1,
-		.woocommerce .col2-set .col-2, 
+		.woocommerce .col2-set .col-2,
 		.woocommerce-page .col2-set .col-2 {
-			float:none;
-			width:100%;
+			float: none;
+			width: 100%;
 		}
 	}
 }
@@ -214,6 +253,122 @@
 }
 
 //Couleur fond bloc paiement
-#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
 	background-color: var(--fond);
+}
+
+
+//Input radio des pages panier et commande
+//https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+	.woocommerce-shipping-methods, .wc_payment_methods {
+
+		input[type='radio'] {
+			--active: var(--bleu);
+			--active-inner: #fff;
+			--focus: 2px rgba(18,75,90, .3);
+			--border: var(--bleu);
+			--border-hover: var(--bleu);
+			--background: #fff;
+			--disabled: #F6F8FF;
+			--disabled-inner: var(--fond);
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			height: 21px;
+			outline: none;
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			margin: 0;
+			cursor: pointer;
+			border: 1px solid var(--bc, var(--border));
+			background: var(--b, var(--background));
+			transition: background .3s, border-color .3s, box-shadow .2s;
+
+			&:after {
+				content: '';
+				display: block;
+				left: 0;
+				top: 0;
+				position: absolute;
+				transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+			}
+
+			&:checked {
+				--b: var(--active);
+				--bc: var(--active);
+				--d-o: .3s;
+				--d-t: .6s;
+				--d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+			}
+
+			&:disabled {
+				--b: var(--disabled);
+				cursor: not-allowed;
+				opacity: .9;
+
+				&:checked {
+					--b: var(--disabled-inner);
+					--bc: var(--border);
+				}
+
+				&+label {
+					cursor: not-allowed;
+				}
+			}
+
+			&:hover {
+				&:not(:checked) {
+					&:not(:disabled) {
+						--bc: var(--border-hover);
+					}
+				}
+			}
+
+			&:focus {
+				box-shadow: 0 0 0 var(--focus);
+			}
+
+			&:not(.switch) {
+				width: 21px;
+
+				&:after {
+					opacity: var(--o, 0);
+				}
+
+				&:checked {
+					--o: 1;
+				}
+			}
+
+			&+label {
+				cursor: pointer;
+			}
+		}
+
+
+
+		input[type='radio'] {
+			border-radius: 50%;
+
+			&:after {
+				width: 19px;
+				height: 19px;
+				border-radius: 50%;
+				background: var(--active-inner);
+				opacity: 0;
+				transform-origin: center;
+				transform: scale(var(--s, .7));
+			}
+
+			&:checked {
+				--s: .6;
+			}
+		}
+
+	}
+
 }
