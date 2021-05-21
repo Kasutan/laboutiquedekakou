@@ -193,6 +193,7 @@ button.menu-toggle {
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
 	background-color:var(--blanc);
+	box-shadow: 0 3px 3px rgba(0,0,0,.2);
 
 	/*Logique affichage sous-menu*/
 	.sub-menu {
@@ -209,6 +210,7 @@ button.menu-toggle {
 		transform:rotate(90deg);
 	}
 
+	
 	/*Styles communs menu et sous-menu*/
 	.menu-mobile, .sub-menu {
 		list-style: none;
@@ -219,6 +221,10 @@ button.menu-toggle {
 			font-weight: 400;
 			text-decoration: none;
 		}
+	}
+	
+	.menu-mobile {
+		margin-bottom:var(--margin-y-1);
 	}
 
 	/*Styles éléments de niveau 1*/
@@ -240,10 +246,18 @@ button.menu-toggle {
 		svg path {
 			fill:var(--rouge);
 		}
+		&:focus {
+			outline: none;
+		}
 	}
 	.sub-menu {
 		flex-basis:100%;
 		flex-shrink:0;
+		padding-top: 0.5rem;
+
+		li {
+			margin-bottom: 0.5rem;
+		}
 	}
 }
 

@@ -1073,7 +1073,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: var(--texte);
-  border: 1px solid var(--gris);
+  border: 1px solid var(--texte-gris);
   border-radius: 1rem;
   outline-color: var(--bleu);
   min-height: 4.4rem;
@@ -1353,6 +1353,8 @@ button.menu-toggle {
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
   background-color: var(--blanc);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   /*Logique affichage sous-menu*/
   /*Styles communs menu et sous-menu*/
   /*Styles éléments de niveau 1*/ }
@@ -1376,6 +1378,8 @@ button.menu-toggle {
     .volet-navigation .menu-mobile a, .volet-navigation .sub-menu a {
       font-weight: 400;
       text-decoration: none; }
+  .volet-navigation .menu-mobile {
+    margin-bottom: var(--margin-y-1); }
   .volet-navigation .menu-mobile > li {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -1400,11 +1404,16 @@ button.menu-toggle {
     padding-left: 2rem; }
     .volet-navigation button.ouvrir-sous-menu svg path {
       fill: var(--rouge); }
+    .volet-navigation button.ouvrir-sous-menu:focus {
+      outline: none; }
   .volet-navigation .sub-menu {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     -ms-flex-negative: 0;
-    flex-shrink: 0; }
+    flex-shrink: 0;
+    padding-top: 0.5rem; }
+    .volet-navigation .sub-menu li {
+      margin-bottom: 0.5rem; }
 
 /*Style liens de menus MENU PRINCIPAL */
 .nav-main {
