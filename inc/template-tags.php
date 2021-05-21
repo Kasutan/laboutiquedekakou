@@ -41,7 +41,12 @@ function ea_entry_category($contexte='archive') {
 			printf('<span class="term screen-reader-text">%s</span>',$term->slug);
 		} else {
 			//contexte single
-			echo '<p class="entry-category h1 entry-title">' . kasutan_enleve_s_final($term->name) . '</p>';
+			if($post_type==='post') {
+				$name =kasutan_enleve_s_final($term->name);
+			} else {
+				$name=$term->name;
+			}
+			echo '<p class="entry-category h1 entry-title">' . $name . '</p>';
 		}
 		
 }
