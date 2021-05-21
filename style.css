@@ -3002,10 +3002,14 @@ h3.titre-interne-onglet {
   width: 1px; }
 
 .filtre-label {
+  cursor: pointer;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding-right: 2ch;
   text-transform: uppercase; }
+
+.filtre-input:focus-visible + .filtre-label {
+  outline: dotted 1px var(--noir); }
 
 .filtre-input:checked + .filtre-label {
   font-weight: 700; }

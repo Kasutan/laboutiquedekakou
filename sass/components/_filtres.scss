@@ -25,11 +25,14 @@
 }
 
 .filtre-label {
+	cursor: pointer;
 	flex-shrink:0; //forcer scroll en mobile
 	padding-right : 2ch; // respiration sur le dernier élément en mobile
 	text-transform: uppercase;
 }
-
+.filtre-input:focus-visible + .filtre-label {
+	outline:dotted 1px var(--noir);
+}
 .filtre-input:checked + .filtre-label {
 	font-weight: 700;
 }
