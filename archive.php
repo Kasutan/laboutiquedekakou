@@ -33,7 +33,7 @@ function ea_archive_header() {
 		$title = get_the_title( get_option( 'page_for_posts' ) );
 
 	} elseif( is_search() ) {
-		$title = 'Search Results';
+		$title = 'Résultats de recherche';
 		$more = get_search_form( false );
 
 	} elseif( is_archive() ) {
@@ -56,7 +56,7 @@ function ea_archive_header() {
 	if( !empty( $subtitle ) )
 		echo '<h4>' . $subtitle . '</h4>';
 	echo apply_filters( 'ea_the_content', $description );
-	echo $more;
+	printf('<div class="container">%s</div>', $more);
 	do_action ('ea_archive_header_after' );
 	echo '</header>';
 

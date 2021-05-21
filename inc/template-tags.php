@@ -31,6 +31,8 @@ function ea_entry_category($contexte='archive') {
 		$term = ea_first_term();
 	} elseif($post_type==='producteur') {
 		$term=ea_first_term(array('taxonomy'=>'type_producteur'));
+	} elseif($post_type==='product') {
+		$term=ea_first_term(array('taxonomy'=>'product_cat'));
 	}
 	if( !empty( $term ) && ! is_wp_error( $term ) )
 		if($contexte==='archive') {
@@ -68,7 +70,13 @@ function ea_post_summary_image( $size = 'thumbnail_medium' ) {
  *
  */
 function ea_entry_image_id() {
-	return has_post_thumbnail() ? get_post_thumbnail_id() : get_option( 'options_ea_default_image' );
+	if(has_post_thumbnail()) {
+		return get_post_thumbnail_id();
+	}
+	if(function_exists('get_field') && !empty($banniere=get_field('kakou_page_banniere'))) {
+		return $banniere;
+	}
+	return get_theme_mod( 'custom_logo' ); //défaut : le logo du site
 }
 
 /**

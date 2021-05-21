@@ -71,7 +71,7 @@ function kasutan_producteur_post_type() {
 		'show_in_nav_menus'     => false,
 		'can_export'            => true,
 		'has_archive'           => false,
-		'exclude_from_search'   => true,
+		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => false,

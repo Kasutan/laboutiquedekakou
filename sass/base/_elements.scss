@@ -124,6 +124,12 @@ textarea {
 .volet-recherche {
 	overflow:hidden;
 	transition:all var(--transition); //animation de l'affichage du volet
+	.search-form .search-field {
+		width:15rem;
+		@include bp(xl) {
+			width:20rem;
+		}
+	}
 }
 .search-form {
 	align-items: stretch;
@@ -131,10 +137,15 @@ textarea {
 	justify-content: flex-start;
 }
 .search-form .search-field {
+	border:solid 1px var(--bleu);
 	height: 40px;
 	line-height: 40px;
 	margin-bottom: 0;
-	width:150px;
+	padding-left: 1.2rem;
+	&:focus-visible, &:focus {
+		border-color:var(--bleu-fonce);
+		outline:none;
+	}
 }
 .search-form .search-submit {
 	margin-bottom: 0;
