@@ -86,6 +86,11 @@ h1.titre-produit {
 		padding-right:4rem;
 		position: relative;
 	}
+
+	a.added_to_cart {
+		margin-left:2rem;
+	}
+	
 	.boutons-partage {
 		margin: var(--margin-y-1) 0;
 		nav {

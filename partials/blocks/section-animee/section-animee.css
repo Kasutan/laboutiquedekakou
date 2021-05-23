@@ -11,6 +11,7 @@
     display: block; }
   .section-animee .decor-5 {
     right: var(--padding-x);
+    opacity: 0.5;
     top: -4rem; }
   .section-animee .decor-6 {
     right: 0;
@@ -80,6 +81,7 @@
       bottom: 0;
       width: 40%; }
     .section-animee .decor-5 {
+      opacity: 1;
       top: -2rem; } }
   @media (min-width: 1400px) {
     .section-animee .decors-wrap {

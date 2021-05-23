@@ -313,7 +313,12 @@ function kasutan_affiche_bloc_deux_colonnes_alternees($args) {
 		if(!empty($args['type_producteur'])) {
 			printf('<span class="term screen-reader-text">%s</span>',$args['type_producteur']); //pour le filtre
 		}
-		printf('<div class="col-image">%s</div>',wp_get_attachment_image( $args['image'], 'large'));
+		if(!empty($args['image'])) {
+			$classe='avec-image';
+		} else {
+			$classe='sans-image';
+		}
+		printf('<div class="col-image %s">%s</div>',$classe,wp_get_attachment_image( $args['image'], 'large'));
 		echo '<div class="col-texte">';
 			printf('<h2 class="titre">%s</h2>',$args['titre']);
 			printf('<div class="texte">%s</div>',$args['texte']);

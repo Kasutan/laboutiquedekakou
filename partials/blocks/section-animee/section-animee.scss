@@ -19,6 +19,7 @@
 	}
 	.decor-5 {
 		right:var(--padding-x);
+		opacity: 0.5;
 		top:-4rem;
 	}
 	.decor-6 {
@@ -100,6 +101,7 @@
 			width:40%;
 		}
 		.decor-5 {
+			opacity:1;
 			top:-2rem;
 		}
 	}

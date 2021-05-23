@@ -13,7 +13,7 @@ body {
 	--margin-y-2: 3.5rem;
 	--padding-x:15px;
 	--padding-x-largeur-reduite:var(--padding-x);
-	--padding-x-pleine-largeur:0;
+	--padding-x-pleine-largeur:0rem;
 	//--header-height:80px;
 	//--max-width-xl:1900px;
 
@@ -46,6 +46,12 @@ body {
 }
 
 //Réglages de largeur selon option choisie en BO ou codée dans la fonction ea_page_layout ou obtenue par le filtre ea_page_layout
+
+body.pleine-largeur .entry-content {
+	> p, > ul, > ol, > .wp-block-buttons {
+		padding: 0 var(--padding-x-largeur-reduite);
+	}
+}
 
 body.largeur-normale .entry-content {
 	padding: 0 var(--padding-x);

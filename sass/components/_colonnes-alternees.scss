@@ -7,10 +7,19 @@
 		img {
 			@include object-fit;
 		}
+		&.sans-image {
+			display: none;
+		}
 	}
 	.col-texte {
 		background-color: var(--fond);
 		padding:var(--margin-y-2) var(--padding-x);
+	}
+
+	&:nth-of-type(2n+1) {
+		.col-texte {
+			background-color: #fff;
+		}
 	}
 	
 	//Tablette : 2 colonnes l'une à côté de l'autre, image à gauche
@@ -22,6 +31,10 @@
 		}
 		.col-image {
 			height: 31vw;
+			&.sans-image {
+				background-color: var(--fond);
+				display: block;
+			}
 		}
 		.col-texte {
 			padding-left:var(--margin-y-1);
