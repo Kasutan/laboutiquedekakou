@@ -110,7 +110,7 @@ class BE_ACF_Customizations {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page(array(
 				'page_title' 	=> 'Réglages du site La boutique de Kakou',
-				'menu_title'	=> 'Réglages du site',
+				'menu_title'	=> 'Réglages de la boutique de Kakou',
 				'menu_slug' 	=> 'site-settings',
 				'capability'	=> 'edit_posts',
 				'position' 		=> '2.5',
@@ -178,7 +178,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'colonnes-alternees',
 			'title'           => 'Bloc colonnes alternées',
-			'description'     => 'Une colonne de texte et une colonne avec une image, alternativement à droite puis à gauche du texte - selon la position du bloc dans la page. La colonne de texte peut contenir un bouton (facultatif). Insérez ce bloc dans une page "Pleine Largeur"..',
+			'description'     => 'Une colonne de texte et une colonne avec une image, alternativement à droite puis à gauche du texte - selon la position du bloc dans la page. La colonne de texte peut contenir un bouton (facultatif).',
 			'render_template' => 'partials/blocks/colonnes-alternees/colonnes-alternees.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/colonnes-alternees/colonnes-alternees.css',
 			'category'        => 'kakou',
@@ -197,7 +197,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'carrousel',
 			'title'           => 'Bloc carrousel',
-			'description'     => 'Carrousel avec images bannières, messages et boutons en option. Insérez ce bloc dans une page "Pleine Largeur".',
+			'description'     => 'Carrousel avec images bannières, messages et boutons en option.',
 			'render_template' => 'partials/blocks/carrousel/carrousel.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.css',
 			'enqueue_script' => get_stylesheet_directory_uri() . '/partials/blocks/carrousel/carrousel.js',
@@ -217,7 +217,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'reassurance',
 			'title'           => 'Bloc réassurance',
-			'description'     => 'Bandeau avec 3 pictos et leurs textes de réassurance. Insérez ce bloc dans une page "Pleine Largeur".',
+			'description'     => 'Bandeau avec 3 pictos et leurs textes de réassurance.',
 			'render_template' => 'partials/blocks/reassurance/reassurance.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/reassurance/reassurance.css',
 			'category'        => 'kakou',
