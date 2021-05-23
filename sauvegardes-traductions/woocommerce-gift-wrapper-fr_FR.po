@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: Woocommerce Gift Wrapper\n"
+"POT-Creation-Date: 2021-02-11 17:25-0800\n"
+"PO-Revision-Date: 2021-05-23 17:30+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: woocommerce-gift-wrapper.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/wcgw-admin-notices.php:99
+#, php-format
+msgid ""
+"WooCommerce Gift Wrapper is not set up properly. Please choose a category to "
+"represent your gift wrap options <a href=\"%s\">in the settings</a>."
+msgstr ""
+
+#: classes/wcgw-admin-notices.php:186
+#, php-format
+msgid ""
+"Your theme (%s) contains outdated copies of some WooCommerce Gift Wrapper "
+"template files."
+msgstr ""
+
+#: classes/wcgw-admin-notices.php:187
+msgid ""
+"The following files should be updated to reflect parent template file "
+"changes to ensure they are secure and compatible with the current version of "
+"Gift Wrapper."
+msgstr ""
+
+#: classes/wcgw-admin-notices.php:193
+msgid ""
+"If you copied over a template file to your theme to change something, you "
+"will need to copy the new version of the template and apply your changes "
+"again."
+msgstr ""
+
+#: classes/wcgw-settings.php:34
+msgid "Donate"
+msgstr ""
+
+#: classes/wcgw-settings.php:35
+msgid "Settings"
+msgstr ""
+
+#: classes/wcgw-settings.php:49
+msgid "Gift Wrapping"
+msgstr ""
+
+#: classes/wcgw-settings.php:81
+msgid "None selected"
+msgstr ""
+
+#: classes/wcgw-settings.php:86
+msgid "None set up yet"
+msgstr ""
+
+#: classes/wcgw-settings.php:108
+msgid "Basic Setup Instructions"
+msgstr ""
+
+#: classes/wcgw-settings.php:110
+#, php-format
+msgid ""
+"Start by <a href=\"%s\" target=\"_blank\">adding at least one WooCommerce "
+"product</a> called \"Gift Wrapping\" or something similar. It can be hidden "
+"from the catalog if you like."
+msgstr ""
+
+#: classes/wcgw-settings.php:110
+msgid ""
+"Create a unique WooCommerce product category for this/these gift wrapping "
+"product(s), and add them to this category."
+msgstr ""
+
+#: classes/wcgw-settings.php:110
+msgid "Then consider the options below."
+msgstr ""
+
+#: classes/wcgw-settings.php:114
+msgid "General Gift Wrapping Options"
+msgstr ""
+
+#: classes/wcgw-settings.php:120
+msgid "Gift Wrap Category"
+msgstr ""
+
+#: classes/wcgw-settings.php:121
+msgid "Define the category which holds your gift wrap product(s)."
+msgstr ""
+
+#: classes/wcgw-settings.php:127
+msgid "Define a Category"
+msgstr ""
+
+#: classes/wcgw-settings.php:134
+msgid "Gift Wrap Details"
+msgstr ""
+
+#: classes/wcgw-settings.php:135
+msgid ""
+"Optional text to give any details or conditions of your gift wrap offering. "
+"This text is not translatable by Wordpress i18n, but can be translated by "
+"WPML. Leave this field empty to translate via another means. Hide this field "
+"with CSS, or by purchasing the paid version of the plugin and setting this "
+"to zero."
+msgstr ""
+
+#: classes/wcgw-settings.php:146
+msgid "Textarea Character Limit"
+msgstr ""
+
+#: classes/wcgw-settings.php:147
+msgid ""
+"How many characters your customer can type when creating their own note for "
+"giftwrapping. Defaults to 1000 characters; lower this number if you want "
+"shorter notes from your customers."
+msgstr ""
+
+#: classes/wcgw-settings.php:157
+msgid "Cart/Checkout Gift Wrapping Options"
+msgstr ""
+
+#: classes/wcgw-settings.php:159
+msgid ""
+"These settings apply to per-order wrap options in the cart and checkout "
+"areas, not line item (per-item) or per-product wrapping."
+msgstr ""
+
+#: classes/wcgw-settings.php:160
+#, php-format
+msgid ""
+"<a href=\"%s\" rel=\"noopener\" target=\"_blank\">Per-product and line item "
+"gift wrapping options are available in the PLUS version of this plugin</a>"
+msgstr ""
+
+#: classes/wcgw-settings.php:165
+msgid "Where to Show Gift Wrapping"
+msgstr ""
+
+#: classes/wcgw-settings.php:166
+msgid ""
+"Choose where to show gift wrap options to the customer on the cart page. You "
+"may choose more than one."
+msgstr ""
+
+#: classes/wcgw-settings.php:170
+msgid "Before cart"
+msgstr ""
+
+#: classes/wcgw-settings.php:171
+msgid "Before cart collaterals"
+msgstr ""
+
+#: classes/wcgw-settings.php:172
+msgid "After cart"
+msgstr ""
+
+#: classes/wcgw-settings.php:173
+msgid "Before checkout"
+msgstr ""
+
+#: classes/wcgw-settings.php:174
+msgid "After checkout"
+msgstr ""
+
+#: classes/wcgw-settings.php:175
+msgid "None"
+msgstr ""
+
+#: classes/wcgw-settings.php:182
+msgid "Should options open in pop-up?"
+msgstr ""
+
+#: classes/wcgw-settings.php:183
+msgid ""
+"If checked, there will be a link (\"header\") in the cart, which when "
+"clicked will open a window for customers to choose gift wrapping options. It "
+"can be styled and might be a nicer option for your site."
+msgstr ""
+
+#: classes/wcgw-settings.php:187
+msgid "Modal/Popup"
+msgstr ""
+
+#: classes/wcgw-settings.php:188
+msgid "jQuery SlideToggle"
+msgstr ""
+
+#: classes/wcgw-settings.php:194
+msgid "Show Gift Wrap Thumbs in Cart"
+msgstr ""
+
+#: classes/wcgw-settings.php:195
+msgid "Should gift wrap product thumbnail images be visible in the cart?"
+msgstr ""
+
+#: classes/wcgw-settings.php:199 classes/wcgw-settings.php:211
+#: classes/wcgw-settings.php:223
+msgid "Yes"
+msgstr ""
+
+#: classes/wcgw-settings.php:200 classes/wcgw-settings.php:212
+#: classes/wcgw-settings.php:224
+msgid "No"
+msgstr ""
+
+#: classes/wcgw-settings.php:206
+msgid "Link thumbnails?"
+msgstr ""
+
+#: classes/wcgw-settings.php:207
+msgid "Should thumbnail images link to gift wrap product details?"
+msgstr ""
+
+#: classes/wcgw-settings.php:218
+msgid "Allow more than one gift wrap product in cart?"
+msgstr ""
+
+#: classes/wcgw-settings.php:219
+msgid ""
+"If yes, customers can buy more than one gift wrapping product in one order."
+msgstr ""
+
+#: classes/wcgw-settings.php:233
+msgid "Advanced Options"
+msgstr ""
+
+#: classes/wcgw-settings.php:240
+msgid "Leave No Trace"
+msgstr ""
+
+#: classes/wcgw-settings.php:243
+msgid "Delete all Gift Wrapper settings upon plugin uninstall"
+msgstr ""
+
+#: classes/wcgw-settings.php:244
+msgid ""
+"If you plan on deleting this plugin and not coming back, and want to keep "
+"your Wordpress database tables tidy, check this box, save settings, then "
+"delete the plugin."
+msgstr ""
+
+#: classes/wcgw-settings.php:253
+msgid "Thank you!"
+msgstr ""
+
+#: classes/wcgw-settings.php:257
+msgid ""
+"Hello. I'm Caroline. I have volunteered to create and maintain this helpful "
+"and free plugin for you since October 2014."
+msgstr ""
+
+#: classes/wcgw-settings.php:258
+#, php-format
+msgid ""
+"If I have helped you, please stoke this plugin's dying fire by <a href=\"%s"
+"\" target=\"_blank\" rel=\"noopener\">leaving a friendly review</a> and/or "
+"<a href=\"%s\" target=\"_blank\" rel=\"noopener\">making a small donation</"
+"a>."
+msgstr ""
+
+#: classes/wcgw-settings.php:259
+#, php-format
+msgid ""
+"Questions? Read the <a href=\"%s\" target=\"_blank\">Gift Wrapper FAQ</a>. "
+"Need further help? <a href=\"%s\" target=\"_blank\" rel=\"noopener\">Use the "
+"Wordpress support forums for free plugin support</a>.<br />Please include as "
+"many details as possible when requesting help."
+msgstr ""
+
+#: classes/wcgw-settings.php:261
+msgid ""
+"Need more gift wrapping options, like per-product gift wrap, line-item gift "
+"wrap in the cart, more built-in styles, and easy string translations?"
+msgstr ""
+
+#: classes/wcgw-settings.php:261
+#, php-format
+msgid ""
+"Check out the <a href=\"%s\" target=\"_blank\" rel=\"noopener\">PLUS version "
+"of WooCommerce Gift Wrapper</a> by <strong>Little Package</strong>! (not "
+"sold at woocommerce.com)"
+msgstr ""
+
+#: classes/wcgw-wrapping.php:473 templates/wcgwp/giftwrap-list.php:23
+#: templates/wcgwp/modal.php:19
+msgid "Add gift wrap?"
+msgstr "Ajouter un emballage ?"
+
+#: classes/wcgw-wrapping.php:483 templates/wcgwp/giftwrap-list.php:89
+#: templates/wcgwp/modal.php:94
+msgid "Add Gift Wrap to Order"
+msgstr "Ajouter l'emballage au panier"
+
+#: classes/wcgw-wrapping.php:611 classes/wcgw-wrapping.php:629
+msgid "Note"
+msgstr ""
+
+#: templates/wcgwp/giftwrap-list-cart.php:60
+#: templates/wcgwp/giftwrap-list.php:84 templates/wcgwp/modal.php:85
+msgid "Add Gift Wrap Message:"
+msgstr ""
+
+#: templates/wcgwp/giftwrap-list.php:23 templates/wcgwp/modal.php:26
+msgid "Cancel"
+msgstr "Refermer le volet"
+
+#: templates/wcgwp/giftwrap-list.php:32
+msgid "We offer the following gift wrap options:"
+msgstr "Choisissez un emballage :"
+
+#: templates/wcgwp/replace-wrap-js.php:20
+msgid "Are you sure you want to replace the gift wrap in your cart?"
+msgstr "Souhaitez-vous remplacer l'emballage dans votre panier ?"
+
+#: woocommerce-gift-wrapper.php:101 woocommerce-gift-wrapper.php:106
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Woocommerce Gift Wrapper"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://web.little-package.com/downloads/woocommerce-gift-wrapper-plus/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin shows gift wrap options on the WooCommerce cart and/or checkout "
+"page, and adds gift wrapping to the order"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Little Package"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://web.little-package.com"
+msgstr ""

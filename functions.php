@@ -26,6 +26,7 @@ include_once( get_template_directory() . '/inc/site-footer.php' );
 //WooCommerce
 include_once( get_template_directory() . '/inc/actions-single-product.php' );
 include_once( get_template_directory() . '/inc/actions-vignette-produit.php' );
+include_once( get_template_directory() . '/inc/actions-cart.php' );
 
 // Editor
 include_once( get_template_directory() . '/inc/disable-editor.php' );
@@ -325,3 +326,4 @@ require_once( 'inc/message-absence.php' );
 
 
 //TODO de-register les blocs gutenberg en doublon avec des blocs custom (notamment WooCommerce)
+

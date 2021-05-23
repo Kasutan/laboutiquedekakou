@@ -127,6 +127,9 @@
 	}
 }
 
+.collaterals-wrap .wc_giftwrap_notes_container {
+	display: none;
+}
 @include bp(md) {
 	.woocommerce table.shop_table {
 		//Déplacer le formulaire coupons en tablette et desktop
@@ -144,6 +147,26 @@
 			justify-content: flex-start;
 		}
 
+	}
+
+	//PLacer le formulaire choix emballage et les totaux sur deux colonnes
+	.collaterals-wrap { //élément ajouté avec des hooks dans actions-cart.php
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 15rem; //pour compenser le décalage top de .wc-giftwrap quand il est ouvert
+	}
+	.wc-giftwrap {
+		position: relative;
+		width: 45%;
+		top: 15rem; //pour laisser de la place au formulaire code promo
+	}
+
+	.woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+		width: 48%;
+		.cart_totals {
+			float:none;
+			width:100%
+		}
 	}
 }
 

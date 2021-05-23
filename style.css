@@ -2794,6 +2794,9 @@ h3.titre-interne-onglet {
     -webkit-filter: brightness(0.95);
     filter: brightness(0.95); }
 
+.collaterals-wrap .wc_giftwrap_notes_container {
+  display: none; }
+
 @media (min-width: 768px) {
   .woocommerce table.shop_table {
     position: relative; }
@@ -2809,7 +2812,24 @@ h3.titre-interne-onglet {
     .woocommerce table.shop_table .quantity {
       -webkit-box-pack: start;
       -ms-flex-pack: start;
-      justify-content: flex-start; } }
+      justify-content: flex-start; }
+  .collaterals-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 15rem; }
+  .wc-giftwrap {
+    position: relative;
+    width: 45%;
+    top: 15rem; }
+  .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+    width: 48%; }
+    .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+      float: none;
+      width: 100%; } }
 
 .cart_totals h2 {
   display: none; }
