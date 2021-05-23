@@ -6,9 +6,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height:31vw;
+		height:70vw;
 		position: relative;
-		padding:var(--margin-y-2) var(--padding-x);
+		padding:5rem var(--padding-x);
 		.image {
 			display: flex;
 			height:100%;
@@ -39,10 +39,30 @@
 			br {
 				display: none;
 			}
+
+			.button {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	@include bp(sm) {
+		.slide {
+			height:50vw;
+		}
+	}
+
+	@include bp(md) {
+		.slide {
+			height:32vw;
 		}
 	}
 
 	@include bp(lg) {
+		.slide {
+			height:43vw;
+		}
+
 		.slide .texte {
 			@include fs(45);
 			br {
@@ -54,9 +74,15 @@
 		}
 	}
 
+	@include bp(xl) {
+		.slide {
+			height:40vw;
+		}
+	}
+
 	@include bp(xxl) {
 		.slide {
-			height : 700px;
+			height : 70rem;
 			min-height:unset;
 		}
 	}
