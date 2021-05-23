@@ -92,7 +92,11 @@ function kasutan_categories_produit() {
 
 	$descendant_id = $descendant->term_id;
 	$ancestors = array_reverse(get_ancestors($descendant_id, 'product_cat'));
-	$origin_ancestor_term = get_term_by("id", $ancestors[0], "product_cat");
+	if(!empty($ancestors)) {
+		$origin_ancestor_term = get_term_by("id", $ancestors[0], "product_cat");
+	} else {
+		$origin_ancestor_term ='';
+	}
 	
 	return array(
 		'categorie_parente' => $origin_ancestor_term,

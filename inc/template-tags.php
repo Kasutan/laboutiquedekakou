@@ -123,10 +123,14 @@ function kasutan_fil_ariane() {
 			if(is_array($categories)) {
 				$parente=$categories['categorie_parente'];
 				$sous_categorie=$categories['sous_categorie'];
-				printf('<a href="%s">%s</a> > ',
-					get_category_link( $parente ),
-					$parente->name
-				);
+				
+				if($parente) {
+					printf('<a href="%s">%s</a> > ',
+						get_category_link( $parente ),
+						$parente->name
+					);
+				}
+				
 				printf('<a href="%s?filtre_cat=%s">%s</a> > ',
 					get_category_link( $parente ),
 					$sous_categorie->slug,
