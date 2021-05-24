@@ -134,7 +134,7 @@ class BE_ACF_Customizations {
 				array(
 					'slug' => 'kakou',
 					'title' => 'kakou',
-					'icon'  => 'cloud', //TODO
+					'icon'  => 'store',
 				),
 			),
 			$categories

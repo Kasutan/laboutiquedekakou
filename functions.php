@@ -34,7 +34,6 @@ include_once( get_template_directory() . '/inc/tinymce.php' );
 
 // Functionality
 include_once( get_template_directory() . '/inc/login-logo.php' );
-include_once( get_template_directory() . '/inc/block-area.php' );
 include_once( get_template_directory() . '/inc/social-links.php' );
 include_once( get_template_directory() . '/inc/traductions.php' );
 
@@ -83,56 +82,6 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		//Autoriser les shortcodes dans les widgets
 		add_filter( 'widget_text', 'do_shortcode' );
 
-		add_action( 'widgets_init', function() {
-			
-
-			register_sidebar(array(
-				'name'=> 'Footer colonne 1',
-				'id' => 'footer_1',
-				'before_widget' => '<div id="%1$s" class="footer-1">',
-				'after_widget' => '</div>',
-				'before_title' => '<div class="h4">',
-				'after_title' => '</div>',
-			));
-
-			register_sidebar(array(
-				'name'=> 'Footer colonne 2',
-				'id' => 'footer_2',
-				'before_widget' => '<div id="%1$s" class="footer-2">',
-				'after_widget' => '</div>',
-				'before_title' => '<div class="h4">',
-				'after_title' => '</div>',
-			));
-
-			register_sidebar(array(
-				'name'=> 'Footer colonne 3',
-				'id' => 'footer_3',
-				'before_widget' => '<div id="%1$s" class="footer-3">',
-				'after_widget' => '</div>',
-				'before_title' => '<div class="h4">',
-				'after_title' => '</div>',
-			));
-			
-			register_sidebar(array(
-				'name'=> 'Footer colonne 4',
-				'id' => 'footer_4',
-				'before_widget' => '<div id="%1$s" class="footer-4">',
-				'after_widget' => '</div>',
-				'before_title' => '<div class="h4">',
-				'after_title' => '</div>',
-			));
-			
-			register_sidebar(array(
-				'name'=> 'Footer colonne 5',
-				'id' => 'footer_5',
-				'before_widget' => '<div id="%1$s" class="%2$s">',
-				'after_widget' => '</div>',
-				'before_title' => '<div class="h5">',
-				'after_title' => '</div>',
-			));
-			
-
-		} );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -226,7 +175,6 @@ function kasutan_scripts() {
 	wp_enqueue_style( 'kakou-google-font', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
 	// Move jQuery to footer
-	//TODO bien vérifier que ça ne perturbe pas WooCommerce !
 	if( ! is_admin() ) {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
@@ -239,17 +187,15 @@ function kasutan_scripts() {
 
 	wp_enqueue_script( 'kakou-owl-carousel',get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.js', array('jquery'), '2.3.4', true );
 
-	wp_register_script( 'kakou-modaal',get_template_directory_uri() . '/lib/modaal/modaal.min.js', array('jquery'), '0.4.4', true );
-
 	wp_register_script( 'kakou-list',get_template_directory_uri() . '/lib/list/list.min.js', array('jquery'), '1.5.0', true );
 
-	wp_enqueue_script( 'kakou-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'kakou-owl-carousel', 'kakou-modaal','kakou-list'), '', true );
+	wp_enqueue_script( 'kakou-scripts', get_template_directory_uri() . '/js/main.js', array('jquery', 'kakou-owl-carousel','kakou-list'), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
 
 
 /**
-* Image sizes. Work first with medium and large in admin if possible
+* Image sizes. 
 * https://developer.wordpress.org/reference/functions/add_image_size/
 */
 /*Autres tailles réglées en bo : 
@@ -268,23 +214,7 @@ add_image_size('banniere',1920,600,false);
 /**
 * CPT, custom fields, custom taxonomies et functions associées
 */
-
 require_once( 'inc/cpt-taxonomies.php' );
-
-
-
-
-/**
-* Reusable Blocks accessible in backend
-* @link https://www.billerickson.net/reusable-blocks-accessible-in-wordpress-admin-area
-*
-*/
-function kasutan_reusable_blocks_admin_menu() {
-	add_menu_page( 'Blocs réutilisables', 'Blocs réutilisables', 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
-}
-add_action( 'admin_menu', 'kasutan_reusable_blocks_admin_menu' );
-
-
 
 
 /**
@@ -323,7 +253,3 @@ require_once( 'inc/fix-local-pickup.php' );
 *
 */
 require_once( 'inc/message-absence.php' );
-
-
-//TODO de-register les blocs gutenberg en doublon avec des blocs custom (notamment WooCommerce)
-

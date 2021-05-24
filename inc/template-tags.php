@@ -280,7 +280,7 @@ function kasutan_affiche_filtre_taxonomy($taxonomy,$child_of=0) {
 	$terms = get_terms( array(
 		'taxonomy' => $taxonomy,
 		'child_of' => $child_of,
-		'hide_empty' => false, //TODO enlever après tests,
+		'hide_empty' => true, 
 		//Pas d'arguments pour l'ordre : l'ordre est géré par le plugin Taxonomy Order
 	) );
 	if(empty($terms)) {
