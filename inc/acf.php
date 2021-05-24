@@ -274,7 +274,7 @@ class BE_ACF_Customizations {
 		acf_register_block_type( [
 			'name'            => 'nouveautes-produits',
 			'title'           => 'Bloc nouveautés produits',
-			'description'     => 'Section avec les 4 derniers produits (contenu automatique).',
+			'description'     => 'Section avec les 4 derniers produits, visibles et en stock (contenu automatique).',
 			'render_template' => 'partials/blocks/nouveautes-produits/nouveautes-produits.php',
 			'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/nouveautes-produits/nouveautes-produits.css',
 			'category'        => 'kakou',
