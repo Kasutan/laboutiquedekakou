@@ -131,9 +131,9 @@
 							//on réinitialise le filtre
 							listeFiltrable.filter();
 						} else {
-							//on filtre la liste pour ne garder que les éléments dont le type est sélectionné
+							//on filtre la liste pour ne garder que les éléments qui contiennent le type sélectionné
 							listeFiltrable.filter(function(item) {
-								return (selectedValue==item.values().term);
+								return (item.values().term.indexOf(selectedValue) >= 0);
 							});
 						}
 						//la nouvelle liste est prête, nouvelle animation pour réafficher

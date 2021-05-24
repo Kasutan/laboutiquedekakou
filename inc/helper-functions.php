@@ -81,6 +81,19 @@ function ea_first_term( $args = [] ) {
 }
 
 
+/** Types producteurs (slugs séparés par des espaces) pour vignettes producteurs */
+function kasutan_types_producteurs_string($producteur_id) {
+	$terms = get_the_terms( $producteur_id, 'type_producteur' );
+	if( empty( $terms ) || is_wp_error( $terms ) )
+	return false;
+
+	$slugs=array();
+	foreach($terms as $term) {
+		$slugs[]=$term->slug;
+	}
+	return implode(' ',$slugs);
+}
+
 /**
  * Catégories de produits pour fil d'ariane
  * d'après https://wordpress.stackexchange.com/questions/56784/get-main-parent-categories-for-a-product */

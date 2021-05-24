@@ -34,23 +34,20 @@ printf('<section id="liste-filtrable" class="acf-producteurs %s" data-pagination
 		kasutan_affiche_filtre_taxonomy('type_producteur');
 	}
 
-	if(function_exists('kasutan_affiche_bloc_deux_colonnes_alternees')) {
+	if(function_exists('kasutan_affiche_bloc_deux_colonnes_alternees') 
+		&& function_exists('kasutan_types_producteurs_string')) {
 		printf('<ul class="list producteurs">');
 		foreach($producteurs as $producteur) {
 			$producteur_id=$producteur->ID;
-			$type_producteur=ea_first_term(
-				array(
-					'taxonomy'	=> 'type_producteur',
-					'field'		=> 'slug',
-					'post_id'	=> $producteur_id,
-				)
-			);
+
+			$type_producteur_string=kasutan_types_producteurs_string($producteur_id);
+
 			kasutan_affiche_bloc_deux_colonnes_alternees(array(
 				'balise' => 'li',
 				'titre' => get_the_title($producteur_id),
 				'texte' => $producteur->post_content,
 				'image' => get_post_thumbnail_id( $producteur_id),
-				'type_producteur' => $type_producteur
+				'type_producteur' => $type_producteur_string
 			));
 		}
 
