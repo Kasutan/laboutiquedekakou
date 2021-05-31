@@ -44,7 +44,7 @@
       padding-left: 0;
       padding-top: 3rem; }
     .section-animee h3 {
-      font-size: calc(42 * var(--taille-texte) / 21); } }
+      font-size: calc(31 * var(--taille-texte) / 21); } }
   @media (min-width: 960px) {
     .section-animee .col-images {
       -webkit-box-align: center;

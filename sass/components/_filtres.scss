@@ -1,12 +1,12 @@
 .filtre {
-	@include fs(26);
+	@include fs(19);
 
 	align-items: center;
 	background-color: var(--fond);
 	color:var(--noir);
 	display: flex;
 	overflow-x: auto;
-	padding: 2rem var(--padding-x);
+	padding: 1.5rem var(--padding-x);
 }
 
 .filtre-sep {

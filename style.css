@@ -651,7 +651,7 @@ body {
   padding-right: var(--padding-x); }
 
 body.pleine-largeur .entry-content > p, body.pleine-largeur .entry-content > ul, body.pleine-largeur .entry-content > ol, body.pleine-largeur .entry-content > .wp-block-buttons {
-  padding: 0 var(--padding-x-largeur-reduite); }
+  padding: 0 var(--padding-x); }
 
 body.largeur-normale .entry-content {
   padding: 0 var(--padding-x); }
@@ -807,7 +807,7 @@ h1, .h1 {
 
 @media (min-width: 500px) {
   h1, .h1 {
-    font-size: calc(55 * var(--taille-texte) / 21);
+    font-size: calc(41 * var(--taille-texte) / 21);
     font-weight: 400; } }
 
 h2,
@@ -925,18 +925,17 @@ a.wp-block-button__link,
   border: none;
   cursor: pointer;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem 0.8rem;
   text-align: center;
   vertical-align: middle;
   background: var(--bleu-bouton);
   border-radius: 1rem;
   color: var(--blanc);
-  font-size: 1em;
+  font-size: 0.7em;
   font-weight: 400;
   letter-spacing: 1.05px;
   line-height: 1.1;
-  min-height: 4.4rem;
-  min-width: 21rem;
+  min-width: 15rem;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all var(--transition);
@@ -982,7 +981,7 @@ a.button.picto {
   border: none;
   cursor: pointer;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem 0.8rem;
   text-align: center;
   vertical-align: middle;
   background-color: transparent;
@@ -1321,6 +1320,7 @@ button.menu-toggle {
     .topbar .menu-topbar li {
       margin-right: 2rem; }
     .topbar .menu-topbar a {
+      font-size: calc(17 * var(--taille-texte) / 21);
       color: var(--blanc);
       letter-spacing: 1.4px;
       line-height: 1;
@@ -1334,9 +1334,9 @@ button.menu-toggle {
     background-image: url("icons/mon-compte.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 28px;
+    height: 21px;
     overflow: hidden;
-    width: 30px;
+    width: 22px;
     -webkit-transition: -webkit-transform 0.3s;
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
@@ -2018,7 +2018,8 @@ button.modaal-close {
       padding-bottom: 3.2rem; } }
 
 .custom-logo-link {
-  display: inline-block; }
+  display: inline-block;
+  max-width: 19rem; }
 
 .custom-logo {
   display: block;
@@ -2080,6 +2081,7 @@ button.modaal-close {
 .site-footer {
   position: relative; }
   .site-footer h2 {
+    font-size: calc(26 * var(--taille-texte) / 21);
     margin-bottom: 0.5em; }
   .site-footer a {
     color: var(--bleu-fonce);
@@ -2558,7 +2560,7 @@ li.product {
   margin-bottom: var(--margin-y-2); }
 
 h1.titre-produit {
-  font-size: calc(48 * var(--taille-texte) / 21);
+  font-size: calc(38 * var(--taille-texte) / 21);
   color: var(--noir);
   line-height: 1.1;
   margin-bottom: 0;
@@ -2567,10 +2569,10 @@ h1.titre-produit {
   text-transform: unset; }
 
 .single-product .product .summary p.price {
-  font-size: calc(40 * var(--taille-texte) / 21);
+  font-size: calc(32 * var(--taille-texte) / 21);
   color: var(--bleu-fonce);
   font-weight: 700;
-  margin-bottom: var(--margin-y-2); }
+  margin-bottom: var(--margin-y); }
 
 .woocommerce div.product form.cart div.quantity {
   float: none;
@@ -2585,6 +2587,9 @@ h1.titre-produit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.single-product .stock {
+  padding-top: 0.5rem; }
 
 .single-product .stock.in-stock::before {
   content: '✓';
@@ -3116,7 +3121,7 @@ h3.titre-interne-onglet {
     padding-left: 0; } }
 
 .filtre {
-  font-size: calc(26 * var(--taille-texte) / 21);
+  font-size: calc(19 * var(--taille-texte) / 21);
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -3126,7 +3131,7 @@ h3.titre-interne-onglet {
   display: -ms-flexbox;
   display: flex;
   overflow-x: auto;
-  padding: 2rem var(--padding-x); }
+  padding: 1.5rem var(--padding-x); }
 
 .filtre-sep {
   padding: 0 2ch 0.5rem 0; }
@@ -3168,7 +3173,7 @@ h3.titre-interne-onglet {
   border: none;
   cursor: pointer;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem 0.8rem;
   text-align: center;
   vertical-align: middle;
   background: var(--bleu-bouton);
@@ -3194,8 +3199,8 @@ li.woofc-menu-item {
   background-image: url("icons/panier.png");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 28px;
-  width: 30px;
+  height: 21px;
+  width: 22px;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;

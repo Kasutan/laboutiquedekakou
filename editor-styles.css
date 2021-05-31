@@ -246,7 +246,7 @@ a.wp-block-button__link {
   border: none;
   cursor: pointer;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem 0.8rem;
   text-align: center;
   vertical-align: middle;
   background: var(--bleu-bouton);

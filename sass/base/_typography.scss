@@ -42,7 +42,7 @@ h1, .h1 {
 
 @include bp(sm) {
 	h1, .h1 {
-		@include fs(55);
+		@include fs(41);
 		font-weight: 400;
 	}
 }

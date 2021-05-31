@@ -150,6 +150,7 @@ button.menu-toggle {
 			margin-right:2rem;
 		}
 		a {
+			@include fs(17);
 			color:var(--blanc);
 			letter-spacing: 1.4px;
 			line-height: 1;
@@ -170,9 +171,9 @@ button.menu-toggle {
 		background-image:url('icons/mon-compte.png');
 		background-size:contain;
 		background-repeat: no-repeat;
-		height:28px;
+		height:21px;
 		overflow: hidden;
-		width:30px;
+		width:22px;
 		transition:transform 0.3s;
 		a {
 			color:transparent;

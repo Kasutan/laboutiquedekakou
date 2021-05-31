@@ -27,7 +27,7 @@
 }
 
 h1.titre-produit {
-	@include fs(48);
+	@include fs(38);
 	color:var(--noir);
 	line-height: 1.1;
 	margin-bottom:0;
@@ -37,10 +37,10 @@ h1.titre-produit {
 }
 
 .single-product .product .summary p.price {
-	@include fs(40);
+	@include fs(32);
 	color:var(--bleu-fonce);
 	font-weight: 700;
-	margin-bottom: var(--margin-y-2);
+	margin-bottom: var(--margin-y);
 }
 
 .woocommerce div.product form.cart div.quantity {
@@ -58,6 +58,9 @@ h1.titre-produit {
 
 	.form-container {
 		display: flex;
+	}
+	.stock {
+		padding-top: 0.5rem;
 	}
 	.stock.in-stock {
 		&::before {
