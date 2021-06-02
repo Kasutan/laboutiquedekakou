@@ -22,6 +22,12 @@
 //Vignette produit
 li.product {
 	text-align: center;
+
+	//Masquer picto natif promo
+	span.onsale {
+		display: none;
+	}
+	
 	.overlay-vignette {
 		align-items: center;
 		background-color:rgba(255,255,255,0.7);

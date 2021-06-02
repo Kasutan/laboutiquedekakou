@@ -2287,6 +2287,8 @@ button.modaal-close {
 
 li.product {
   text-align: center; }
+  li.product span.onsale {
+    display: none; }
   li.product .overlay-vignette {
     -webkit-box-align: center;
     -ms-flex-align: center;
