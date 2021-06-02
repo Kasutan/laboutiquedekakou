@@ -60,7 +60,7 @@ li.product {
 		}
 
 		@include bp(md) {
-			.attachment-woocommerce_thumbnail {
+			.attachment-woocommerce_thumbnail, .woocommerce-placeholder {
 				width:100%;
 			}
 			&:first-of-type { //lien qui contient l'image principale et les pictos
@@ -69,7 +69,7 @@ li.product {
 				padding-top: 100%; //forcer format carré
 				position: relative;
 				width: 100%;
-				img.attachment-woocommerce_thumbnail { //viser uniquement l'image principale et pas les pictos
+				img.attachment-woocommerce_thumbnail, .woocommerce-placeholder { //viser uniquement l'image principale et pas les pictos
 					@include object-fit;
 					height: 100%;
 					left:0;
