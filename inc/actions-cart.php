@@ -13,3 +13,13 @@ add_action('woocommerce_after_cart','kasutan_after_cart');
 function kasutan_after_cart() {
 	echo '</div>';
 }
+
+//Ajouter une phrase sur la livraison offerte
+add_action('woocommerce_after_shipping_calculator','kasutan_after_shipping_calculator');
+function kasutan_after_shipping_calculator(){
+	if(function_exists('get_field') 
+		&& !empty( $message=wp_kses_post(get_field('kakou_message_livraison_offerte','options'))) ) {
+
+			printf('<p><em><small>%s</small></em></p>',$message);
+	}
+}

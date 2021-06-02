@@ -22,6 +22,25 @@
             "new_lines": "br"
         },
         {
+            "key": "field_60b744939e822",
+            "label": "Message livraison offerte",
+            "name": "kakou_message_livraison_offerte",
+            "type": "textarea",
+            "instructions": "Affiché sur la page panier",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Livraison offerte à partir de 100€ d'achat",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "br"
+        },
+        {
             "key": "field_608ac16ae3a8c",
             "label": "Page de la boutique",
             "name": "page_boutique",
@@ -227,5 +246,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621158384
+    "modified": 1622623467
 }
