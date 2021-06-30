@@ -61,6 +61,37 @@ function kasutan_conditionally_hidding_pickuptime(){
 	<?php
 }
 
+// Remplacer la fonction du plugin qui enregistre la meta avec le timestamp du créneau de livraison (pb de nonce quand le client n'est pas connecté)
+// add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'update_order_meta' ) );
+// dans le fichier public/class-local-pickup-time.php
+if ( class_exists( 'Local_Pickup_Time' ) ) {
+	remove_action( 'woocommerce_checkout_update_order_meta', array( Local_Pickup_Time::get_instance(), 'update_order_meta') );
+}
+
+//Nouvelle fonction pour enregistrer la meta avec le timestamp du créneau de livraison
+add_action( 'woocommerce_checkout_update_order_meta', 'kasutan_update_order_meta' );
+function kasutan_update_order_meta( $order_id ) {
+	//propriétés protégées de la classe Local_Pickup_Time
+	// dans le fichier public/class-local-pickup-time.php
+	$order_post_key = 'local_pickup_time_select'; 
+	$order_meta_key = '_local_pickup_time_select';
+
+	// Update the order pickup time if set.
+	$value=esc_attr(wc_get_post_data_by_key( $order_post_key ));
+	if ( ! empty( $value ) && kasutan_isValidTimeStamp($value) ) {
+		update_post_meta( $order_id, $order_meta_key, $value );
+	} else {
+		error_log('Créneau de livraison vide ou non valide : '.$value);
+	}
+}
+
+//https://stackoverflow.com/questions/2524680/check-whether-the-string-is-a-unix-timestamp
+function kasutan_isValidTimeStamp($timestamp)
+{
+	return ((string) (int) $timestamp === $timestamp) 
+		&& ($timestamp <= PHP_INT_MAX)
+		&& ($timestamp >= ~PHP_INT_MAX);
+}
 
 // Retirer la validation systématique prévue dans le plugin 
 // add_action( 'woocommerce_checkout_process', array( $this, 'field_process' ) );
@@ -98,7 +129,7 @@ function kasutan_email_order_meta_fields( $fields, $sent_to_admin, $order ) {
 
 	$key='_local_pickup_time_select';
 	$value = get_post_meta($order->get_id(),$key, true );
-	if($value!=="Aucun") {
+	if(!empty($value) && $value!=="Aucun") {
 
 		// Get an instance of the Public plugin.
 		$plugin = Local_Pickup_Time::get_instance();
