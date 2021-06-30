@@ -253,3 +253,18 @@ require_once( 'inc/fix-local-pickup.php' );
 *
 */
 require_once( 'inc/message-absence.php' );
+
+
+//Modifier l'adresse mail qui envoie les mails automatiques
+
+add_filter( 'wp_mail_from', function() {
+
+	return 'veronique@laboutiquedekakou.fr';
+
+});
+
+add_filter( 'wp_mail_from_name', function( $name ) {
+
+	return 'La Boutique de Kakou';
+
+});
